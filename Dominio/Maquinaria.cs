@@ -9,20 +9,9 @@ namespace Dominio
     public abstract class Maquinaria
     {
         public int Id { get; set; }
-        public static int UltimoId { get; set; }
-        public string Categoria { get; set; }
-        public string Marca { get; set; }
-        public string Modelo { get; set; }
-        public DateTime Anio { get; set; }
-        public int PrecioVenta { get; set; }
-        public string Pais {  get; set; }
-        public string Ciudad {  get; set; }
-        public string Barrio { get; set; }
-        public int HorasDeUso   { get; set; }
-        public bool EsUsado { get; set; }
-        public TipoDireccion TipoDireccion { get; set; }
-        public bool UnicoDuenio { get; set; }
-        public TipoCombustible TipoCombustible { get; set; }
+        public static int UltimoId { get; set; } = 0;   
+        public Direccion Direccion { get; set; }
+        public Caracteristica Caracteristica { get; set; }
         public string OtrasCaracteristicas { get; set; }
         
 
@@ -31,29 +20,28 @@ namespace Dominio
             Id = UltimoId;
             UltimoId++;
         }
-        public Maquinaria(string categoria, string marca,string modelo, DateTime anio, int precioVenta,string pais, string ciudad,string barrio,int horasDeUso,
-            bool esUsado,TipoDireccion tipoDireccion,bool unicoDuenio,TipoCombustible tipoCombustible,string otrasCaracteristicas)
+        public Maquinaria(Direccion direccion,Caracteristica caracteristica,string otrasCaracteristicas)
         {
-
-            this.Categoria = categoria;
-            this.Marca = marca;
-            this.Modelo = modelo;
-            this.Anio = anio;
-            this.PrecioVenta = precioVenta;
-            this.Pais = pais;
-            this.Ciudad = ciudad;
-            this.Barrio = barrio;
-            this.HorasDeUso = horasDeUso;
-            this.EsUsado = esUsado;
-            this.TipoDireccion = tipoDireccion;
-            this.UnicoDuenio = unicoDuenio;
-            this.TipoCombustible = tipoCombustible;
-            this.OtrasCaracteristicas = otrasCaracteristicas;
+            Direccion = direccion;
+            Caracteristica = caracteristica;
+            OtrasCaracteristicas = otrasCaracteristicas;
 
         }
 
         public abstract string TipoVechiculo();
 
-           
+        public void Validar()
+        {
+            ValidarOtrasCaracteristicas();
+
+        }
+
+        private void ValidarOtrasCaracteristicas()
+        {
+            if(OtrasCaracteristicas.Length > 60)
+            {
+                throw new Exception("Otras caracteristicas debe de ser menor a 60 caracteres")
+            }
+        }
     }
 }

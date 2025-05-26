@@ -6,27 +6,24 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Compra : Publicacion
+    public class Compra 
     {
         public DateTime FechaCompra {  get; set; }
+        public Cliente ClienteCompra { get; set; }
 
-        public Compra(DateTime fechaCompra, string titulo, string foto, Maquinaria unaMaquina, Cliente clienteAccionar, TipoDePublicacion tipoDePublicacion)
-            : base(titulo,foto,unaMaquina,clienteAccionar,tipoDePublicacion)
+        public Compra(DateTime fechaCompra,Cliente clienteCompra)
         {
             FechaCompra = fechaCompra;
+            ClienteCompra = clienteCompra;
         }
 
         public override string ToString()
         {
-            string dato = $"Usted acaba de confirar la compra de {UnaMaquina.TipoVechiculo()}\n" +
-                $"fecha de compra: {FechaCompra}\n" +
-                $" la maquina a vender es: {UnaMaquina}";
+            string dato = $"fecha de compra: {FechaCompra}\n" +
+                $"{ClienteCompra} Disfrute de su compra";
             return dato;
         }
 
-        public override double CalcularPrecioFinal(double precio)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

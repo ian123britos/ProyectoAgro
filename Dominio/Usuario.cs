@@ -118,9 +118,9 @@ namespace Dominio
 
         private void ValidarApellido()
         {
-            if (string.IsNullOrEmpty(Nombre))
+            if (string.IsNullOrEmpty(Apellido))
             {
-                throw new Exception("El nombre no puede ser vacio");
+                throw new Exception("El apellido no puede ser vacio");
             }
         }
 

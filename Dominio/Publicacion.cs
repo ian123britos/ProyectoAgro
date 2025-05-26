@@ -13,28 +13,39 @@ namespace Dominio
         public string Titulo { get; set; }
         public string Foto { get; set; }
         public Maquinaria UnaMaquina { get; set; }
-        public Cliente ClienteAccionar { get; set; }
+        public Cliente ClienteVende { get; set; }
         public TipoDePublicacion TipoDePublicacion { get; set; }
+        public double PrecioVenta { get; set; }
 
         public Publicacion() 
         {
             Id= UltimoId;
             UltimoId++;
         }
-        public Publicacion( string titulo, string foto, Maquinaria unaMaquina, Cliente clienteAccionar,TipoDePublicacion tipoDePublicacion)
+        public Publicacion( string titulo, string foto, Maquinaria unaMaquina, Cliente clienteVende,TipoDePublicacion tipoDePublicacion)
         {
-            
+            Id = UltimoId++;
             Titulo = titulo;
             Foto = foto;
             UnaMaquina = unaMaquina;
-            ClienteAccionar = clienteAccionar;
+            ClienteVende = clienteVende;
             TipoDePublicacion = tipoDePublicacion;
         }
 
         public void Validar()
         {
             ValidarTitulo();
+            ValidarPrecioVenta();
 
+        }
+
+        private void ValidarPrecioVenta()
+        {
+        
+            if(PrecioVenta < 0)
+            {
+                throw new Exception("El precio de la venta debe de ser mayor a 0");
+            }
         }
 
         private void ValidarTitulo()

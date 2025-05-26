@@ -9,11 +9,15 @@ namespace Dominio
     public class Venta : Publicacion
     {
         public DateTime FechaPublicacionVenta { get; set; }
+        public double PrecioVenta { get; set; }
 
-        public Venta(DateTime fechaPublicacionVenta, string titulo, string foto, Maquinaria unaMaquina, Cliente clienteAccionar, TipoDePublicacion tipoDePublicacion) 
-            : base(titulo,foto,unaMaquina,clienteAccionar,tipoDePublicacion)
+        public Venta() { }
+        public Venta(DateTime fechaPublicacionVenta,double precioVenta, string titulo, string foto, Maquinaria unaMaquina, Cliente clienteVende, TipoDePublicacion tipoDePublicacion) 
+            : base(titulo,foto,unaMaquina,clienteVende,tipoDePublicacion)
         {
             FechaPublicacionVenta = fechaPublicacionVenta;
+            PrecioVenta = precioVenta;
+
 
         }
 
@@ -21,18 +25,18 @@ namespace Dominio
         {
             string dato = $"{Titulo}\n" +
                 $"la fecha de publicacion es {FechaPublicacionVenta}\n" +
-                $"la categoria del vechiculo es: {UnaMaquina.Categoria}\n" +
-                $"su modelo es: {UnaMaquina.Modelo}\n" +
-                $"la marca es: {UnaMaquina.Marca}\n" +
-                $"año de fabricacion: {UnaMaquina.Anio}\n" +
+                $"la categoria del vechiculo es: {UnaMaquina.Caracteristica.Categoria}\n" +
+                $"su modelo es: {UnaMaquina.Caracteristica.Modelo}\n" +
+                $"la marca es: {UnaMaquina.Caracteristica.Marca}\n" +
+                $"año de fabricacion: {UnaMaquina.Caracteristica.Anio}\n" +
                 $"la maquina a vender es: {UnaMaquina.TipoVechiculo()}\n" +
-                $"su precio de venta es: {UnaMaquina.PrecioVenta}";
+                $"su precio de venta es: {PrecioVenta}";
             return dato;
         }
 
         public override double CalcularPrecioFinal(double precio)
         {
-            throw new NotImplementedException();
+            return PrecioVenta;
         }
     }
 }

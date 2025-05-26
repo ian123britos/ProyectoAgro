@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Dominio
@@ -11,10 +13,9 @@ namespace Dominio
         public int Cilindro {  get; set; }
         public string MarcaMotor { get; set; }
 
-        public CargadoraPala(int cilindro,string marcaMotor, string categoria, string marca, string modelo, DateTime anio,
-            int precioVenta, string pais, string ciudad, string barrio, int horasDeUso, bool esUsado, TipoDireccion tipoDireccion,
-            bool unicoDuenio, TipoCombustible tipoCombustible, string otrasCaracteristicas) : base(categoria, marca, modelo, anio, precioVenta, pais, ciudad, barrio, horasDeUso,
-                esUsado, tipoDireccion, unicoDuenio, tipoCombustible, otrasCaracteristicas)  
+        public CargadoraPala() { }
+        public CargadoraPala(int cilindro,string marcaMotor, Direccion direccion, Caracteristica caracteristica, string otrasCaracteristicas) :
+            base(direccion, caracteristica, otrasCaracteristicas)
         {
             Cilindro = cilindro;
             MarcaMotor = marcaMotor;
@@ -23,8 +24,20 @@ namespace Dominio
 
         public override string TipoVechiculo()
         {
-            string dato = "Cargadora de pala";
+            string dato = $"Cargadora de pala:\n" +
+                $" Cilindro {Cilindro}\n" +
+                $"caracteristicas: {Caracteristica.Marca}\n" +
+                $"caracteristicas: {Caracteristica.Modelo}\n" +
+                $"caracteristicas: {Caracteristica.Anio}\n" +
+                $"marca del motor {MarcaMotor}\n" +
+                $"caracteristicas: {Caracteristica.TipoDeCombustible} ";
+                
             return dato;
+        }
+
+        public override string ToString()
+        {
+            return TipoVechiculo();
         }
     }
 

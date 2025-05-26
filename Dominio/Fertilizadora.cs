@@ -12,10 +12,10 @@ namespace Dominio
         public int Potencia { get; set; }
         public bool DobleTraccion {  get; set; }
 
-        public Fertilizadora(string marcaMotor,int potencia, bool dobleTraccion, string categoria, string marca, string modelo, DateTime anio, 
-            int precioVenta, string pais, string ciudad, string barrio, int horasDeUso,bool esUsado, TipoDireccion tipoDireccion, 
-            bool unicoDuenio, TipoCombustible tipoCombustible, string otrasCaracteristicas) : base(categoria,marca,modelo,anio,precioVenta,pais,ciudad,barrio,horasDeUso,
-                esUsado,tipoDireccion,unicoDuenio,tipoCombustible,otrasCaracteristicas) 
+        public Fertilizadora() { }
+
+        public Fertilizadora(string marcaMotor,int potencia,bool dobleTraccion,Direccion direccion,Caracteristica caracteristica, string otrasCaracteristicas) :
+            base(direccion,caracteristica,otrasCaracteristicas)
         {
             MarcaMotor = marcaMotor;
             Potencia = potencia;
@@ -23,8 +23,33 @@ namespace Dominio
         }
         public override string TipoVechiculo()
         {
-            string dato = "Fertilizadora";
+            string TieneDobleTraccion = EsDobleTraccion(DobleTraccion);
+            string dato = $"Fertilizadora\n" +
+                $"marca del motor: {MarcaMotor}" +
+                $"potencia: {Potencia}\n" +
+                $"es doble traccion: {TieneDobleTraccion}\n" +
+                $"caracteristicas: {Caracteristica.Marca}\n" +
+                $"caracteristicas: {Caracteristica.Modelo}\n" +
+                $"caracteristicas: {Caracteristica.Anio}\n";
             return dato;
         }
+        public override string ToString()
+        {
+            return TipoVechiculo();
+        }
+        public static string EsDobleTraccion(bool esDobleTraccion)
+        {
+            string Texto = "";
+            if(esDobleTraccion == false)
+            {
+                Texto = "No";
+            }
+            else
+            {
+                Texto = "Si";
+            }
+            return Texto;
+        }
+        
     }
 }

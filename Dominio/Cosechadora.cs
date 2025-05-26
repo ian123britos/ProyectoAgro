@@ -12,10 +12,9 @@ namespace Dominio
         public int CapacidadDeCarga { get; set; }
         public bool EsRuedaDual { get; set; }
 
-        public Cosechadora(string tipoCosechadora,int capacidadDeCarga,bool esRuedaDual,string categoria, string marca, string modelo, DateTime anio,
-            int precioVenta, string pais, string ciudad, string barrio, int horasDeUso, bool esUsado, TipoDireccion tipoDireccion,
-            bool unicoDuenio, TipoCombustible tipoCombustible, string otrasCaracteristicas) : base(categoria, marca, modelo, anio, precioVenta, pais, ciudad, barrio, horasDeUso,
-                esUsado, tipoDireccion, unicoDuenio, tipoCombustible, otrasCaracteristicas)
+        public Cosechadora() { }
+        public Cosechadora(string tipoCosechadora,int capacidadDeCarga,bool esRuedaDual, Direccion direccion, Caracteristica caracteristica, string otrasCaracteristicas) :
+            base(direccion, caracteristica, otrasCaracteristicas)
         { 
             TipoCosechadora = tipoCosechadora;
             CapacidadDeCarga = capacidadDeCarga;
@@ -24,8 +23,33 @@ namespace Dominio
 
         public override string TipoVechiculo()
         {
-            string dato = "Cosechadora";
+            string ruedaDual = ObtenerSiNo(EsRuedaDual);
+            string dato = $"Cosechadora\n" +
+                $"es rueda dual {ruedaDual}" +
+                $"capacidad de carga: {CapacidadDeCarga}" +
+                $"tipo de cosechadora {TipoCosechadora}" +
+                $"caracteristicas: {Caracteristica.Marca}\n" +
+                $"caracteristicas: {Caracteristica.Modelo}\n" +
+                $"caracteristicas: {Caracteristica.Anio}\n";
             return dato;
+        }
+
+        public override string ToString()
+        {
+            return TipoVechiculo();
+        }
+
+        public static string ObtenerSiNo(bool esDual)
+        {
+            string Texto = "";
+            if(esDual == false)
+            {
+                Texto = "No";
+            }else
+            {
+                Texto = "Si";
+            }
+            return Texto;
         }
     }
 }
