@@ -10,6 +10,7 @@ namespace Dominio
     {
         public DateTime FechaCompra {  get; set; }
         public Cliente ClienteCompra { get; set; }
+        public Publicacion publicacionComprada { get; set; }
 
         public Compra(DateTime fechaCompra,Cliente clienteCompra)
         {

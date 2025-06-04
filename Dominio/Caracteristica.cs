@@ -12,19 +12,19 @@ namespace Dominio
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public DateTime Anio { get; set; }
-        public int HorasDeUso { get; set; }
+        public bool EsUsado { get; set; }
         public bool UnicoDuenio { get; set; }
         public TipoCombustible TipoDeCombustible { get; set; }
         public TipoDireccion TipoDeDireccion { get; set; }
 
         public Caracteristica() { }
-        public Caracteristica(string categoria, string marca, string modelo, DateTime anio, int horasDeUso, bool unicoDuenio, TipoCombustible tipoDeCombustible, TipoDireccion tipoDeDireccion)
+        public Caracteristica(string categoria, string marca, string modelo, DateTime anio, bool esUsado, bool unicoDuenio, TipoCombustible tipoDeCombustible, TipoDireccion tipoDeDireccion)
         {
             Categoria = categoria;
             Marca = marca;
             Modelo = modelo;
             Anio = anio;
-            HorasDeUso = horasDeUso;
+            EsUsado = esUsado;
             UnicoDuenio = unicoDuenio;
             TipoDeCombustible = tipoDeCombustible;
             TipoDeDireccion = tipoDeDireccion;
@@ -34,17 +34,10 @@ namespace Dominio
             ValidarCategoria();
             ValidarMarca();
             ValidarModelo();
-            ValidarHorasDeUso();
 
         }
 
-        private void ValidarHorasDeUso()
-        {
-            if(HorasDeUso<0)
-            {
-                throw new Exception("Las horas de uso deben de ser un 0 o mayor");
-            }
-        }
+    
 
         private void ValidarModelo()
         {
@@ -70,5 +63,10 @@ namespace Dominio
                 throw new Exception("El campo categoría no puede ser vacio");
             }
         }
+
+      
+
+
+
     }
 }

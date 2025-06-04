@@ -131,5 +131,11 @@ namespace Dominio
                 throw new Exception("El nombre no puede ser vacio");
             }
         }
+
+        public override bool Equals(object? obj)
+        {
+            Usuario usuario = (Usuario) obj;
+            return usuario.Email == Email;
+        }
     }
 }
