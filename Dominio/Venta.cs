@@ -21,6 +21,19 @@ namespace Dominio
 
         }
 
+        public void Validar()
+        {
+            ValidarPrecioVenta();
+        }
+
+        private void ValidarPrecioVenta()
+        {
+            if(PrecioVenta <0)
+            {
+                throw new Exception("El precio de venta debe de ser mayor a 0");
+            }
+        }
+
         public override string ToString()
         {
             string UnicoDuenio = EsUnicoDuenioSioNo(UnaMaquina.Caracteristica.UnicoDuenio);

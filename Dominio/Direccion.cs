@@ -8,6 +8,8 @@ namespace Dominio
 {
     public class Direccion
     {
+        public int IdDireccion { get; set; }
+        public static int UltimoIdDireccion { get; set; }
         public string Pais {  get; set; }
         public string Ciudad {  get; set; }
         public string Barrio { get; set; }
@@ -16,6 +18,7 @@ namespace Dominio
 
         public Direccion(string pais, string ciudad, string barrio)
         {
+            IdDireccion = UltimoIdDireccion++;
             Pais = pais;
             Ciudad = ciudad;
             Barrio = barrio;

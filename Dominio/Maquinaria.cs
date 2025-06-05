@@ -1,15 +1,17 @@
-﻿using System;
+﻿using D.Interfaces;
+using Dominio.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Dominio
 {
-    public abstract class Maquinaria
+    public abstract class Maquinaria :IValidable
     {
-        public int Id { get; set; }
-        public static int UltimoId { get; set; } = 0;   
+       
         public Direccion Direccion { get; set; }
         public Caracteristica Caracteristica { get; set; }
         public string OtrasCaracteristicas { get; set; }
@@ -17,8 +19,7 @@ namespace Dominio
 
         public Maquinaria() 
         {
-            Id = UltimoId;
-            UltimoId++;
+          
         }
         public Maquinaria(Direccion direccion,Caracteristica caracteristica,string otrasCaracteristicas)
         {

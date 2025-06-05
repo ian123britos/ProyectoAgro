@@ -8,6 +8,8 @@ namespace Dominio
 {
     public class Caracteristica
     {
+        public int IdCaracteristica { get; set; }
+        public static int UltimoIdCaracteristica { get; set; }
         public string Categoria { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
@@ -20,6 +22,7 @@ namespace Dominio
         public Caracteristica() { }
         public Caracteristica(string categoria, string marca, string modelo, DateTime anio, bool esUsado, bool unicoDuenio, TipoCombustible tipoDeCombustible, TipoDireccion tipoDeDireccion)
         {
+            IdCaracteristica = UltimoIdCaracteristica++;
             Categoria = categoria;
             Marca = marca;
             Modelo = modelo;
