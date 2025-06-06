@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dominio.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,52 +7,35 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Usuario
+    public class Usuario:IValidable
     {
         public int Id { get; set; }
         public static int UltimoId { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public int Telefono { get; set; }
+        
 
         public Usuario() 
         {
-            Id = UltimoId;
-            UltimoId++;
+
         }
 
-        public Usuario(string nombre, string apellido,string email,string password,int telefono)
+        public Usuario(string email,string password)
         {
-            this.Nombre = nombre;
-            this.Apellido = apellido;
+            Id=UltimoId++;
             this.Email = email;
             this.Password = password;
-            this.Telefono = telefono;
+
         }
 
         public void Validar()
         {
-            ValidarNombre();
-            ValidarApellido();
+
             ValidarEmail();
             ValidarPassword();
-            ValidarTelefono();
+
         }
 
-        private void ValidarTelefono()
-        {
-            bool tieneNueveNumeros = false;
-            if(Telefono == 9)
-            {
-                tieneNueveNumeros = true;
-            }
-            if(!tieneNueveNumeros)
-            {
-                throw new Exception("Ingresa un numero de telefono correcto");
-            }
-        }
 
         private void ValidarPassword()
         {
@@ -116,21 +100,7 @@ namespace Dominio
             }
         }
 
-        private void ValidarApellido()
-        {
-            if (string.IsNullOrEmpty(Apellido))
-            {
-                throw new Exception("El apellido no puede ser vacio");
-            }
-        }
-
-        private void ValidarNombre()
-        {
-            if(string.IsNullOrEmpty(Nombre))
-            {
-                throw new Exception("El nombre no puede ser vacio");
-            }
-        }
+      
 
         public override bool Equals(object? obj)
         {

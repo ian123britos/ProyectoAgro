@@ -28,7 +28,6 @@ namespace Dominio
             OtrasCaracteristicas = otrasCaracteristicas;
 
         }
-
         public abstract string TipoVechiculo();
 
         public void Validar()
@@ -39,10 +38,22 @@ namespace Dominio
 
         private void ValidarOtrasCaracteristicas()
         {
-            if(OtrasCaracteristicas.Length > 60)
+
+            if (OtrasCaracteristicas.Length > 60)
             {
-                throw new Exception("Otras caracteristicas debe de ser menor a 60 caracteres")
+                throw new Exception("Otras características debe de ser menor a 60 caracteres");
+
             }
+
+            int i = 0;
+                while(i < OtrasCaracteristicas.Length)
+                {
+                    if (OtrasCaracteristicas[i] >= '0' && OtrasCaracteristicas[i] <= '9')
+                    {
+                        throw new Exception("Otras características no puede tener numero");
+                    }
+                    i++;
+                }
         }
     }
 }

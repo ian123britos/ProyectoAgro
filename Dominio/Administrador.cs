@@ -10,13 +10,14 @@ namespace Dominio
     {
         public string Apodo {  get; set; }
 
-        public Administrador(string apodo, string nombre, string apellido, string email, string password, int telefono) : base(nombre,apellido,email,password,telefono) 
+        public Administrador(string apodo, string email, string password) : base(email,password) 
         {
             this.Apodo = apodo;
         }
 
         public void Validar()
         {
+            base.Validar();
             ValidarApodo();
         }
 

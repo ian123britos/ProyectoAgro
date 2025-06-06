@@ -16,7 +16,7 @@ namespace Dominio
         public Maquinaria UnaMaquina { get; set; }
         public Cliente ClienteVende { get; set; }
         public TipoDePublicacion TipoDePublicacion { get; set; }
-        public double PrecioVenta { get; set; }
+
 
         public Publicacion() 
         {
@@ -36,17 +36,8 @@ namespace Dominio
         public void Validar()
         {
             ValidarTitulo();
-            ValidarPrecioVenta();
 
-        }
 
-        private void ValidarPrecioVenta()
-        {
-        
-            if(PrecioVenta < 0)
-            {
-                throw new Exception("El precio de la venta debe de ser mayor a 0");
-            }
         }
 
         private void ValidarTitulo()

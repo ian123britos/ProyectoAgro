@@ -102,12 +102,23 @@ namespace Dominio
             PreCargaDatosDireccionesTractores();
             PreCargaDatosMaquinariasTractores();
 
-            PreCargaDatosCargadoraPala();
+            
             PreCargaCaracteristicasCargadoraPala();
+            PreCargaDireccionCargadoraPala();
             PreCargaMaquinariaCargadoraPala();
 
             PreCargaCaracteristicasCosechadoras();
-            PreCargaDatosCosechadoras();
+            PreCargaDireccionCosechadoras();
+            PreCargaMaquinariaCosechadora();
+
+            PreCargaCaracteristicasFertilizadora();
+            PreCargaDireccionFertilizadora();
+            PreCargaMaquinariaFertilizadora();
+
+            PreCargaCaracteristicasSembradora();
+            PreCargaDireccionSembradoraa();
+            PreCargaMaquinariaSembradorara();
+
 
 
 
@@ -287,7 +298,7 @@ namespace Dominio
             AltaCaracteristica(caracteristica30);
         }
 
-        private void PreCargaDatosCargadoraPala()
+        private void PreCargaDireccionCargadoraPala()
         {
             Direccion direccion21 = new Direccion("Uruguay", "Canelones", "Suárez");
             Direccion direccion22 = new Direccion("Uruguay", "Maldonado", "San Carlos");
@@ -364,7 +375,7 @@ namespace Dominio
             AltaCaracteristica(caracteristica40);
         }
 
-        private void PreCargaDatosCosechadoras()
+        private void PreCargaDireccionCosechadoras()
         {
             Direccion direccion31 = new Direccion("Uruguay", "Canelones", "Toledo");
             Direccion direccion32 = new Direccion("Uruguay", "San José", "Rafael Perazza");
@@ -415,6 +426,154 @@ namespace Dominio
         }
         #endregion
 
+        #region Fertilizadora pre carga
+        private void PreCargaCaracteristicasFertilizadora()
+        {
+            Caracteristica caracteristica41 = new Caracteristica("Fertilizadora autopropulsada", "John Deere", "F4365", new DateTime(2021, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica42 = new Caracteristica("Fertilizadora arrastrada", "Case IH", "Patriot 350", new DateTime(2019, 6, 15), false, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica43 = new Caracteristica("Fertilizadora neumática", "Horsch", "Pronto 12 SW", new DateTime(2020, 3, 10), true, false, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica44 = new Caracteristica("Fertilizadora centrífuga", "Kuhn", "Axis 40.2", new DateTime(2018, 11, 25), false, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica45 = new Caracteristica("Fertilizadora de precisión", "Amazone", "UX 5200", new DateTime(2022, 2, 5), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica46 = new Caracteristica("Fertilizadora de gran escala", "Vicon", "RotaFlow 1500", new DateTime(2017, 7, 20), false, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica47 = new Caracteristica("Fertilizadora de jardín", "Agroplast", "GP1500", new DateTime(2021, 9, 30), true, false, TipoCombustible.NAFTA, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica48 = new Caracteristica("Fertilizadora manual", "Howard", "Manual Spreader", new DateTime(2016, 4, 12), false, false, TipoCombustible.NAFTA, TipoDireccion.MECANICO);
+            Caracteristica caracteristica49 = new Caracteristica("Fertilizadora de tambor", "Great Plains", "FX1500", new DateTime(2019, 8, 22), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica50 = new Caracteristica("Fertilizadora pivote móvil", "Gandy", "MPRO 1000", new DateTime(2020, 12, 1), false, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+
+            AltaCaracteristica(caracteristica41);
+            AltaCaracteristica(caracteristica42);
+            AltaCaracteristica(caracteristica43);
+            AltaCaracteristica(caracteristica44);
+            AltaCaracteristica(caracteristica45);
+            AltaCaracteristica(caracteristica46);
+            AltaCaracteristica(caracteristica47);
+            AltaCaracteristica(caracteristica48);
+            AltaCaracteristica(caracteristica49);
+            AltaCaracteristica(caracteristica50);
+        }
+        public void PreCargaDireccionFertilizadora()
+        {
+            Direccion direccion41 = new Direccion("Uruguay", "Salto", "Centro");
+            Direccion direccion42 = new Direccion("Uruguay", "Paysandú", "Norte");
+            Direccion direccion43 = new Direccion("Uruguay", "Tacuarembó", "Este");
+            Direccion direccion44 = new Direccion("Uruguay", "Rivera", "Oeste");
+            Direccion direccion45 = new Direccion("Uruguay", "Melo", "Sur");
+            Direccion direccion46 = new Direccion("Uruguay", "Mercedes", "Barrio Sur");
+            Direccion direccion47 = new Direccion("Uruguay", "Florida", "Centro");
+            Direccion direccion48 = new Direccion("Uruguay", "Durazno", "Barrio Industrial");
+            Direccion direccion49 = new Direccion("Uruguay", "Canelones", "Ciudad de la Costa");
+            Direccion direccion50 = new Direccion("Uruguay", "Rocha", "La Paloma");
+
+            AltaDireccion(direccion41);
+            AltaDireccion(direccion42);
+            AltaDireccion(direccion43);
+            AltaDireccion(direccion44);
+            AltaDireccion(direccion45);
+            AltaDireccion(direccion46);
+            AltaDireccion(direccion47);
+            AltaDireccion(direccion48);
+            AltaDireccion(direccion49);
+            AltaDireccion(direccion50);
+        }
+        private void PreCargaMaquinariaFertilizadora()
+        {
+            Fertilizadora fertilizadora41 = new Fertilizadora("Cummins", 350, true, ObtenerDireccionPorId(41), ObtenerCaracteristicaPorId(41), "Sistema de aplicación variable con GPS");
+            Fertilizadora fertilizadora42 = new Fertilizadora("Perkins", 300, false, ObtenerDireccionPorId(42), ObtenerCaracteristicaPorId(42), "Capacidad tanque 4000 litros");
+            Fertilizadora fertilizadora43 = new Fertilizadora("John Deere", 320, true, ObtenerDireccionPorId(43), ObtenerCaracteristicaPorId(43), "Control automático de dosis");
+            Fertilizadora fertilizadora44 = new Fertilizadora("Cummins", 280, false, ObtenerDireccionPorId(44), ObtenerCaracteristicaPorId(44), "Distribución centrífuga precisa");
+            Fertilizadora fertilizadora45 = new Fertilizadora("Kubota", 350, true, ObtenerDireccionPorId(45), ObtenerCaracteristicaPorId(45), "Equipo equipado con sensores de humedad");
+            Fertilizadora fertilizadora46 = new Fertilizadora("Volvo Penta", 360, false, ObtenerDireccionPorId(46), ObtenerCaracteristicaPorId(46), "Alta eficiencia en consumo de combustible");
+            Fertilizadora fertilizadora47 = new Fertilizadora("Deutz", 200, true, ObtenerDireccionPorId(47), ObtenerCaracteristicaPorId(47), "Diseñada para terrenos irregulares");
+            Fertilizadora fertilizadora48 = new Fertilizadora("John Deere", 150, false, ObtenerDireccionPorId(48), ObtenerCaracteristicaPorId(48), "Ideal para pequeñas explotaciones");
+            Fertilizadora fertilizadora49 = new Fertilizadora("Cummins", 330, true, ObtenerDireccionPorId(49), ObtenerCaracteristicaPorId(49), "Sistema neumático avanzado");
+            Fertilizadora fertilizadora50 = new Fertilizadora("Perkins", 310, false, ObtenerDireccionPorId(50), ObtenerCaracteristicaPorId(50), "Control electrónico del sistema");
+
+            AltaMaquinaria(fertilizadora41);
+            AltaMaquinaria(fertilizadora42);
+            AltaMaquinaria(fertilizadora43);
+            AltaMaquinaria(fertilizadora44);
+            AltaMaquinaria(fertilizadora45);
+            AltaMaquinaria(fertilizadora46);
+            AltaMaquinaria(fertilizadora47);
+            AltaMaquinaria(fertilizadora48);
+            AltaMaquinaria(fertilizadora49);
+            AltaMaquinaria(fertilizadora50);
+        }
+        #endregion
+
+        private void PreCargaCaracteristicasSembradora()
+        {
+            Caracteristica caracteristica51 = new Caracteristica("Agrícola", "John Deere", "X9", new DateTime(2021, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica52 = new Caracteristica("Precisión", "Case IH", "Early Riser 2150", new DateTime(2020, 1, 1), false, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica53 = new Caracteristica("Neumática", "New Holland", "P2080", new DateTime(2019, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica54 = new Caracteristica("Mecánica", "Kuhn", "Maxima 3", new DateTime(2022, 1, 1), false, false, TipoCombustible.NAFTA, TipoDireccion.MECANICO);
+            Caracteristica caracteristica55 = new Caracteristica("Directa", "Agco", "Tempo L", new DateTime(2018, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica56 = new Caracteristica("Agrícola", "Gaspardo", "MTR 12", new DateTime(2021, 1, 1), false, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica57 = new Caracteristica("Precisión", "Horsch", "Pronto 9 SW", new DateTime(2020, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica58 = new Caracteristica("Neumática", "Vaderstad", "Spirit 600", new DateTime(2019, 1, 1), false, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica59 = new Caracteristica("Mecánica", "Great Plains", "CD-4000", new DateTime(2022, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica60 = new Caracteristica("Directa", "John Deere", "DB60", new DateTime(2021, 1, 1), false, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+
+            AltaCaracteristica(caracteristica51);
+            AltaCaracteristica(caracteristica52);
+            AltaCaracteristica(caracteristica53);
+            AltaCaracteristica(caracteristica54);
+            AltaCaracteristica(caracteristica55);
+            AltaCaracteristica(caracteristica56);
+            AltaCaracteristica(caracteristica57);
+            AltaCaracteristica(caracteristica58);
+            AltaCaracteristica(caracteristica59);
+            AltaCaracteristica(caracteristica60);
+        }
+        private void PreCargaDireccionSembradora()
+        {
+            Direccion direccion51 = new Direccion("Uruguay", "Montevideo", "Pocitos");
+            Direccion direccion52 = new Direccion("Uruguay", "Montevideo", "Carrasco");
+            Direccion direccion53 = new Direccion("Uruguay", "Canelones", "Las Piedras");
+            Direccion direccion54 = new Direccion("Uruguay", "Maldonado", "Punta del Este");
+            Direccion direccion55 = new Direccion("Uruguay", "Colonia", "Colonia del Sacramento");
+            Direccion direccion56 = new Direccion("Uruguay", "Salto", "Centro");
+            Direccion direccion57 = new Direccion("Uruguay", "Paysandú", "Parque Rodó");
+            Direccion direccion58 = new Direccion("Uruguay", "Durazno", "Barrio Oeste");
+            Direccion direccion59 = new Direccion("Uruguay", "Tacuarembó", "Villa Sara");
+            Direccion direccion60 = new Direccion("Uruguay", "Rivera", "Centro");
+
+            AltaDireccion(direccion51);
+            AltaDireccion(direccion52);
+            AltaDireccion(direccion53);
+            AltaDireccion(direccion54);
+            AltaDireccion(direccion55);
+            AltaDireccion(direccion56);
+            AltaDireccion(direccion57);
+            AltaDireccion(direccion58);
+            AltaDireccion(direccion59);
+            AltaDireccion(direccion60);
+        }
+
+        private void PreCargaMaquinariaSembradora()
+        {
+            Sembradora sembradora51 = new Sembradora("Neumática", ObtenerDireccionPorId(51), ObtenerCaracteristicaPorId(51), "Equipo bien cuidado");
+            Sembradora sembradora52 = new Sembradora("Precisión", ObtenerDireccionPorId(52), ObtenerCaracteristicaPorId(52), "Última revisión hecha");
+            Sembradora sembradora53 = new Sembradora("Mecánica", ObtenerDireccionPorId(53), ObtenerCaracteristicaPorId(53), "Muy buen estado general");
+            Sembradora sembradora54 = new Sembradora("Directa", ObtenerDireccionPorId(54), ObtenerCaracteristicaPorId(54), "Poco uso en campo");
+            Sembradora sembradora55 = new Sembradora("Agrícola", ObtenerDireccionPorId(55), ObtenerCaracteristicaPorId(55), "Incluye accesorios");
+            Sembradora sembradora56 = new Sembradora("Precisión", ObtenerDireccionPorId(56), ObtenerCaracteristicaPorId(56), "Perfecta para siembra de precisión");
+            Sembradora sembradora57 = new Sembradora("Neumática", ObtenerDireccionPorId(57), ObtenerCaracteristicaPorId(57), "Recién salida de servicio");
+            Sembradora sembradora58 = new Sembradora("Mecánica", ObtenerDireccionPorId(58), ObtenerCaracteristicaPorId(58), "Ideal para grandes superficies");
+            Sembradora sembradora59 = new Sembradora("Directa", ObtenerDireccionPorId(59), ObtenerCaracteristicaPorId(59), "Alta eficiencia");
+            Sembradora sembradora60 = new Sembradora("Agrícola", ObtenerDireccionPorId(60), ObtenerCaracteristicaPorId(60), "Equipamiento completo");
+
+            AltaMaquinaria(sembradora51);
+            AltaMaquinaria(sembradora52);
+            AltaMaquinaria(sembradora53);
+            AltaMaquinaria(sembradora54);
+            AltaMaquinaria(sembradora55);
+            AltaMaquinaria(sembradora56);
+            AltaMaquinaria(sembradora57);
+            AltaMaquinaria(sembradora58);
+            AltaMaquinaria(sembradora59);
+            AltaMaquinaria(sembradora60);
+        }
 
 
 

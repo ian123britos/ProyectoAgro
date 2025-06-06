@@ -8,24 +8,54 @@ namespace Dominio
 {
     public class Cliente : Usuario
     {
-        public string NombreUsuario {  get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public int Telefono { get; set; }
 
-        public Cliente(string nombreUsuario, string nombre, string apellido, string email, string password, int telefono) : base(nombre, apellido, email, password, telefono)
+        public Cliente(string nombre, string apellido,int telefono,string email, string password) : base( email, password)
         {
-            this.NombreUsuario = nombreUsuario;
+             Nombre = nombre;
+            Apellido = apellido;
+            Telefono = telefono;
         }
 
         public void Validar()
         {
-            ValidarNombreUsuario();
+            base.Validar();
+            ValidarTelefono();
+            ValidarApellido();
+            ValidarNombre();
+
         }
 
-        private void ValidarNombreUsuario()
+        private void ValidarTelefono()
         {
-           if(string.IsNullOrEmpty(NombreUsuario))
+            bool tieneNueveNumeros = false;
+            if (Telefono == 9)
             {
-                throw new Exception("El nombre de usuario no puede ser vacio");
+                tieneNueveNumeros = true;
+            }
+            if (!tieneNueveNumeros)
+            {
+                throw new Exception("Ingresa un numero de telefono correcto");
             }
         }
+        private void ValidarApellido()
+        {
+            if (string.IsNullOrEmpty(Apellido))
+            {
+                throw new Exception("El apellido no puede ser vacio");
+            }
+        }
+
+        private void ValidarNombre()
+        {
+            if (string.IsNullOrEmpty(Nombre))
+            {
+                throw new Exception("El nombre no puede ser vacio");
+            }
+        }
+
+
     }
 }
