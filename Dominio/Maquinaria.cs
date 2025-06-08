@@ -11,7 +11,8 @@ namespace Dominio
 {
     public abstract class Maquinaria :IValidable
     {
-       
+       public int IdMaquinaria {  get; set; }
+        public static int UltimoIdMaquinaria { get; set; }
         public Direccion Direccion { get; set; }
         public Caracteristica Caracteristica { get; set; }
         public string OtrasCaracteristicas { get; set; }
@@ -23,6 +24,7 @@ namespace Dominio
         }
         public Maquinaria(Direccion direccion,Caracteristica caracteristica,string otrasCaracteristicas)
         {
+            IdMaquinaria = UltimoIdMaquinaria++;
             Direccion = direccion;
             Caracteristica = caracteristica;
             OtrasCaracteristicas = otrasCaracteristicas;

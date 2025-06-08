@@ -15,7 +15,7 @@ namespace Dominio
             this.Apodo = apodo;
         }
 
-        public void Validar()
+        public override void Validar()
         {
             base.Validar();
             ValidarApodo();

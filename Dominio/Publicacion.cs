@@ -33,7 +33,7 @@ namespace Dominio
             TipoDePublicacion = tipoDePublicacion;
         }
 
-        public void Validar()
+        public virtual void Validar()
         {
             ValidarTitulo();
 

@@ -87,7 +87,6 @@ namespace Dominio
         #endregion
 
 
-
         public void ExisteUsuario(Usuario usuario)
         {
             if(listaUsuarios.Contains(usuario))
@@ -98,10 +97,13 @@ namespace Dominio
 
         public void PreCargaDatos()
         {
+            PreCargarAdministradores();
+            PreCargarClientes();
+
+
             PreCargaDatosCaracteristicasTractores();
             PreCargaDatosDireccionesTractores();
             PreCargaDatosMaquinariasTractores();
-
             
             PreCargaCaracteristicasCargadoraPala();
             PreCargaDireccionCargadoraPala();
@@ -116,21 +118,57 @@ namespace Dominio
             PreCargaMaquinariaFertilizadora();
 
             PreCargaCaracteristicasSembradora();
-            PreCargaDireccionSembradoraa();
-            PreCargaMaquinariaSembradorara();
+            PreCargaDireccionSembradora();
+            PreCargaMaquinariaSembradora();
+
+
+            PreCargaPublicaciónVenta();
+
+            PreCargaCompras();
 
 
 
-
-            PreCargaDatosUsuarios();
-
-            PreCargaDatosPublicaciones();
-            
-           
-            PreCargaDatosCompras();
         }
 
         #region Seccion de Precargas
+
+        #region pre cargas de usuarios(cliente y administrador)
+        public void PreCargarClientes()
+        {
+            Cliente cliente1 = new Cliente("María", "González", 987654321, "maria.gonzalez@mail.com", "Marya#2025");
+            Cliente cliente2 = new Cliente("Carlos", "Fernández", 912345678, "carlos.fernandez@mail.com", "Carlo$123");
+            Cliente cliente3 = new Cliente("Lucía", "Martínez", 998877665, "lucia.martinez@mail.com", "Luci@4567");
+            Cliente cliente4 = new Cliente("Javier", "Pérez", 934567890, "javier.perez@mail.com", "Javi!8901");
+            Cliente cliente5 = new Cliente("Ana", "Rodríguez", 956123478, "ana.rodriguez@mail.com", "Ana*3456");
+
+            Cliente cliente6 = new Cliente("Diego", "López", 967854321, "diego.lopez@mail.com", "Diego#7890");
+            Cliente cliente7 = new Cliente("Sofía", "Silva", 921345678, "sofia.silva@mail.com", "Sofi$2345");
+            Cliente cliente8 = new Cliente("Matías", "Gómez", 999887766, "matias.gomez@mail.com", "Mati@6789");
+            Cliente cliente9 = new Cliente("Valentina", "Torres", 945678901, "valentina.torres@mail.com", "Valen!1234");
+            Cliente cliente10 = new Cliente("Andrés", "Díaz", 956789123, "andres.diaz@mail.com", "Andr*5678");
+
+            AltaUsuario(cliente1);
+            AltaUsuario(cliente2);
+            AltaUsuario(cliente3);
+            AltaUsuario(cliente4);
+            AltaUsuario(cliente5);
+            AltaUsuario(cliente6);
+            AltaUsuario(cliente7);
+            AltaUsuario(cliente8);
+            AltaUsuario(cliente9);
+            AltaUsuario(cliente10);
+        }
+
+        public void PreCargarAdministradores()
+        {
+            Administrador admin1 = new Administrador("AdminJuan", "juan.admin@agroapp.com", "Admin#1234");
+            Administrador admin2 = new Administrador("AdminLaura", "laura.admin@agroapp.com", "Laura@5678");
+
+            AltaUsuario(admin1);
+            AltaUsuario(admin2);
+        }
+        #endregion
+
         #region Pre carga de tractores
         private void PreCargaDatosDireccionesTractores()
         {
@@ -501,6 +539,7 @@ namespace Dominio
         }
         #endregion
 
+        #region pre cargas Sembradora
         private void PreCargaCaracteristicasSembradora()
         {
             Caracteristica caracteristica51 = new Caracteristica("Agrícola", "John Deere", "X9", new DateTime(2021, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
@@ -574,25 +613,134 @@ namespace Dominio
             AltaMaquinaria(sembradora59);
             AltaMaquinaria(sembradora60);
         }
+        #endregion
 
-
-
-        private void PreCargaDatosUsuarios()
+        #region publicaciones en venta
+        public void PreCargaPublicaciónVenta()
         {
-            throw new NotImplementedException();
-        }
-        private void PreCargaDatosPublicaciones()
-        {
-            throw new NotImplementedException();
-        }
+            Venta venta1 = new Venta(new DateTime(2025, 1, 15), 35000, "Venta de Tractor modelo T-150", "tractor_t150.jpg", ObtenerMaquinariaPorId(1), ObtenerUsuarioPorEmail("maria.gonzalez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta2 = new Venta(new DateTime(2025, 2, 20), 42000, "Venta de Cosechadora modelo CX500", "cosechadora_cx500.jpg", ObtenerMaquinariaPorId(2), ObtenerUsuarioPorEmail("carlos.fernandez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta3 = new Venta(new DateTime(2025, 3, 10), 28000, "Venta de Fertilizadora modelo FertX", "fertilizadora_fertx.jpg", ObtenerMaquinariaPorId(3), ObtenerUsuarioPorEmail("lucia.martinez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta4 = new Venta(new DateTime(2025, 4, 5), 46000, "Venta de Sembradora modelo S-200", "sembradora_s200.jpg", ObtenerMaquinariaPorId(4), ObtenerUsuarioPorEmail("javier.perez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta5 = new Venta(new DateTime(2025, 5, 15), 30000, "Venta de Tractor modelo T-100", "tractor_t100.jpg", ObtenerMaquinariaPorId(5), ObtenerUsuarioPorEmail("ana.rodriguez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta6 = new Venta(new DateTime(2025, 6, 10), 50000, "Venta de Cosechadora modelo CX600", "cosechadora_cx600.jpg", ObtenerMaquinariaPorId(6), ObtenerUsuarioPorEmail("maria.gonzalez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta7 = new Venta(new DateTime(2025, 7, 1), 35000, "Venta de Fertilizadora modelo FertZ", "fertilizadora_fertz.jpg", ObtenerMaquinariaPorId(7), ObtenerUsuarioPorEmail("carlos.fernandez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta8 = new Venta(new DateTime(2025, 8, 20), 42000, "Venta de Sembradora modelo S-300", "sembradora_s300.jpg", ObtenerMaquinariaPorId(8), ObtenerUsuarioPorEmail("lucia.martinez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta9 = new Venta(new DateTime(2025, 9, 15), 32000, "Venta de Tractor modelo T-200", "tractor_t200.jpg", ObtenerMaquinariaPorId(9), ObtenerUsuarioPorEmail("javier.perez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta10 = new Venta(new DateTime(2025, 10, 5), 48000, "Venta de Cosechadora modelo CX700", "cosechadora_cx700.jpg", ObtenerMaquinariaPorId(10), ObtenerUsuarioPorEmail("ana.rodriguez@mail.com"), TipoDePublicacion.GRATIS);
 
-        private void PreCargaDatosCompras()
-        {
-            throw new NotImplementedException();
+            Venta venta11 = new Venta(new DateTime(2025, 1, 18), 31000, "Venta de Fertilizadora modelo FertY", "fertilizadora_ferty.jpg", ObtenerMaquinariaPorId(11), ObtenerUsuarioPorEmail("maria.gonzalez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta12 = new Venta(new DateTime(2025, 2, 25), 44000, "Venta de Sembradora modelo S-350", "sembradora_s350.jpg", ObtenerMaquinariaPorId(12), ObtenerUsuarioPorEmail("carlos.fernandez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta13 = new Venta(new DateTime(2025, 3, 12), 36000, "Venta de Tractor modelo T-250", "tractor_t250.jpg", ObtenerMaquinariaPorId(13), ObtenerUsuarioPorEmail("lucia.martinez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta14 = new Venta(new DateTime(2025, 4, 10), 47000, "Venta de Cosechadora modelo CX800", "cosechadora_cx800.jpg", ObtenerMaquinariaPorId(14), ObtenerUsuarioPorEmail("javier.perez@mail.com"), TipoDePublicacion.PLATA);
+            Venta venta15 = new Venta(new DateTime(2025, 5, 20), 29000, "Venta de Fertilizadora modelo FertA", "fertilizadora_ferta.jpg", ObtenerMaquinariaPorId(15), ObtenerUsuarioPorEmail("ana.rodriguez@mail.com"), TipoDePublicacion.PLATA);
+            Venta venta16 = new Venta(new DateTime(2025, 6, 15), 43000, "Venta de Sembradora modelo S-400", "sembradora_s400.jpg", ObtenerMaquinariaPorId(16), ObtenerUsuarioPorEmail("maria.gonzalez@mail.com"), TipoDePublicacion.ORO);
+            Venta venta17 = new Venta(new DateTime(2025, 7, 5), 37000, "Venta de Tractor modelo T-300", "tractor_t300.jpg", ObtenerMaquinariaPorId(17), ObtenerUsuarioPorEmail("carlos.fernandez@mail.com"), TipoDePublicacion.ORO);
+            Venta venta18 = new Venta(new DateTime(2025, 8, 22), 49000, "Venta de Cosechadora modelo CX900", "cosechadora_cx900.jpg", ObtenerMaquinariaPorId(18), ObtenerUsuarioPorEmail("lucia.martinez@mail.com"), TipoDePublicacion.PREMIUM);
+            Venta venta19 = new Venta(new DateTime(2025, 9, 18), 33000, "Venta de Fertilizadora modelo FertB", "fertilizadora_fertb.jpg", ObtenerMaquinariaPorId(19), ObtenerUsuarioPorEmail("javier.perez@mail.com"), TipoDePublicacion.PREMIUM);
+            Venta venta20 = new Venta(new DateTime(2025, 10, 8), 45000, "Venta de Sembradora modelo S-450", "sembradora_s450.jpg", ObtenerMaquinariaPorId(20), ObtenerUsuarioPorEmail("ana.rodriguez@mail.com"), TipoDePublicacion.PREMIUM);
+
+            AltaPublicacion(venta1);
+            AltaPublicacion(venta2);
+            AltaPublicacion(venta3);
+            AltaPublicacion(venta4);
+            AltaPublicacion(venta5);
+            AltaPublicacion(venta6);
+            AltaPublicacion(venta7);
+            AltaPublicacion(venta8);
+            AltaPublicacion(venta9);
+            AltaPublicacion(venta10);
+            AltaPublicacion(venta11);
+            AltaPublicacion(venta12);
+            AltaPublicacion(venta13);
+            AltaPublicacion(venta14);
+            AltaPublicacion(venta15);
+            AltaPublicacion(venta16);
+            AltaPublicacion(venta17);
+            AltaPublicacion(venta18);
+            AltaPublicacion(venta19);
+            AltaPublicacion(venta20);
+
         }
         #endregion
 
+        #region compras
+        public void PreCargaCompras()
+        {
+            Compra compra1 = new Compra(new DateTime(2025, 5, 20), ObtenerUsuarioPorEmail("carlos.fernandez@mail.com"), ObtenerPublicacionPorId(1));
+            AltaCompra(compra1);
+
+            Compra compra2 = new Compra(new DateTime(2025, 5, 22), ObtenerUsuarioPorEmail("lucia.martinez@mail.com"), ObtenerPublicacionPorId(2));
+            AltaCompra(compra2);
+
+            Compra compra3 = new Compra(new DateTime(2025, 5, 25), ObtenerUsuarioPorEmail("javier.perez@mail.com"), ObtenerPublicacionPorId(3));
+            AltaCompra(compra3);
+
+            Compra compra4 = new Compra(new DateTime(2025, 5, 28), ObtenerUsuarioPorEmail("ana.rodriguez@mail.com"), ObtenerPublicacionPorId(4));
+            AltaCompra(compra4);
+
+            Compra compra5 = new Compra(new DateTime(2025, 6, 1), ObtenerUsuarioPorEmail("maria.gonzalez@mail.com"), ObtenerPublicacionPorId(5));
+            AltaCompra(compra5);
+
+            Compra compra6 = new Compra(new DateTime(2025, 6, 2), ObtenerUsuarioPorEmail("lucia.martinez@mail.com"), ObtenerPublicacionPorId(6));
+            AltaCompra(compra6);
+
+            Compra compra7 = new Compra(new DateTime(2025, 6, 3), ObtenerUsuarioPorEmail("javier.perez@mail.com"), ObtenerPublicacionPorId(7));
+            AltaCompra(compra7);
+
+            Compra compra8 = new Compra(new DateTime(2025, 6, 4), ObtenerUsuarioPorEmail("ana.rodriguez@mail.com"), ObtenerPublicacionPorId(8));
+            AltaCompra(compra8);
+
+            Compra compra9 = new Compra(new DateTime(2025, 6, 5), ObtenerUsuarioPorEmail("maria.gonzalez@mail.com"), ObtenerPublicacionPorId(9));
+            AltaCompra(compra9);
+
+            Compra compra10 = new Compra(new DateTime(2025, 6, 6), ObtenerUsuarioPorEmail("carlos.fernandez@mail.com"), ObtenerPublicacionPorId(10));
+            AltaCompra(compra10);
+
+        }
+        #endregion
+
+        #endregion
+
         #region ObtenerPorParametros
+        public Publicacion ObtenerPublicacionPorId(int id)
+        {
+            foreach (Publicacion p in listaPublicaciones)
+            {
+                if (p.Id == id)
+                {
+                    return p;
+                }
+            }
+            throw new Exception("No existe una publicacion con ese id");
+        }
+        public Maquinaria ObtenerMaquinariaPorId(int id)
+        {
+
+            foreach(Maquinaria m in listaMaquinarias)
+            {
+                if(m.IdMaquinaria == id)
+                {
+                    return m;
+                }
+            }
+            throw new Exception("no existe una maquinaria con ese id");
+
+        }
+
+        public  Cliente ObtenerUsuarioPorEmail(string email)
+        {
+            //talvez debo devolver un cliente por email y no un usuario 
+            foreach (Cliente c in listaUsuarios)
+            {
+                if (c.Email == email)
+                {
+                    return c;
+                }
+            }
+                throw new Exception("No existe un usuario con ese email");
+
+        }
         public Caracteristica ObtenerCaracteristicaPorId(int id)
         { 
             foreach(Caracteristica c in listaCaracteristicas)

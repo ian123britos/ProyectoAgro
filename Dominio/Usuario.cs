@@ -28,7 +28,7 @@ namespace Dominio
 
         }
 
-        public void Validar()
+        public virtual void Validar()
         {
 
             ValidarEmail();
@@ -72,7 +72,7 @@ namespace Dominio
             }
             if(!tieneCaracterEspecial || !tieneMayuscula || !tieneMinuscula || !tieneNumero)
             {
-                throw new Exception("La contraseña debe de tener por lo menos una mayuscula, una minuscula , un numero y un caracter especial");
+                throw new Exception("La contraseña debe de tener por lo menos una mayuscula, una minuscula , un numero y un carácter especial");
             }
         }
 

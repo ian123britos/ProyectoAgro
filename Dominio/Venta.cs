@@ -21,8 +21,9 @@ namespace Dominio
 
         }
 
-        public void Validar()
+        public override void Validar()
         {
+            base.Validar();
             ValidarPrecioVenta();
         }
 

@@ -15,6 +15,7 @@ namespace Dominio
         { 
             TieneCabina = tieneCabina;
         }
+
         public override string TipoVechiculo()
         {
                 string tendraCabina = TieneSiNo(TieneCabina);
@@ -26,6 +27,7 @@ namespace Dominio
 
             return dato;
         }
+
         public override string ToString()
         {
             return TipoVechiculo();

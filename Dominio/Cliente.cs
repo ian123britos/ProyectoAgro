@@ -19,7 +19,7 @@ namespace Dominio
             Telefono = telefono;
         }
 
-        public void Validar()
+        public override void Validar()
         {
             base.Validar();
             ValidarTelefono();
@@ -30,12 +30,8 @@ namespace Dominio
 
         private void ValidarTelefono()
         {
-            bool tieneNueveNumeros = false;
-            if (Telefono == 9)
-            {
-                tieneNueveNumeros = true;
-            }
-            if (!tieneNueveNumeros)
+
+            if (Telefono != 9)
             {
                 throw new Exception("Ingresa un numero de telefono correcto");
             }
