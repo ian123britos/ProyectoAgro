@@ -12,7 +12,7 @@ namespace Dominio
         public string Apellido { get; set; }
         public int Telefono { get; set; }
 
-        public Cliente(string nombre, string apellido,int telefono,string email, string password) : base( email, password)
+        public Cliente(string nombre, string apellido,int telefono,string email, string password,Rol rol) : base( email, password,rol)
         {
              Nombre = nombre;
             Apellido = apellido;

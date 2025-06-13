@@ -14,7 +14,11 @@ namespace Dominio
         public Cliente ClienteCompra { get; set; }
         public Publicacion PublicacionComprada { get; set; }
 
-        public Compra() { }
+        public Compra() 
+        {
+            IdCompra = UltimoIdCompra++;
+
+        }
         public Compra(DateTime fechaCompra,Cliente clienteCompra,Publicacion publicacionComprada)
         {
             IdCompra = UltimoIdCompra++;
@@ -32,7 +36,7 @@ namespace Dominio
             }
             else
             {
-                throw new Exception("La publicacion comprada no tiene precio");
+                throw new Exception("La publicación comprada no tiene precio");
             }
         }
         #endregion

@@ -9,8 +9,8 @@ namespace Dominio
 {
     public abstract class Publicacion : IValidable
     {
-        public int Id {  get; set; }
-        public static int UltimoId { get; set; }
+        public int IdPublicacion {  get; set; }
+        public static int UltimoIdPublicacion { get; set; }
         public string Titulo { get; set; }
         public string Foto { get; set; }
         public Maquinaria UnaMaquina { get; set; }
@@ -20,12 +20,11 @@ namespace Dominio
 
         public Publicacion() 
         {
-            Id= UltimoId;
-            UltimoId++;
+            IdPublicacion = UltimoIdPublicacion++;
         }
         public Publicacion( string titulo, string foto, Maquinaria unaMaquina, Cliente clienteVende,TipoDePublicacion tipoDePublicacion)
         {
-            Id = UltimoId++;
+            IdPublicacion = UltimoIdPublicacion++;
             Titulo = titulo;
             Foto = foto;
             UnaMaquina = unaMaquina;
@@ -50,7 +49,6 @@ namespace Dominio
 
         public abstract string ToString();
 
-        public abstract double CalcularPrecioFinal(double precio);
         
 
 

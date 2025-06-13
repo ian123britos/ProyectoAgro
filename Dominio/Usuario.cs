@@ -12,20 +12,22 @@ namespace Dominio
         public int Id { get; set; }
         public static int UltimoId { get; set; }
         public string Email { get; set; }
-        public string Password { get; set; }
+        public string Contrasenia { get; set; }
+        public Rol Rol {  get; set; }
         
 
         public Usuario() 
         {
+            Id = UltimoId++;
 
         }
 
-        public Usuario(string email,string password)
+        public Usuario(string email,string password, Rol rol)
         {
-            Id=UltimoId++;
+            Id = UltimoId++;
             this.Email = email;
-            this.Password = password;
-
+            this.Contrasenia = password;
+            Rol = rol;
         }
 
         public virtual void Validar()
@@ -39,40 +41,51 @@ namespace Dominio
 
         private void ValidarPassword()
         {
-            bool largoValido = false;
             bool tieneNumero = false;
             bool tieneMayuscula = false;
             bool tieneMinuscula = false;
             bool tieneCaracterEspecial = false;
-            if(Password.Length > 8)
+            if (string.IsNullOrEmpty(Contrasenia))
             {
-                largoValido = true;
+                throw new Exception("La contraseña no puede ser vacía");
             }
+            else
+            {
+                if (Contrasenia.Length < 8)
+                {
 
-           int i = 0;
-            while(i < Password.Length)
-            {
-                if ((int)Password[i] >= 65 && (int)Password[i] <= 90)//tiene mayuscula?
-                {
-                    tieneMayuscula = true;
+                    throw new Exception("El largo de la contraseña debe de ser mayor a 8 caracteres");
                 }
-                if ((int)Password[i] >= 97 && (int)Password[i] <= 122)//tiene minuscula?
+                else
                 {
-                    tieneMinuscula = true;
+                    int i = 0;
+                    while (i < Contrasenia.Length)
+                    {
+                        if ((int)Contrasenia[i] >= 65 && (int)Contrasenia[i] <= 90)//tiene mayuscula?
+                        {
+                            tieneMayuscula = true;
+                        }
+                        if ((int)Contrasenia[i] >= 97 && (int)Contrasenia[i] <= 122)//tiene minuscula?
+                        {
+                            tieneMinuscula = true;
+                        }
+                        if ((int)Contrasenia[i] >= 48 && (int)Contrasenia[i] <= 57)//tiene numero?
+                        {
+                            tieneNumero = true;
+                        }
+                        if ((int)Contrasenia[i] >= 33 && (int)Contrasenia[i] <= 47 || (int)Contrasenia[i] >= 58 && (int)Contrasenia[i] <= 64 || (int)Contrasenia[i] >= 91 && (int)Contrasenia[i] <= 96)
+                        {
+                            tieneCaracterEspecial = true;
+                        }
+                        i++;
+                    }
+                    if (!tieneMayuscula || !tieneMinuscula || !tieneNumero || !tieneCaracterEspecial)
+                    {
+                        throw new Exception("La contraseña debe de tener por lo menos una mayuscula, una minuscula , un numero y un caracter especial");
+
+                    }
+
                 }
-                if ((int)Password[i] >= 48 && (int)Password[i] <= 57)//tiene numero?
-                {
-                    tieneNumero = true;
-                }
-                if ((int)Password[i] >= 33 && (int)Password[i] <= 47 || (int)Password[i] >= 58 && (int)Password[i] <= 64 || (int)Password[i] >= 91 && (int)Password[i] <= 96)
-                {
-                    tieneCaracterEspecial = true;
-                }
-                i++;
-            }
-            if(!tieneCaracterEspecial || !tieneMayuscula || !tieneMinuscula || !tieneNumero)
-            {
-                throw new Exception("La contraseña debe de tener por lo menos una mayuscula, una minuscula , un numero y un carácter especial");
             }
         }
 

@@ -10,7 +10,7 @@ namespace Dominio
     {
         public string Apodo {  get; set; }
 
-        public Administrador(string apodo, string email, string password) : base(email,password) 
+        public Administrador(string apodo, string email, string password,Rol rol) : base(email,password,rol) 
         {
             this.Apodo = apodo;
         }

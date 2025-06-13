@@ -135,17 +135,17 @@ namespace Dominio
         #region pre cargas de usuarios(cliente y administrador)
         public void PreCargarClientes()
         {
-            Cliente cliente1 = new Cliente("María", "González", 987654321, "maria.gonzalez@mail.com", "Marya#2025");
-            Cliente cliente2 = new Cliente("Carlos", "Fernández", 912345678, "carlos.fernandez@mail.com", "Carlo$123");
-            Cliente cliente3 = new Cliente("Lucía", "Martínez", 998877665, "lucia.martinez@mail.com", "Luci@4567");
-            Cliente cliente4 = new Cliente("Javier", "Pérez", 934567890, "javier.perez@mail.com", "Javi!8901");
-            Cliente cliente5 = new Cliente("Ana", "Rodríguez", 956123478, "ana.rodriguez@mail.com", "Ana*3456");
+            Cliente cliente1 = new Cliente("María", "González", 987654321, "maria.gonzalez@mail.com", "Marya#2025",Rol.CLI);
+            Cliente cliente2 = new Cliente("Carlos", "Fernández", 912345678, "carlos.fernandez@mail.com", "Carlo$123", Rol.CLI);
+            Cliente cliente3 = new Cliente("Lucía", "Martínez", 998877665, "lucia.martinez@mail.com", "Luci@4567", Rol.CLI);
+            Cliente cliente4 = new Cliente("Javier", "Pérez", 934567890, "javier.perez@mail.com", "Javi!8901", Rol.CLI);
+            Cliente cliente5 = new Cliente("Ana", "Rodríguez", 956123478, "ana.rodriguez@mail.com", "Ana*3456", Rol.CLI);
 
-            Cliente cliente6 = new Cliente("Diego", "López", 967854321, "diego.lopez@mail.com", "Diego#7890");
-            Cliente cliente7 = new Cliente("Sofía", "Silva", 921345678, "sofia.silva@mail.com", "Sofi$2345");
-            Cliente cliente8 = new Cliente("Matías", "Gómez", 999887766, "matias.gomez@mail.com", "Mati@6789");
-            Cliente cliente9 = new Cliente("Valentina", "Torres", 945678901, "valentina.torres@mail.com", "Valen!1234");
-            Cliente cliente10 = new Cliente("Andrés", "Díaz", 956789123, "andres.diaz@mail.com", "Andr*5678");
+            Cliente cliente6 = new Cliente("Diego", "López", 967854321, "diego.lopez@mail.com", "Diego#7890", Rol.CLI);
+            Cliente cliente7 = new Cliente("Sofía", "Silva", 921345678, "sofia.silva@mail.com", "Sofi$2345", Rol.CLI);
+            Cliente cliente8 = new Cliente("Matías", "Gómez", 999887766, "matias.gomez@mail.com", "Mati@6789", Rol.CLI);
+            Cliente cliente9 = new Cliente("Valentina", "Torres", 945678901, "valentina.torres@mail.com", "Valen!1234", Rol.CLI);
+            Cliente cliente10 = new Cliente("Andrés", "Díaz", 956789123, "andres.diaz@mail.com", "Andr*5678", Rol.CLI);
 
             AltaUsuario(cliente1);
             AltaUsuario(cliente2);
@@ -161,8 +161,8 @@ namespace Dominio
 
         public void PreCargarAdministradores()
         {
-            Administrador admin1 = new Administrador("AdminJuan", "juan.admin@agroapp.com", "Admin#1234");
-            Administrador admin2 = new Administrador("AdminLaura", "laura.admin@agroapp.com", "Laura@5678");
+            Administrador admin1 = new Administrador("AdminJuan", "juan.admin@agroapp.com", "Admin#1234",Rol.ADMIN);
+            Administrador admin2 = new Administrador("AdminLaura", "laura.admin@agroapp.com", "Laura@5678",Rol.ADMIN);
 
             AltaUsuario(admin1);
             AltaUsuario(admin2);
@@ -670,13 +670,13 @@ namespace Dominio
             Compra compra1 = new Compra(new DateTime(2025, 5, 20), ObtenerUsuarioPorEmail("carlos.fernandez@mail.com"), ObtenerPublicacionPorId(1));
             AltaCompra(compra1);
 
-            Compra compra2 = new Compra(new DateTime(2025, 5, 22), ObtenerUsuarioPorEmail("lucia.martinez@mail.com"), ObtenerPublicacionPorId(2));
+            Compra compra2 = new Compra(new DateTime(2025, 5, 22), ObtenerUsuarioPorEmail("lucia.martinez@mail.com"), ObtenerPublicacionPorId(12));
             AltaCompra(compra2);
 
             Compra compra3 = new Compra(new DateTime(2025, 5, 25), ObtenerUsuarioPorEmail("javier.perez@mail.com"), ObtenerPublicacionPorId(3));
             AltaCompra(compra3);
 
-            Compra compra4 = new Compra(new DateTime(2025, 5, 28), ObtenerUsuarioPorEmail("ana.rodriguez@mail.com"), ObtenerPublicacionPorId(4));
+            Compra compra4 = new Compra(new DateTime(2025, 5, 28), ObtenerUsuarioPorEmail("ana.rodriguez@mail.com"), ObtenerPublicacionPorId(14));
             AltaCompra(compra4);
 
             Compra compra5 = new Compra(new DateTime(2025, 6, 1), ObtenerUsuarioPorEmail("maria.gonzalez@mail.com"), ObtenerPublicacionPorId(5));
@@ -685,10 +685,10 @@ namespace Dominio
             Compra compra6 = new Compra(new DateTime(2025, 6, 2), ObtenerUsuarioPorEmail("lucia.martinez@mail.com"), ObtenerPublicacionPorId(6));
             AltaCompra(compra6);
 
-            Compra compra7 = new Compra(new DateTime(2025, 6, 3), ObtenerUsuarioPorEmail("javier.perez@mail.com"), ObtenerPublicacionPorId(7));
+            Compra compra7 = new Compra(new DateTime(2025, 6, 3), ObtenerUsuarioPorEmail("javier.perez@mail.com"), ObtenerPublicacionPorId(20));
             AltaCompra(compra7);
 
-            Compra compra8 = new Compra(new DateTime(2025, 6, 4), ObtenerUsuarioPorEmail("ana.rodriguez@mail.com"), ObtenerPublicacionPorId(8));
+            Compra compra8 = new Compra(new DateTime(2025, 6, 4), ObtenerUsuarioPorEmail("ana.rodriguez@mail.com"), ObtenerPublicacionPorId(18));
             AltaCompra(compra8);
 
             Compra compra9 = new Compra(new DateTime(2025, 6, 5), ObtenerUsuarioPorEmail("maria.gonzalez@mail.com"), ObtenerPublicacionPorId(9));
@@ -707,7 +707,7 @@ namespace Dominio
         {
             foreach (Publicacion p in listaPublicaciones)
             {
-                if (p.Id == id)
+                if (p.IdPublicacion == id)
                 {
                     return p;
                 }

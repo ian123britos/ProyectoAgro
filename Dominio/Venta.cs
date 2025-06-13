@@ -52,7 +52,7 @@ namespace Dominio
             return dato;
         }
 
-        public override double CalcularPrecioFinal(double precio)
+        public  double CalcularPrecioFinal(double precio)
         {
             return PrecioVenta;
         }
