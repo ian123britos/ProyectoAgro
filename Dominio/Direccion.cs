@@ -9,7 +9,7 @@ namespace Dominio
     public class Direccion
     {
         public int IdDireccion { get; set; }
-        public static int UltimoIdDireccion { get; set; }
+        public static int UltimoIdDireccion { get; set; } = 1;
         public string Pais {  get; set; }
         public string Ciudad {  get; set; }
         public string Barrio { get; set; }

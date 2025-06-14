@@ -39,7 +39,9 @@ namespace Dominio
             listaDirecciones = new List<Direccion>();
             listaPublicaciones = new List<Publicacion>();
             listaCompras = new List<Compra>();
-        
+            PreCargaDatos();
+
+
         }
 
         #region Seccion de altas y Get
@@ -232,26 +234,26 @@ namespace Dominio
 
         private void PreCargaDatosCaracteristicasTractores()
         {
-            Caracteristica caracteristica1 = new Caracteristica("Agrícola", "John Deere", "5075E", new DateTime(2020, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica2 = new Caracteristica("Agrícola", "Case IH", "Farmall 90", new DateTime(2018, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica3 = new Caracteristica("Agrícola", "Massey Ferguson", "MF 4292", new DateTime(2022, 1, 1), false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica4 = new Caracteristica("Forestal", "New Holland", "TD5.90", new DateTime(2017, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica5 = new Caracteristica("Vitícola", "Kubota", "M7040", new DateTime(2019, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica6 = new Caracteristica("Frutícola", "Deutz-Fahr", "Agrolux 75", new DateTime(2021, 1, 1), false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica7 = new Caracteristica("Agrícola", "Valtra", "BH120", new DateTime(2016, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica8 = new Caracteristica("Caña de azúcar", "John Deere", "5076E", new DateTime(2020, 1, 1), false, false, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica9 = new Caracteristica("Agrícola", "Zetor", "Proxima 80", new DateTime(2015, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica10 = new Caracteristica("Agrícola", "Fiat", "640", new DateTime(2005, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica11 = new Caracteristica("Agrícola", "SAME", "Explorer 90", new DateTime(2018, 1, 1), false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica12 = new Caracteristica("Arrocero", "John Deere", "5075EN", new DateTime(2019, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica13 = new Caracteristica("Frutícola", "Lamborghini", "RF 90", new DateTime(2023, 1, 1), false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica14 = new Caracteristica("Ganadero", "Ford", "6610", new DateTime(2010, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica15 = new Caracteristica("Cerealero", "Claas", "Arion 430", new DateTime(2021, 1, 1), false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica16 = new Caracteristica("Frutícola", "Valpadana", "9000 Series", new DateTime(2020, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica17 = new Caracteristica("Forestal", "Antonio Carraro", "TTR 7600", new DateTime(2017, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica18 = new Caracteristica("Vitícola", "John Deere", "3036E", new DateTime(2022, 1, 1), false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica19 = new Caracteristica("Minero", "CAT", "416E", new DateTime(2016, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica20 = new Caracteristica("Ganadero", "Fendt", "720 Vario", new DateTime(2023, 1, 1), false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica1 = new Caracteristica("Agrícola", "John Deere", "5075E", 2010, true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica2 = new Caracteristica("Agrícola", "Case IH", "Farmall 90", 2010, true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica3 = new Caracteristica("Agrícola", "Massey Ferguson", "MF 4292", 2010, false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica4 = new Caracteristica("Forestal", "New Holland", "TD5.90", 2010, true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica5 = new Caracteristica("Vitícola", "Kubota", "M7040", 2010, true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica6 = new Caracteristica("Frutícola", "Deutz-Fahr", "Agrolux 75", 2010, false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica7 = new Caracteristica("Agrícola", "Valtra", "BH120", 2015, true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica8 = new Caracteristica("Caña de azúcar", "John Deere", "5076E", 2015, false, false, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica9 = new Caracteristica("Agrícola", "Zetor", "Proxima 80", 2015, true, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica10 = new Caracteristica("Agrícola", "Fiat", "640", 2015, true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica11 = new Caracteristica("Agrícola", "SAME", "Explorer 90", 2015, false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica12 = new Caracteristica("Arrocero", "John Deere", "5075EN", 2015, true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica13 = new Caracteristica("Frutícola", "Lamborghini", "RF 90", 2015, false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica14 = new Caracteristica("Ganadero", "Ford", "6610", 2015, true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica15 = new Caracteristica("Cerealero", "Claas", "Arion 430", 2012, false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica16 = new Caracteristica("Frutícola", "Valpadana", "9000 Series", 2012, true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica17 = new Caracteristica("Forestal", "Antonio Carraro", "TTR 7600", 2012, true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica18 = new Caracteristica("Vitícola", "John Deere", "3036E", 2012, false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica19 = new Caracteristica("Minero", "CAT", "416E", 2012, true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica20 = new Caracteristica("Ganadero", "Fendt", "720 Vario", 2012, false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
             AltaCaracteristica(caracteristica1);
             AltaCaracteristica(caracteristica2);
             AltaCaracteristica(caracteristica3);
@@ -327,16 +329,16 @@ namespace Dominio
         #region Pre carga Cargadora Pala
         private void PreCargaCaracteristicasCargadoraPala()
         {
-            Caracteristica caracteristica21 = new Caracteristica("Construcción", "Caterpillar", "938M", new DateTime(2019, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica22 = new Caracteristica("Construcción", "Volvo", "L90H", new DateTime(2020, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica23 = new Caracteristica("Minería", "Komatsu", "WA320", new DateTime(2018, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica24 = new Caracteristica("Forestal", "John Deere", "444K", new DateTime(2021, 1, 1), false, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica25 = new Caracteristica("Industrial", "Hyundai", "HL940", new DateTime(2017, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica26 = new Caracteristica("Construcción", "Doosan", "DL250", new DateTime(2022, 1, 1), false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica27 = new Caracteristica("Minería", "Liebherr", "L538", new DateTime(2023, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica28 = new Caracteristica("Construcción", "JCB", "427ZX", new DateTime(2016, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica29 = new Caracteristica("Forestal", "Hitachi", "ZW220", new DateTime(2020, 1, 1), false, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica30 = new Caracteristica("Construcción", "CASE", "621G", new DateTime(2021, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica21 = new Caracteristica("Construcción", "Caterpillar", "938M",2019, true, false, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica22 = new Caracteristica("Construcción", "Volvo", "L90H", 2020, true, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica23 = new Caracteristica("Minería", "Komatsu", "WA320", 2018, true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica24 = new Caracteristica("Forestal", "John Deere", "444K", 2021, false, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica25 = new Caracteristica("Industrial", "Hyundai", "HL940", 2017, true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica26 = new Caracteristica("Construcción", "Doosan", "DL250", 2022, false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica27 = new Caracteristica("Minería", "Liebherr", "L538", 2023, true, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica28 = new Caracteristica("Construcción", "JCB", "427ZX", 2016, true, false, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica29 = new Caracteristica("Forestal", "Hitachi", "ZW220",  2020, false, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica30 = new Caracteristica("Construcción", "CASE", "621G", 2021, true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
 
             AltaCaracteristica(caracteristica21);
             AltaCaracteristica(caracteristica22);
@@ -404,16 +406,16 @@ namespace Dominio
         #region Pre carga de Cosechadora
         private void PreCargaCaracteristicasCosechadoras()
         {
-            Caracteristica caracteristica31 = new Caracteristica("Agrícola", "John Deere", "S780", new DateTime(2020, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica32 = new Caracteristica("Cerealera", "Case IH", "Axial-Flow 8250", new DateTime(2021, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica33 = new Caracteristica("Arrocera", "New Holland", "CR10.90", new DateTime(2019, 1, 1), false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica34 = new Caracteristica("Maicera", "Claas", "Lexion 8900", new DateTime(2022, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica35 = new Caracteristica("Cerealera", "Massey Ferguson", "9895", new DateTime(2018, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica36 = new Caracteristica("Sojera", "Deutz-Fahr", "C9306", new DateTime(2020, 1, 1), false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica37 = new Caracteristica("General", "Gleaner", "S98", new DateTime(2017, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica38 = new Caracteristica("Cerealera", "Fendt", "Ideal 9T", new DateTime(2021, 1, 1), false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica39 = new Caracteristica("Multicultivo", "Laverda", "M410", new DateTime(2019, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica40 = new Caracteristica("General", "Sampo Rosenlew", "Comia C12", new DateTime(2022, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica31 = new Caracteristica("Agrícola", "John Deere", "S780", 2020, true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica32 = new Caracteristica("Cerealera", "Case IH", "Axial-Flow 8250", 2021, true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica33 = new Caracteristica("Arrocera", "New Holland", "CR10.90", 2019, false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica34 = new Caracteristica("Maicera", "Claas", "Lexion 8900", 2022, true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica35 = new Caracteristica("Cerealera", "Massey Ferguson", "9895",2018, true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica36 = new Caracteristica("Sojera", "Deutz-Fahr", "C9306", 2020, false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica37 = new Caracteristica("General", "Gleaner", "S98", 2017, true, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica38 = new Caracteristica("Cerealera", "Fendt", "Ideal 9T",2021, false, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica39 = new Caracteristica("Multicultivo", "Laverda", "M410", 2019, true, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica40 = new Caracteristica("General", "Sampo Rosenlew", "Comia C12", 2022, true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
 
             AltaCaracteristica(caracteristica31);
             AltaCaracteristica(caracteristica32);
@@ -481,16 +483,16 @@ namespace Dominio
         #region Fertilizadora pre carga
         private void PreCargaCaracteristicasFertilizadora()
         {
-            Caracteristica caracteristica41 = new Caracteristica("Fertilizadora autopropulsada", "John Deere", "F4365", new DateTime(2021, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica42 = new Caracteristica("Fertilizadora arrastrada", "Case IH", "Patriot 350", new DateTime(2019, 6, 15), false, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica43 = new Caracteristica("Fertilizadora neumática", "Horsch", "Pronto 12 SW", new DateTime(2020, 3, 10), true, false, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica44 = new Caracteristica("Fertilizadora centrífuga", "Kuhn", "Axis 40.2", new DateTime(2018, 11, 25), false, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica45 = new Caracteristica("Fertilizadora de precisión", "Amazone", "UX 5200", new DateTime(2022, 2, 5), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica46 = new Caracteristica("Fertilizadora de gran escala", "Vicon", "RotaFlow 1500", new DateTime(2017, 7, 20), false, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica47 = new Caracteristica("Fertilizadora de jardín", "Agroplast", "GP1500", new DateTime(2021, 9, 30), true, false, TipoCombustible.NAFTA, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica48 = new Caracteristica("Fertilizadora manual", "Howard", "Manual Spreader", new DateTime(2016, 4, 12), false, false, TipoCombustible.NAFTA, TipoDireccion.MECANICO);
-            Caracteristica caracteristica49 = new Caracteristica("Fertilizadora de tambor", "Great Plains", "FX1500", new DateTime(2019, 8, 22), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica50 = new Caracteristica("Fertilizadora pivote móvil", "Gandy", "MPRO 1000", new DateTime(2020, 12, 1), false, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica41 = new Caracteristica("Fertilizadora autopropulsada", "John Deere", "F4365", 2021, true, false, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica42 = new Caracteristica("Fertilizadora arrastrada", "Case IH", "Patriot 350", 2019, false, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica43 = new Caracteristica("Fertilizadora neumática", "Horsch", "Pronto 12 SW", 2020, true, false, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica44 = new Caracteristica("Fertilizadora centrífuga", "Kuhn", "Axis 40.2", 2018, false, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica45 = new Caracteristica("Fertilizadora de precisión", "Amazone", "UX 5200", 2022, true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica46 = new Caracteristica("Fertilizadora de gran escala", "Vicon", "RotaFlow 1500", 2017, false, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica47 = new Caracteristica("Fertilizadora de jardín", "Agroplast", "GP1500", 2021, true, false, TipoCombustible.NAFTA, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica48 = new Caracteristica("Fertilizadora manual", "Howard", "Manual Spreader",2016, false, false, TipoCombustible.NAFTA, TipoDireccion.MECANICO);
+            Caracteristica caracteristica49 = new Caracteristica("Fertilizadora de tambor", "Great Plains", "FX1500", 2019, true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica50 = new Caracteristica("Fertilizadora pivote móvil", "Gandy", "MPRO 1000", 2020, false, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
 
             AltaCaracteristica(caracteristica41);
             AltaCaracteristica(caracteristica42);
@@ -556,16 +558,16 @@ namespace Dominio
         #region pre cargas Sembradora
         private void PreCargaCaracteristicasSembradora()
         {
-            Caracteristica caracteristica51 = new Caracteristica("Agrícola", "John Deere", "X9", new DateTime(2021, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica52 = new Caracteristica("Precisión", "Case IH", "Early Riser 2150", new DateTime(2020, 1, 1), false, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica53 = new Caracteristica("Neumática", "New Holland", "P2080", new DateTime(2019, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica54 = new Caracteristica("Mecánica", "Kuhn", "Maxima 3", new DateTime(2022, 1, 1), false, false, TipoCombustible.NAFTA, TipoDireccion.MECANICO);
-            Caracteristica caracteristica55 = new Caracteristica("Directa", "Agco", "Tempo L", new DateTime(2018, 1, 1), true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica56 = new Caracteristica("Agrícola", "Gaspardo", "MTR 12", new DateTime(2021, 1, 1), false, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica57 = new Caracteristica("Precisión", "Horsch", "Pronto 9 SW", new DateTime(2020, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica58 = new Caracteristica("Neumática", "Vaderstad", "Spirit 600", new DateTime(2019, 1, 1), false, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
-            Caracteristica caracteristica59 = new Caracteristica("Mecánica", "Great Plains", "CD-4000", new DateTime(2022, 1, 1), true, false, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
-            Caracteristica caracteristica60 = new Caracteristica("Directa", "John Deere", "DB60", new DateTime(2021, 1, 1), false, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica51 = new Caracteristica("Agrícola", "John Deere", "X9", 2021, true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica52 = new Caracteristica("Precisión", "Case IH", "Early Riser 2150", 2020, false, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica53 = new Caracteristica("Neumática", "New Holland", "P2080", 2019, true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica54 = new Caracteristica("Mecánica", "Kuhn", "Maxima 3", 2022, false, false, TipoCombustible.NAFTA, TipoDireccion.MECANICO);
+            Caracteristica caracteristica55 = new Caracteristica("Directa", "Agco", "Tempo L", 2018, true, true, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica56 = new Caracteristica("Agrícola", "Gaspardo", "MTR 12", 2021, false, false, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica57 = new Caracteristica("Precisión", "Horsch", "Pronto 9 SW", 2020, true, false, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica58 = new Caracteristica("Neumática", "Vaderstad", "Spirit 600", 2019, false, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
+            Caracteristica caracteristica59 = new Caracteristica("Mecánica", "Great Plains", "CD-4000", 2022, true, false, TipoCombustible.GASOIL, TipoDireccion.AUTOMATICO);
+            Caracteristica caracteristica60 = new Caracteristica("Directa", "John Deere", "DB60", 2021, false, true, TipoCombustible.GASOIL, TipoDireccion.MECANICO);
 
             AltaCaracteristica(caracteristica51);
             AltaCaracteristica(caracteristica52);
@@ -742,19 +744,18 @@ namespace Dominio
 
         }
 
-        public  Cliente ObtenerUsuarioPorEmail(string email)
+        public Cliente ObtenerUsuarioPorEmail(string email)
         {
-            //talvez debo devolver un cliente por email y no un usuario 
-            foreach (Cliente c in listaUsuarios)
+            foreach (Usuario u in listaUsuarios)  // recorrer como Usuario base
             {
-                if (c.Email == email)
+                if (u.Email == email && u is Cliente c)  // verificar que sea Cliente
                 {
                     return c;
                 }
             }
-                throw new Exception("No existe un usuario con ese email");
-
+            throw new Exception("No existe un usuario con ese email");
         }
+
         public Caracteristica ObtenerCaracteristicaPorId(int id)
         { 
             foreach(Caracteristica c in listaCaracteristicas)

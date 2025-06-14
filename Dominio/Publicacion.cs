@@ -10,7 +10,7 @@ namespace Dominio
     public abstract class Publicacion : IValidable
     {
         public int IdPublicacion {  get; set; }
-        public static int UltimoIdPublicacion { get; set; }
+        public static int UltimoIdPublicacion { get; set; } = 1;
         public string Titulo { get; set; }
         public string Foto { get; set; }
         public Maquinaria UnaMaquina { get; set; }

@@ -3,12 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\maquinaria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\maquinaria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\publicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\publicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\direccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\direccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\compra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\compra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\caracteristica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\caracteristica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgro.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\webagro\\views\\publicacion\\todaslaspublicacionesenventa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgro.csproj|solutionrelative:webagro\\views\\publicacion\\todaslaspublicacionesenventa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgro.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\webagro\\controllers\\publicacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgro.csproj|solutionrelative:webagro\\controllers\\publicacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgro.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\webagro\\views\\publicacion\\formulariotractorpublicacionventa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgro.csproj|solutionrelative:webagro\\views\\publicacion\\formulariotractorpublicacionventa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgro.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\webagro\\views\\publicacion\\formulariotractormaquinaria.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgro.csproj|solutionrelative:webagro\\views\\publicacion\\formulariotractormaquinaria.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgro.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\webagro\\views\\publicacion\\formulariotractorcaracteristicas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgro.csproj|solutionrelative:webagro\\views\\publicacion\\formulariotractorcaracteristicas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\tractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\tractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgro.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\webagro\\views\\publicacion\\formulariotractordireccion.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -27,26 +79,6 @@
       "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\tipocombustible.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\maquinaria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\maquinaria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\caracteristica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\caracteristica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\tractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\tractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgro.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\webagro\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgro.csproj|solutionrelative:webagro\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -55,28 +87,8 @@
       "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\direccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\direccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\compra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\compra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\tipodepublicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\tipodepublicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\venta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\publicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\publicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\sembradora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -128,7 +140,7 @@
         },
         {
           "DockedWidth": 14,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -136,33 +148,68 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormularioTractorDireccion.cshtml",
-              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioTractorDireccion.cshtml",
-              "RelativeDocumentMoniker": "WebAgro\\Views\\Publicacion\\FormularioTractorDireccion.cshtml",
-              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioTractorDireccion.cshtml",
-              "RelativeToolTip": "WebAgro\\Views\\Publicacion\\FormularioTractorDireccion.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAPAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "TodasLasPublicacionesEnVenta.cshtml",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\TodasLasPublicacionesEnVenta.cshtml",
+              "RelativeDocumentMoniker": "WebAgro\\Views\\Publicacion\\TodasLasPublicacionesEnVenta.cshtml",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\TodasLasPublicacionesEnVenta.cshtml",
+              "RelativeToolTip": "WebAgro\\Views\\Publicacion\\TodasLasPublicacionesEnVenta.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-14T16:23:56.445Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormularioTractorCaracteristicas.cshtml",
-              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioTractorCaracteristicas.cshtml",
-              "RelativeDocumentMoniker": "WebAgro\\Views\\Publicacion\\FormularioTractorCaracteristicas.cshtml",
-              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioTractorCaracteristicas.cshtml",
-              "RelativeToolTip": "WebAgro\\Views\\Publicacion\\FormularioTractorCaracteristicas.cshtml",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAAAAgAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-13T21:02:15.37Z",
+              "WhenOpened": "2025-06-14T19:09:50.224Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "FormularioTractorPublicacionVenta.cshtml",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioTractorPublicacionVenta.cshtml",
+              "RelativeDocumentMoniker": "WebAgro\\Views\\Publicacion\\FormularioTractorPublicacionVenta.cshtml",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioTractorPublicacionVenta.cshtml",
+              "RelativeToolTip": "WebAgro\\Views\\Publicacion\\FormularioTractorPublicacionVenta.cshtml",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-14T18:41:15.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FormularioTractorMaquinaria.cshtml",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioTractorMaquinaria.cshtml",
+              "RelativeDocumentMoniker": "WebAgro\\Views\\Publicacion\\FormularioTractorMaquinaria.cshtml",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioTractorMaquinaria.cshtml",
+              "RelativeToolTip": "WebAgro\\Views\\Publicacion\\FormularioTractorMaquinaria.cshtml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAA0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-14T18:33:54.859Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "FormularioTractorDireccion.cshtml",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioTractorDireccion.cshtml",
+              "RelativeDocumentMoniker": "WebAgro\\Views\\Publicacion\\FormularioTractorDireccion.cshtml",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioTractorDireccion.cshtml",
+              "RelativeToolTip": "WebAgro\\Views\\Publicacion\\FormularioTractorDireccion.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-14T16:23:56.445Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FormularioTractorCaracteristicas.cshtml",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioTractorCaracteristicas.cshtml",
+              "RelativeDocumentMoniker": "WebAgro\\Views\\Publicacion\\FormularioTractorCaracteristicas.cshtml",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioTractorCaracteristicas.cshtml",
+              "RelativeToolTip": "WebAgro\\Views\\Publicacion\\FormularioTractorCaracteristicas.cshtml",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAAC8AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-13T21:02:15.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "WebAgro\\Views\\Shared\\_Layout.cshtml",
@@ -174,7 +221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 16,
               "Title": "SeleccionarTipoMaquinaria.cshtml",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\SeleccionarTipoMaquinaria.cshtml",
               "RelativeDocumentMoniker": "WebAgro\\Views\\Publicacion\\SeleccionarTipoMaquinaria.cshtml",
@@ -182,25 +229,23 @@
               "RelativeToolTip": "WebAgro\\Views\\Publicacion\\SeleccionarTipoMaquinaria.cshtml",
               "ViewState": "AgIAABsAAAAAAAAAAAAAAC0AAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-13T20:52:53.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-13T20:52:53.103Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 10,
               "Title": "PublicacionController.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Controllers\\PublicacionController.cs",
               "RelativeDocumentMoniker": "WebAgro\\Controllers\\PublicacionController.cs",
               "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Controllers\\PublicacionController.cs",
               "RelativeToolTip": "WebAgro\\Controllers\\PublicacionController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAAACAAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T20:51:01.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-13T20:51:01.708Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 20,
               "Title": "Rol.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Rol.cs",
               "RelativeDocumentMoniker": "Dominio\\Rol.cs",
@@ -212,7 +257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 17,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "WebAgro\\Controllers\\HomeController.cs",
@@ -220,12 +265,11 @@
               "RelativeToolTip": "WebAgro\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T20:34:26.351Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-08T20:34:26.351Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "IValidable.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Interfaces\\IValidable.cs",
               "RelativeDocumentMoniker": "Dominio\\Interfaces\\IValidable.cs",
@@ -237,44 +281,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "Caracteristica.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Caracteristica.cs",
               "RelativeDocumentMoniker": "Dominio\\Caracteristica.cs",
               "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Caracteristica.cs",
               "RelativeToolTip": "Dominio\\Caracteristica.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAArwBgAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T01:57:11.071Z"
+              "WhenOpened": "2025-05-26T01:57:11.071Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 5,
               "Title": "Direccion.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Direccion.cs",
               "RelativeDocumentMoniker": "Dominio\\Direccion.cs",
               "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Direccion.cs",
               "RelativeToolTip": "Dominio\\Direccion.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-26T01:28:22.175Z"
+              "WhenOpened": "2025-05-26T01:28:22.175Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Sistema.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Sistema.cs",
               "RelativeDocumentMoniker": "Dominio\\Sistema.cs",
               "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Sistema.cs",
               "RelativeToolTip": "Dominio\\Sistema.cs",
-              "ViewState": "AgIAAOUAAAAAAAAAAAAEwOoAAACZAAAAAAAAAA==",
+              "ViewState": "AgIAANwCAAAAAAAAAAA3wPYCAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-24T00:18:12.872Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "TipoDePublicacion.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\TipoDePublicacion.cs",
               "RelativeDocumentMoniker": "Dominio\\TipoDePublicacion.cs",
@@ -286,7 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 18,
               "Title": "TipoCombustible.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\TipoCombustible.cs",
               "RelativeDocumentMoniker": "Dominio\\TipoCombustible.cs",
@@ -294,12 +340,11 @@
               "RelativeToolTip": "Dominio\\TipoCombustible.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T23:19:26.527Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-23T23:19:26.527Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "TipoDireccion.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\TipoDireccion.cs",
               "RelativeDocumentMoniker": "Dominio\\TipoDireccion.cs",
@@ -311,7 +356,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "Cosechadora.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Cosechadora.cs",
               "RelativeDocumentMoniker": "Dominio\\Cosechadora.cs",
@@ -323,7 +368,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "Fertilizadora.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Fertilizadora.cs",
               "RelativeDocumentMoniker": "Dominio\\Fertilizadora.cs",
@@ -335,7 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "CargadoraPala.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\CargadoraPala.cs",
               "RelativeDocumentMoniker": "Dominio\\CargadoraPala.cs",
@@ -347,7 +392,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "Sembradora.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Sembradora.cs",
               "RelativeDocumentMoniker": "Dominio\\Sembradora.cs",
@@ -359,80 +404,84 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "Tractor.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Tractor.cs",
               "RelativeDocumentMoniker": "Dominio\\Tractor.cs",
               "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Tractor.cs",
               "RelativeToolTip": "Dominio\\Tractor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAADMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-23T21:22:01.993Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "Maquinaria.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Maquinaria.cs",
               "RelativeDocumentMoniker": "Dominio\\Maquinaria.cs",
               "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Maquinaria.cs",
               "RelativeToolTip": "Dominio\\Maquinaria.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAhwC8AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-23T21:20:15.69Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 2,
               "Title": "Venta.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Venta.cs",
               "RelativeDocumentMoniker": "Dominio\\Venta.cs",
               "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Venta.cs",
               "RelativeToolTip": "Dominio\\Venta.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T21:21:06.755Z"
+              "WhenOpened": "2025-05-23T21:21:06.755Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 7,
               "Title": "Compra.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Compra.cs",
               "RelativeDocumentMoniker": "Dominio\\Compra.cs",
               "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Compra.cs",
               "RelativeToolTip": "Dominio\\Compra.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAwwB0AAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T21:20:48.837Z"
+              "WhenOpened": "2025-05-23T21:20:48.837Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 4,
               "Title": "Publicacion.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Publicacion.cs",
               "RelativeDocumentMoniker": "Dominio\\Publicacion.cs",
               "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Publicacion.cs",
               "RelativeToolTip": "Dominio\\Publicacion.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAswDEAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T21:20:30.744Z"
+              "WhenOpened": "2025-05-23T21:20:30.744Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 6,
               "Title": "Cliente.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Cliente.cs",
               "RelativeDocumentMoniker": "Dominio\\Cliente.cs",
               "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Cliente.cs",
               "RelativeToolTip": "Dominio\\Cliente.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAA4AAABkAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAwBgAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T21:20:00.584Z"
+              "WhenOpened": "2025-05-23T21:20:00.584Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "Administrador.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Administrador.cs",
               "RelativeDocumentMoniker": "Dominio\\Administrador.cs",
@@ -444,20 +493,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Usuario.cs",
               "RelativeDocumentMoniker": "Dominio\\Usuario.cs",
               "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\Usuario.cs",
               "RelativeToolTip": "Dominio\\Usuario.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAEwAkAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAEwAwAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-23T21:19:22.488Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\program\\Program.cs",
               "RelativeDocumentMoniker": "program\\Program.cs",

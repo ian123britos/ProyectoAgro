@@ -9,7 +9,7 @@ namespace Dominio
     public class Compra 
     {
         public int IdCompra {  get; set; }
-        public static int UltimoIdCompra {  get; set; }
+        public static int UltimoIdCompra { get; set; } = 1;
         public DateTime FechaCompra {  get; set; }
         public Cliente ClienteCompra { get; set; }
         public Publicacion PublicacionComprada { get; set; }

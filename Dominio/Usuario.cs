@@ -10,7 +10,7 @@ namespace Dominio
     public class Usuario:IValidable
     {
         public int Id { get; set; }
-        public static int UltimoId { get; set; }
+        public static int UltimoId { get; set; } = 1;
         public string Email { get; set; }
         public string Contrasenia { get; set; }
         public Rol Rol {  get; set; }

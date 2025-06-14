@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@using Dominio
+@model List<Publicacion>
+
+@{
+    ViewData["Title"] = "Publicaciones de Venta";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">📦 Publicaciones de Venta</h2>
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-success">
+            <tr>
+                @* <th>#</th> *@
+                <th>Título</th>
+                <th>Maquinaria</th>
+                <th>Precio</th>
+                <th>Vendedor</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pub in Model)
+            {
+                if (pub is Venta venta)
+                {
+                    <tr>
+                       @*  <td>@venta.IdPublicacion</td> *@
+                        <td>@venta.Titulo</td>
+                        <td>@venta.UnaMaquina?.TipoVechiculo()</td>
+                        <td>$@venta.PrecioVenta</td>
+                        <td>@venta.ClienteVende?.Nombre</td>
+                        <td>@venta.FechaPublicacionVenta.ToShortDateString()</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-info">No hay publicaciones de venta cargadas.</div>
+    }
+</div>

@@ -4,4 +4,40 @@
 @{
 }
 
-<h1>Felicidades</h1>
+
+@using Dominio
+@model Direccion
+
+<h1>Complete los campos</h1>
+<div class="container mt-5 p-4 rounded shadow" style="background-color: white;">
+    <h3>Paso 2 - Direccion </h3>
+
+    <form asp-action="FormularioTractorAltaDireccion" method="post">
+        <div class="mb-3">
+            <label asp-for="Pais" class="form-label">Pais</label>
+            <input asp-for="Pais" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Ciudad" class="form-label">Ciudad</label>
+            <input asp-for="Ciudad" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Barrio" class="form-label">Barrio</label>
+            <input asp-for="Barrio" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Siguiente ➡️</button>
+
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger">@TempData["Error"]</div>
+        }
+    </form>
+</div>
+
+
+    
+@* asp-for="Marca" genera internamente name="Marca" y id="Marca", junto con el value, etc.
+Pero la gran ventaja es que asp-for esta fuertemente tipado *@

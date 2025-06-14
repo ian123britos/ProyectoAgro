@@ -22,20 +22,20 @@ namespace Dominio
         public override void Validar()
         {
             base.Validar();
-            ValidarTelefono();
+            //ValidarTelefono();
             ValidarApellido();
             ValidarNombre();
 
         }
 
-        private void ValidarTelefono()
-        {
+        //private void ValidarTelefono()
+        //{
 
-            if (Telefono != 9)
-            {
-                throw new Exception("Ingresa un numero de telefono correcto");
-            }
-        }
+        //    if (Telefono != 9)
+        //    {
+        //        throw new Exception("Ingresa un numero de telefono correcto");
+        //    }
+        //}
         private void ValidarApellido()
         {
             if (string.IsNullOrEmpty(Apellido))

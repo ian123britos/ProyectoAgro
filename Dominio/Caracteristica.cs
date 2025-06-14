@@ -10,11 +10,11 @@ namespace Dominio
     public class Caracteristica:IValidable
     {
         public int IdCaracteristica { get; set; }
-        public static int UltimoIdCaracteristica { get; set; }
+        public static int UltimoIdCaracteristica { get; set; } = 1;
         public string Categoria { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
-        public DateTime Anio { get; set; }
+        public int Anio { get; set; }
         public bool EsUsado { get; set; }
         public bool UnicoDuenio { get; set; }
         public TipoCombustible TipoDeCombustible { get; set; }
@@ -23,7 +23,7 @@ namespace Dominio
         public Caracteristica() { 
             IdCaracteristica = UltimoIdCaracteristica++;
         }
-        public Caracteristica(string categoria, string marca, string modelo, DateTime anio, bool esUsado, bool unicoDuenio, TipoCombustible tipoDeCombustible, TipoDireccion tipoDeDireccion)
+        public Caracteristica(string categoria, string marca, string modelo, int anio, bool esUsado, bool unicoDuenio, TipoCombustible tipoDeCombustible, TipoDireccion tipoDeDireccion)
         {
             IdCaracteristica = UltimoIdCaracteristica++;
             Categoria = categoria;
@@ -40,10 +40,20 @@ namespace Dominio
             ValidarCategoria();
             ValidarMarca();
             ValidarModelo();
+            ValidarAnio();
 
         }
 
-    
+
+        private void ValidarAnio()
+        {
+           
+            if (Anio < 1800 || Anio > DateTime.Now.Year)
+            {
+                throw new Exception($"El año debe tener 4 dígitos y no puede ser mayor a {DateTime.Now.Year}.");
+
+            }
+        }
 
         private void ValidarModelo()
         {

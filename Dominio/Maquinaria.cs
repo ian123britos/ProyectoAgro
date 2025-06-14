@@ -12,7 +12,7 @@ namespace Dominio
     public abstract class Maquinaria :IValidable
     {
        public int IdMaquinaria {  get; set; }
-        public static int UltimoIdMaquinaria { get; set; }
+        public static int UltimoIdMaquinaria { get; set; } = 1;
         public Direccion Direccion { get; set; }
         public Caracteristica Caracteristica { get; set; }
         public string OtrasCaracteristicas { get; set; }
@@ -41,22 +41,15 @@ namespace Dominio
 
         private void ValidarOtrasCaracteristicas()
         {
-
+            if(string.IsNullOrEmpty(OtrasCaracteristicas))
+            {
+                throw new Exception("Otras caracteristicas no puede ser vacio");
+            }
             if (OtrasCaracteristicas.Length > 60)
             {
                 throw new Exception("Otras características debe de ser menor a 60 caracteres");
 
             }
-
-            int i = 0;
-                while(i < OtrasCaracteristicas.Length)
-                {
-                    if (OtrasCaracteristicas[i] >= '0' && OtrasCaracteristicas[i] <= '9')
-                    {
-                        throw new Exception("Otras características no puede tener numero");
-                    }
-                    i++;
-                }
         }
     }
 }

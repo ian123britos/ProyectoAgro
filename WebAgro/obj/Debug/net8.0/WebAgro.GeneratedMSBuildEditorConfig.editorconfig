@@ -34,8 +34,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRm9ybXVsYXJpb1RyYWN0b3JEaXJlY2Npb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/FormularioTractorMaquinaria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRm9ybXVsYXJpb1RyYWN0b3JNYXF1aW5hcmlhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/FormularioTractorMaquinariaOtrasCaracteristicas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRm9ybXVsYXJpb1RyYWN0b3JNYXF1aW5hcmlhT3RyYXNDYXJhY3RlcmlzdGljYXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/FormularioTractorPublicacionVenta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRm9ybXVsYXJpb1RyYWN0b3JQdWJsaWNhY2lvblZlbnRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/SeleccionarTipoMaquinaria.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cU2VsZWNjaW9uYXJUaXBvTWFxdWluYXJpYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/TodasLasPublicacionesEnVenta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cVG9kYXNMYXNQdWJsaWNhY2lvbmVzRW5WZW50YS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Shared/Error.cshtml]

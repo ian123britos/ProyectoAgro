@@ -29,7 +29,7 @@ namespace Dominio
 
         private void ValidarPrecioVenta()
         {
-            if(PrecioVenta <0)
+            if(PrecioVenta < 0)
             {
                 throw new Exception("El precio de venta debe de ser mayor a 0");
             }
