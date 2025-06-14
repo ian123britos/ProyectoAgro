@@ -8,6 +8,20 @@ namespace Dominio
 {
     public class Sistema
     {
+        private static Sistema instanciaSistema;
+
+        public static Sistema ObtenerInstancia()
+        {
+            if (instanciaSistema != null)
+            {
+                return instanciaSistema;
+            }
+            else
+            {
+                instanciaSistema = new Sistema();
+                return instanciaSistema;
+            }
+        }
         public List<Usuario> listaUsuarios { get; set; }
 
         public List<Maquinaria> listaMaquinarias {  get; set; }

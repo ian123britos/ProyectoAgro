@@ -20,7 +20,9 @@ namespace Dominio
         public TipoCombustible TipoDeCombustible { get; set; }
         public TipoDireccion TipoDeDireccion { get; set; }
 
-        public Caracteristica() { }
+        public Caracteristica() { 
+            IdCaracteristica = UltimoIdCaracteristica++;
+        }
         public Caracteristica(string categoria, string marca, string modelo, DateTime anio, bool esUsado, bool unicoDuenio, TipoCombustible tipoDeCombustible, TipoDireccion tipoDeDireccion)
         {
             IdCaracteristica = UltimoIdCaracteristica++;

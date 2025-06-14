@@ -8,7 +8,7 @@ namespace Dominio
 {
     public enum TipoCombustible
     {
-        NAFTA = 1,
-        GASOIL = 2
+        GASOIL,
+        NAFTA
     }
 }

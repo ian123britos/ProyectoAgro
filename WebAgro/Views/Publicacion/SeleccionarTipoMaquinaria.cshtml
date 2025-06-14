@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+    ViewData["Title"] = "¿Qué querés vender hoy?";
+}
+<style>
+    body {
+        background-color: #e8f5e9; /* Verde claro suave */
+    }
+</style>
+
+<h2 class="text-center mt-4">Hola, ¿qué querés vender hoy?</h2>
+
+<div class="container mt-5">
+    <div class="row justify-content-center g-4">
+
+        <div class="col-md-4">
+            <a asp-controller="Publicacion" asp-action="FormularioTractorCaracteristicas" class="btn btn-success btn-lg w-100 shadow rounded-pill p-3">
+                🚜 Tractor
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a asp-controller="Publicacion" asp-action="FormularioSembradoraCaracteristicas" class="btn btn-primary btn-lg w-100 shadow rounded-pill p-3">
+                🌾 Sembradora
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a asp-controller="Publicacion" asp-action="FormularioCosechadoraCaracteristicas" class="btn btn-warning btn-lg w-100 shadow rounded-pill p-3">
+                🌽 Cosechadora
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a asp-controller="Publicacion" asp-action="FormularioFertilizadoraCaracteristicas" class="btn btn-info btn-lg w-100 shadow rounded-pill p-3">
+                💧 Fertilizadora
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a asp-controller="Publicacion" asp-action="FormularioPulverizadoraCaracteristicas" class="btn btn-danger btn-lg w-100 shadow rounded-pill p-3">
+                ☁️ Pulverizadora
+            </a>
+        </div>
+
+    </div>
+</div>
+
