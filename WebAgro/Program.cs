@@ -9,6 +9,14 @@ namespace WebAgro
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddSession(
+                options =>
+                {
+                    options.IdleTimeout = TimeSpan.FromHours(5);
+                    options.Cookie.HttpOnly = true;
+                    options.Cookie.IsEssential = true;
+                });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -29,6 +37,7 @@ namespace WebAgro
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+            app.UseSession();
 
             app.Run();
         }

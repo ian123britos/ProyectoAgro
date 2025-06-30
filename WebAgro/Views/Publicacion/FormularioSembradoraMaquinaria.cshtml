@@ -1,18 +1,18 @@
 ﻿@using Dominio
-@model Tractor
+@model Sembradora
 
 @{
-    ViewData["Title"] = "Paso 3 - Información del Tractor";
+    ViewData["Title"] = "Paso 3 - Información de la Sembradora";
 }
 
 <div class="container p-3 rounded shadow-sm" style="background-color: #fff; max-width: 600px;">
-    <h5 class="mb-3">🚜 Paso 3 - Información del Tractor</h5>
+    <h5 class="mb-3">🌾 Paso 3 - Información de la Sembradora</h5>
 
-    <form asp-action="FormularioTractorAltaMaquinaria" method="post" class="small">
+    <form asp-action="FormularioSembradoraAltaMaquinaria" method="post" class="small">
 
-        <div class="form-check form-switch mb-2">
-            <input asp-for="TieneCabina" class="form-check-input" />
-            <label asp-for="TieneCabina" class="form-check-label">¿Tiene cabina?</label>
+        <div class="mb-3">
+            <label asp-for="TipoDeSembradora" class="form-label">Tipo de Sembradora</label>
+            <input asp-for="TipoDeSembradora" class="form-control form-control-sm" />
         </div>
 
         <div class="mb-3">
@@ -28,4 +28,3 @@
         }
     </form>
 </div>
-

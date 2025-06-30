@@ -1,50 +1,62 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
-@{
+﻿@{
     ViewData["Title"] = "¿Qué querés vender hoy?";
 }
 <style>
     body {
         background-color: #e8f5e9; /* Verde claro suave */
+        /* Quitar flex para no afectar nav */
     }
+
+    .btn-custom {
+        padding: 1rem 0.75rem; /* Menor alto y un poco ancho */
+        font-size: 1.25rem;
+        font-weight: 600;
+        border-radius: 0.3rem; /* bordes suaves */
+        text-transform: uppercase;
+        box-shadow: 0 3px 6px rgb(0 0 0 / 0.1);
+        transition: all 0.3s ease;
+        max-height: 60px; /* Limita la altura para que no crezcan mucho */
+    }
+
+        .btn-custom:hover {
+            filter: brightness(1.1);
+            box-shadow: 0 5px 10px rgb(0 0 0 / 0.15);
+            transform: translateY(-1.5px);
+        }
 </style>
 
-<h2 class="text-center mt-4">Hola, ¿qué querés vender hoy?</h2>
+<h2 class="text-center mt-4 mb-5 fw-bold">Hola, ¿qué querés vender hoy?</h2>
 
-<div class="container mt-5">
-    <div class="row justify-content-center g-4">
+<div class="container">
+    <div class="row justify-content-center g-3">
 
-        <div class="col-md-4">
-            <a asp-controller="Publicacion" asp-action="FormularioTractorCaracteristicas" class="btn btn-success btn-lg w-100 shadow rounded-pill p-3">
-                🚜 Tractor
+        <div class="col-10 col-md-6 col-lg-4">
+            <a asp-controller="Publicacion" asp-action="FormularioTractorCaracteristicas" class="btn btn-success btn-custom w-100 shadow">
+                🚜 TRACTOR
             </a>
         </div>
 
-        <div class="col-md-4">
-            <a asp-controller="Publicacion" asp-action="FormularioSembradoraCaracteristicas" class="btn btn-primary btn-lg w-100 shadow rounded-pill p-3">
-                🌾 Sembradora
+        <div class="col-10 col-md-6 col-lg-4">
+            <a asp-controller="Publicacion" asp-action="FormularioSembradoraCaracteristicas" class="btn btn-primary btn-custom w-100 shadow">
+                🌾 SEMBRADORA
             </a>
         </div>
 
-        <div class="col-md-4">
-            <a asp-controller="Publicacion" asp-action="FormularioCosechadoraCaracteristicas" class="btn btn-warning btn-lg w-100 shadow rounded-pill p-3">
-                🌽 Cosechadora
+        <div class="col-10 col-md-6 col-lg-4">
+            <a asp-controller="Publicacion" asp-action="FormularioFertilizadoraCaracteristicas" class="btn btn-warning btn-custom w-100 shadow">
+                🌽 COSECHADORA
             </a>
         </div>
 
-        <div class="col-md-4">
-            <a asp-controller="Publicacion" asp-action="FormularioFertilizadoraCaracteristicas" class="btn btn-info btn-lg w-100 shadow rounded-pill p-3">
-                💧 Fertilizadora
+        <div class="col-10 col-md-6 col-lg-4">
+            <a asp-controller="Publicacion" asp-action="FormularioCosechadoraCaracteristicas" class="btn btn-info btn-custom w-100 shadow">
+                💧 FERTILIZADORA
             </a>
         </div>
 
-        <div class="col-md-4">
-            <a asp-controller="Publicacion" asp-action="FormularioPulverizadoraCaracteristicas" class="btn btn-danger btn-lg w-100 shadow rounded-pill p-3">
-                ☁️ Pulverizadora
+        <div class="col-10 col-md-6 col-lg-4">
+            <a asp-controller="Publicacion" asp-action="FormularioCargadoraDePalaCaracteristicas" class="btn btn-danger btn-custom w-100 shadow">
+                ☁️ CARGADORA DE PALA
             </a>
         </div>
 

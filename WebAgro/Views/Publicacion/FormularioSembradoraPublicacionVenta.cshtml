@@ -1,4 +1,5 @@
-﻿@using Dominio
+﻿
+@using Dominio
 @model Venta
 
 @{
@@ -6,9 +7,9 @@
 }
 
 <div class="container p-3 rounded shadow-sm" style="background-color: #fff; max-width: 600px;">
-    <h5 class="mb-3">📢 Paso 4 - Publicar venta del tractor</h5>
+    <h5 class="mb-3">📢 Paso 4 - Publicar venta de la Sembradora</h5>
 
-    <form asp-action="FormularioTractorAltaPublicacionVenta" method="post" enctype="multipart/form-data" class="small">
+    <form asp-action="FormularioSembradoraAltaPublicacionVenta" method="post" enctype="multipart/form-data" class="small">
 
         <div class="mb-2">
             <label asp-for="Titulo" class="form-label">Título</label>

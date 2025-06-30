@@ -1,4 +1,9 @@
-﻿
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
 @using Dominio
 @model Direccion
 
@@ -6,7 +11,7 @@
 <div class="container p-3 rounded shadow-sm" style="background-color: #fff; max-width: 600px;">
     <h5 class="mb-3">📍 Paso 2 - Dirección</h5>
 
-    <form asp-action="FormularioTractorAltaDireccion" method="post" class="small">
+    <form asp-action="FormularioSembradoraAltaDireccion" method="post" class="small">
 
         <div class="mb-2">
             <label asp-for="Pais" class="form-label">País</label>
@@ -34,6 +39,6 @@
 
 
 
-    
+
 @* asp-for="Marca" genera internamente name="Marca" y id="Marca", junto con el value, etc.
 Pero la gran ventaja es que asp-for esta fuertemente tipado *@
