@@ -1,0 +1,48 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@using Dominio
+@model List<Publicacion>
+<div class="container mt-5">
+@if (Model.Count == 0)
+{
+    <div class="alert alert-info">No hay publicaciones de venta cargadas.</div>
+}
+else
+{
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var pub in Model)
+        {
+            if (pub is Venta venta)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                            <img src="@venta.Foto" /images/sin-imagen.png"" class="card-img-top" alt="@venta.Titulo" style="height: 200px; object-fit: cover;">
+
+                            <div class="card-body">
+                            <h5 class="card-title">@venta.Titulo</h5>
+                            @* @* <p class="card-text text-muted">@venta.UnaMaquina?.TipoVechiculo()</p>  Esto va adentro de ver detalle *@
+                            <p class="card-text">
+                                <strong>Marca:</strong> @venta.UnaMaquina?.Caracteristica?.Marca <br />
+                                <strong>Modelo:</strong> @venta.UnaMaquina?.Caracteristica?.Modelo <br />
+                                <strong>Año:</strong> @venta.UnaMaquina?.Caracteristica?.Anio
+                            </p>
+                            <p class="card-text">
+                                <strong>Ubicación:</strong> @venta.UnaMaquina?.Direccion?.Ciudad, @venta.UnaMaquina?.Direccion?.Pais
+                            </p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center">
+                            <span class="fw-bold text-success">$@venta.PrecioVenta</span>
+                            <button type="submit">Ver Detalle</button>
+                                @* @* <small class="text-muted">@venta.FechaPublicacionVenta.ToShortDateString()</small> Esto va adentro de ver detalle *@
+                            </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+}
+</div>

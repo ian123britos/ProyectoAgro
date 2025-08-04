@@ -1,55 +1,77 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
+﻿
 @using Dominio
 @model List<Publicacion>
-
-@{
-    ViewData["Title"] = "Publicaciones de Venta";
-}
-
 <div class="container mt-5">
     <h2 class="mb-4">📦 Publicaciones de Venta</h2>
 
-    <table class="table table-bordered table-striped">
-        <thead class="table-success">
-            <tr>
-                <th>Título</th>
-                <th>Tipo Maquinaria</th>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Año</th>
-                <th>Ubicación</th>
-                <th>Precio</th>
-                <th>Fecha</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var pub in Model)
-            {
-                if (pub is Venta venta)
-                {
-                    <tr>
-                        <td>@venta.Titulo</td>
-                        <td>@venta.UnaMaquina?.TipoVechiculo()</td>
-                        <td>@venta.UnaMaquina?.Caracteristica?.Marca</td>
-                        <td>@venta.UnaMaquina?.Caracteristica?.Modelo</td>
-                        <td>@venta.UnaMaquina?.Caracteristica?.Anio</td>
-                        <td>@($"{venta.UnaMaquina?.Direccion?.Barrio}, {venta.UnaMaquina?.Direccion?.Ciudad}, {venta.UnaMaquina?.Direccion?.Pais}")</td>
-                        <td>$@venta.PrecioVenta</td>
-                        <td>@venta.FechaPublicacionVenta.ToShortDateString()</td>
-                    </tr>
-                }
-            }
-        </tbody>
+    <!-- FILTRO DE MARCA -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <form asp-action="FiltradoPorMarcaDeMaquinaria" method="post" class="row g-3 align-items-end">
+                <div class="col-md-6">
+                    <label for="marca" class="form-label">Filtrar por marca</label>
+                    <select name="marca" id="marca" class="form-select">
+                        <option value="">Seleccione marca de maquinaria agro</option>
+                        @{
+                            var marcasUnicas = Model
+                            .Where(p => p.UnaMaquina?.Caracteristica?.Marca != null)
+                            .Select(p => p.UnaMaquina.Caracteristica.Marca)
+                            .Distinct();
 
-    </table>
+                            foreach (var marca in marcasUnicas)
+                            {
+                                <option value="@marca">@marca</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="col-md-auto">
+                    <button class="btn btn-primary mt-3" type="submit">🔍 Buscar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     @if (Model.Count == 0)
     {
         <div class="alert alert-info">No hay publicaciones de venta cargadas.</div>
     }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            @foreach (var pub in Model)
+            {
+                if (pub is Venta venta)
+                {
+                    <div class="col">
+                        <div class="card h-100 shadow-sm">
+                            <img src="@venta.Foto" /images/sin-imagen.png"" class="card-img-top" alt="@venta.Titulo" style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">@venta.Titulo</h5>
+                                @* <p class="card-text text-muted">@venta.UnaMaquina?.TipoVechiculo()</p> *@
+                                <p class="card-text">
+                                    <strong>Marca:</strong> @venta.UnaMaquina.Caracteristica.Marca <br />
+                                    <strong>Modelo:</strong> @venta.UnaMaquina.Caracteristica.Modelo <br />
+                                    <strong>Año:</strong> @venta.UnaMaquina.Caracteristica.Anio
+                                </p>
+                                <p class="card-text">
+                                    <strong>Ubicación:</strong> @venta.UnaMaquina.Direccion.Ciudad, @venta.UnaMaquina.Direccion.Pais
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-success">USD @venta.PrecioVenta</span>
+                                <form action="/" method="post">
+                                <button type="submit" style="background-color: rgba(0, 128, 0, 0.1); color: green; border: 1px solid green; border-radius: 5px; padding: 5px 10px;">
+                                    Ver Detalle
+                                </button>
+                                </form>
+                                @* <small class="text-muted">@venta.FechaPublicacionVenta.ToShortDateString()</small> *@
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    }
 </div>
+

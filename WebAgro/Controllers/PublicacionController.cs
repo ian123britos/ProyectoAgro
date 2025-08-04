@@ -275,16 +275,22 @@ namespace WebAgro.Controllers
                 return Redirect("FormularioFertilizadoraCaracteristicas");
             }
         }
+        #endregion
 
 
-
-
-
-
+        #region Filtrados:
         public IActionResult TodasLasPublicacionesEnVenta()
         {
             List<Publicacion> lista = sistema.GetPublicacions();
             return View(lista);
         }
+
+        [HttpPost]
+        public IActionResult FiltradoPorMarcaDeMaquinaria(string marca)
+        {
+            List<Publicacion> VerPorMarca = sistema.ObtenerMaquinariaPorMarca(marca);
+            return View(VerPorMarca);
+        }
+        #endregion
     }
 }

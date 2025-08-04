@@ -5,6 +5,22 @@
       "PackagePath": "staticwebassets\\WebAgro.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\NewFolder\\Foto profesional - Medio plano.jpeg",
+      "PackagePath": "staticwebassets\\NewFolder\\Foto profesional - Medio plano.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\NewFolder\\Imagen_Cosechadora.jpg",
+      "PackagePath": "staticwebassets\\NewFolder\\Imagen_Cosechadora.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\NewFolder\\Imagen_Fertilizadora.jpg",
+      "PackagePath": "staticwebassets\\NewFolder\\Imagen_Fertilizadora.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\NewFolder\\Imagen_Tractor.jpg",
+      "PackagePath": "staticwebassets\\NewFolder\\Imagen_Tractor.jpg"
+    },
+    {
       "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
