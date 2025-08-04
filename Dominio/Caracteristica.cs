@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Caracteristica:IValidable
+    public class Caracteristica : IValidable
     {
         public int IdCaracteristica { get; set; }
         public static int UltimoIdCaracteristica { get; set; } = 1;
@@ -20,7 +20,8 @@ namespace Dominio
         public TipoCombustible TipoDeCombustible { get; set; }
         public TipoDireccion TipoDeDireccion { get; set; }
 
-        public Caracteristica() { 
+        public Caracteristica()
+        {
             IdCaracteristica = UltimoIdCaracteristica++;
         }
         public Caracteristica(string categoria, string marca, string modelo, int anio, bool esUsado, bool unicoDuenio, TipoCombustible tipoDeCombustible, TipoDireccion tipoDeDireccion)
@@ -47,7 +48,7 @@ namespace Dominio
 
         private void ValidarAnio()
         {
-           
+
             if (Anio < 1800 || Anio > DateTime.Now.Year)
             {
                 throw new Exception($"El año debe tener 4 dígitos y no puede ser mayor a {DateTime.Now.Year}.");
@@ -61,12 +62,12 @@ namespace Dominio
             {
                 throw new Exception("El campo de modelo de maquina no puede ser vacio ");
             }
-            
+
         }
 
         private void ValidarMarca()
         {
-            if(string.IsNullOrEmpty(Marca))
+            if (string.IsNullOrEmpty(Marca))
             {
                 throw new Exception("El campo de marca no puede ser vacio");
             }
@@ -74,13 +75,13 @@ namespace Dominio
 
         private void ValidarCategoria()
         {
-            if(string.IsNullOrEmpty(Categoria))
+            if (string.IsNullOrEmpty(Categoria))
             {
                 throw new Exception("El campo categoría no puede ser vacio");
             }
         }
 
-      
+
 
 
 

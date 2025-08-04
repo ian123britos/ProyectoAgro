@@ -16,22 +16,8 @@ namespace Dominio
             TieneCabina = tieneCabina;
         }
 
-        public override string TipoVechiculo()
-        {
-                string tendraCabina = TieneSiNo(TieneCabina);
-                string dato = $"Tractor\n" +
-                $"Tiene cabina: {tendraCabina}\n" +
-                $"caracteristicas: {Caracteristica.Marca}\n" +
-                $"caracteristicas: {Caracteristica.Modelo}\n" +
-                $"caracteristicas: {Caracteristica.Anio}\n";
+        public override string TipoVechiculo() => "Tractor";
 
-            return dato;
-        }
-
-        public override string ToString()
-        {
-            return TipoVechiculo();
-        }
 
         public static string TieneSiNo(bool EsConCabina)
         {

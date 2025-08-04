@@ -22,23 +22,13 @@ namespace Dominio
         
         }
 
-        public override string TipoVechiculo()
-        {
-            string dato = $"Cargadora de pala:\n" +
-                $" Cilindro {Cilindro}\n" +
-                $"caracteristicas: {Caracteristica.Marca}\n" +
-                $"caracteristicas: {Caracteristica.Modelo}\n" +
-                $"caracteristicas: {Caracteristica.Anio}\n" +
-                $"marca del motor {MarcaMotor}\n" +
-                $"caracteristicas: {Caracteristica.TipoDeCombustible} ";
-                
-            return dato;
-        }
+        public override string TipoVechiculo() => "CargadoraDePala";
 
-        public override string ToString()
-        {
-            return TipoVechiculo();
-        }
+
+        //public override string ToString()
+        //{
+        //    return TipoVechiculo();
+        //}
     }
 
 }

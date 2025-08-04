@@ -47,7 +47,7 @@ namespace Dominio
             }
         }
 
-        public abstract string ToString();
+      
 
         
 

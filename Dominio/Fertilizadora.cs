@@ -21,22 +21,11 @@ namespace Dominio
             Potencia = potencia;
             DobleTraccion = dobleTraccion;
         }
-        public override string TipoVechiculo()
-        {
-            string TieneDobleTraccion = EsDobleTraccion(DobleTraccion);
-            string dato = $"Fertilizadora\n" +
-                $"marca del motor: {MarcaMotor}" +
-                $"potencia: {Potencia}\n" +
-                $"es doble traccion: {TieneDobleTraccion}\n" +
-                $"caracteristicas: {Caracteristica.Marca}\n" +
-                $"caracteristicas: {Caracteristica.Modelo}\n" +
-                $"caracteristicas: {Caracteristica.Anio}\n";
-            return dato;
-        }
-        public override string ToString()
-        {
-            return TipoVechiculo();
-        }
+        public override string TipoVechiculo() => "Fertilizadora";
+        //public override string ToString()
+        //{
+        //    return TipoVechiculo();
+        //}
         public static string EsDobleTraccion(bool esDobleTraccion)
         {
             string Texto = "";

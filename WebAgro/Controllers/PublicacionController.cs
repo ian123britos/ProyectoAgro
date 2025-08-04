@@ -291,6 +291,7 @@ namespace WebAgro.Controllers
             List<Publicacion> VerPorMarca = sistema.ObtenerMaquinariaPorMarca(marca);
             return View(VerPorMarca);
         }
+
         #endregion
     }
 }

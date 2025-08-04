@@ -4,14 +4,14 @@
 <div class="container mt-5">
     <h2 class="mb-4">📦 Publicaciones de Venta</h2>
 
-    <!-- FILTRO DE MARCA -->
-    <div class="card mb-4">
+     <!-- FILTRO DE MARCA -->
+        <div class="card mb-4">
         <div class="card-body">
             <form asp-action="FiltradoPorMarcaDeMaquinaria" method="post" class="row g-3 align-items-end">
                 <div class="col-md-6">
                     <label for="marca" class="form-label">Filtrar por marca</label>
                     <select name="marca" id="marca" class="form-select">
-                        <option value="">Seleccione marca de maquinaria agro</option>
+                        <option value="">Buscar Maquinaria por Marca</option>
                         @{
                             var marcasUnicas = Model
                             .Where(p => p.UnaMaquina?.Caracteristica?.Marca != null)
@@ -30,7 +30,7 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div>  
 
     @if (Model.Count == 0)
     {

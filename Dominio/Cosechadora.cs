@@ -21,23 +21,12 @@ namespace Dominio
             EsRuedaDual = esRuedaDual;
         }
 
-        public override string TipoVechiculo()
-        {
-            string ruedaDual = ObtenerSiNo(EsRuedaDual);
-            string dato = $"Cosechadora\n" +
-                $"es rueda dual {ruedaDual}" +
-                $"capacidad de carga: {CapacidadDeCarga}" +
-                $"tipo de cosechadora {TipoCosechadora}" +
-                $"caracteristicas: {Caracteristica.Marca}\n" +
-                $"caracteristicas: {Caracteristica.Modelo}\n" +
-                $"caracteristicas: {Caracteristica.Anio}\n";
-            return dato;
-        }
+        public override string TipoVechiculo() => "Cosechadora";
 
-        public override string ToString()
-        {
-            return TipoVechiculo();
-        }
+        //public override string ToString()
+        //{
+        //    return TipoVechiculo();
+        //}
 
         public static string ObtenerSiNo(bool esDual)
         {
