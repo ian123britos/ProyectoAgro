@@ -23,7 +23,6 @@ namespace Dominio
             }
         }
         public List<Usuario> listaUsuarios { get; set; }
-
         public List<Maquinaria> listaMaquinarias {  get; set; }
         public List<Caracteristica> listaCaracteristicas { get; set; }
         public List<Direccion> listaDirecciones { get; set; }
@@ -81,6 +80,24 @@ namespace Dominio
             direccion.Validar();
             listaDirecciones.Add(direccion);
         }
+
+        #region METODO PREMIUM PARA AGREGAR PUBLICACIONES DE TIPO MAQUINARIA SEGURA Y QUE LUEGO PUEDEA VER SUS DETALLES DE C/U
+        // Método seguro para agregar publicaciones validando maquinaria y cliente
+        public void AltaPublicacionSegura(Publicacion p)
+        {
+            if (p.UnaMaquina == null)
+            {
+                Console.WriteLine($"No se puede agregar publicación '{p.Titulo}' porque la maquinaria es null.");
+                return;
+            }
+            if (p.ClienteVende == null)
+            {
+                Console.WriteLine($"No se puede agregar publicación '{p.Titulo}' porque el cliente es null.");
+                return;
+            }
+            AltaPublicacion(p);
+        }
+        #endregion
 
         public void AltaPublicacion(Publicacion publicacion)
         {
@@ -140,7 +157,7 @@ namespace Dominio
 
             PreCargaPublicaciónVenta();
 
-            PreCargaCompras();
+            //PreCargaCompras();
 
 
 
@@ -631,53 +648,55 @@ namespace Dominio
         }
         #endregion
 
+
+
         #region publicaciones en venta
         public void PreCargaPublicaciónVenta()
         {
-            Venta venta1 = new Venta(new DateTime(2025, 1, 15), 35000, "Venta de Tractor modelo T-150","/NewFolder/Imagen_Tractor.jpg", ObtenerMaquinariaPorId(1), ObtenerUsuarioPorEmail("maria.gonzalez@mail.com"), TipoDePublicacion.GRATIS);
-            Venta venta2 = new Venta(new DateTime(2025, 2, 20), 42000, "Venta de Cosechadora modelo CX500", "/NewFolder/Imagen_Cosechadora.jpg", ObtenerMaquinariaPorId(2), ObtenerUsuarioPorEmail("carlos.fernandez@mail.com"), TipoDePublicacion.GRATIS);
-            Venta venta3 = new Venta(new DateTime(2025, 3, 10), 28000, "Venta de Fertilizadora modelo FertX", "/NewFolder/Imagen_Fertilizadora.jpg", ObtenerMaquinariaPorId(3), ObtenerUsuarioPorEmail("lucia.martinez@mail.com"), TipoDePublicacion.GRATIS);
-            Venta venta4 = new Venta(new DateTime(2025, 4, 5), 46000, "Venta de Sembradora modelo S-200", "/NewFolder/Imagen_Fertilizadora.jpg", ObtenerMaquinariaPorId(4), ObtenerUsuarioPorEmail("javier.perez@mail.com"), TipoDePublicacion.GRATIS);
-            Venta venta5 = new Venta(new DateTime(2025, 5, 15), 30000, "Venta de Tractor modelo T-100", "/NewFolder/Imagen_Fertilizadora.jpg", ObtenerMaquinariaPorId(5), ObtenerUsuarioPorEmail("ana.rodriguez@mail.com"), TipoDePublicacion.GRATIS);
-            Venta venta6 = new Venta(new DateTime(2025, 6, 10), 50000, "Venta de Cosechadora modelo CX600", "/NewFolder/Imagen_Fertilizadora.jpg", ObtenerMaquinariaPorId(6), ObtenerUsuarioPorEmail("maria.gonzalez@mail.com"), TipoDePublicacion.GRATIS);
-            Venta venta7 = new Venta(new DateTime(2025, 7, 1), 35000, "Venta de Fertilizadora modelo FertZ", "/NewFolder/Imagen_Fertilizadora.jpg", ObtenerMaquinariaPorId(7), ObtenerUsuarioPorEmail("carlos.fernandez@mail.com"), TipoDePublicacion.GRATIS);
-            Venta venta8 = new Venta(new DateTime(2025, 8, 20), 42000, "Venta de Sembradora modelo S-300", "/NewFolder/Imagen_Fertilizadora.jpg", ObtenerMaquinariaPorId(8), ObtenerUsuarioPorEmail("lucia.martinez@mail.com"), TipoDePublicacion.GRATIS);
-            Venta venta9 = new Venta(new DateTime(2025, 9, 15), 32000, "Venta de Tractor modelo T-200", "/NewFolder/Imagen_Fertilizadora.jpg", ObtenerMaquinariaPorId(9), ObtenerUsuarioPorEmail("javier.perez@mail.com"), TipoDePublicacion.GRATIS);
-            Venta venta10 = new Venta(new DateTime(2025, 10, 5), 48000, "Venta de Cosechadora modelo CX700", "/NewFolder/Imagen_Fertilizadora.jpg", ObtenerMaquinariaPorId(10), ObtenerUsuarioPorEmail("ana.rodriguez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta1 = new Venta(new DateTime(2025, 1, 15), 35000, "Venta de Tractor modelo T-150", "/NewFolder/Imagen_Tractor.jpg", ObtenerMaquinariaPorId(1), ObtenerUsuarioPorEmail("maria.gonzalez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta2 = new Venta(new DateTime(2025, 2, 20), 42000, "Venta de Cosechadora modelo CX500", "/NewFolder/Imagen_Cosechadora.jpg", ObtenerMaquinariaPorId(31), ObtenerUsuarioPorEmail("carlos.fernandez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta3 = new Venta(new DateTime(2025, 3, 10), 28000, "Venta de Fertilizadora modelo FertX", "/NewFolder/Imagen_Fertilizadora.jpg", ObtenerMaquinariaPorId(41), ObtenerUsuarioPorEmail("lucia.martinez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta4 = new Venta(new DateTime(2025, 4, 5), 46000, "Venta de Sembradora modelo S-200", "/NewFolder/Imagen_Sembradora.jpg", ObtenerMaquinariaPorId(51), ObtenerUsuarioPorEmail("javier.perez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta5 = new Venta(new DateTime(2025, 5, 15), 30000, "Venta de Tractor modelo T-100", "/NewFolder/Imagen_Tractor.jpg", ObtenerMaquinariaPorId(5), ObtenerUsuarioPorEmail("ana.rodriguez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta6 = new Venta(new DateTime(2025, 6, 10), 50000, "Venta de Cosechadora modelo CX600", "/NewFolder/Imagen_Cosechadora.jpg", ObtenerMaquinariaPorId(32), ObtenerUsuarioPorEmail("maria.gonzalez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta7 = new Venta(new DateTime(2025, 7, 1), 35000, "Venta de Fertilizadora modelo FertZ", "/NewFolder/Imagen_Fertilizadora.jpg", ObtenerMaquinariaPorId(42), ObtenerUsuarioPorEmail("carlos.fernandez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta8 = new Venta(new DateTime(2025, 8, 20), 42000, "Venta de Sembradora modelo S-300", "/NewFolder/Imagen_Sembradora.jpg", ObtenerMaquinariaPorId(52), ObtenerUsuarioPorEmail("lucia.martinez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta9 = new Venta(new DateTime(2025, 9, 15), 32000, "Venta de Tractor modelo T-200", "/NewFolder/Imagen_Tractor.jpg", ObtenerMaquinariaPorId(9), ObtenerUsuarioPorEmail("javier.perez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta10 = new Venta(new DateTime(2025, 10, 5), 48000, "Venta de Cosechadora modelo CX700", "/NewFolder/Imagen_Cosechadora.jpg", ObtenerMaquinariaPorId(33), ObtenerUsuarioPorEmail("ana.rodriguez@mail.com"), TipoDePublicacion.GRATIS);
 
-            Venta venta11 = new Venta(new DateTime(2025, 1, 18), 31000, "Venta de Fertilizadora modelo FertY", "/NewFolder/Imagen_Fertilizadora.jpg", ObtenerMaquinariaPorId(11), ObtenerUsuarioPorEmail("maria.gonzalez@mail.com"), TipoDePublicacion.GRATIS);
-            Venta venta12 = new Venta(new DateTime(2025, 2, 25), 44000, "Venta de Sembradora modelo S-350", "/NewFolder/Foto profesional - Medio plano.jpeg", ObtenerMaquinariaPorId(12), ObtenerUsuarioPorEmail("carlos.fernandez@mail.com"), TipoDePublicacion.GRATIS);
-            Venta venta13 = new Venta(new DateTime(2025, 3, 12), 36000, "Venta de Tractor modelo T-250", "/NewFolder/Foto profesional - Medio plano.jpeg", ObtenerMaquinariaPorId(13), ObtenerUsuarioPorEmail("lucia.martinez@mail.com"), TipoDePublicacion.GRATIS);
-            Venta venta14 = new Venta(new DateTime(2025, 4, 10), 47000, "Venta de Cosechadora modelo CX800", "/NewFolder/Foto profesional - Medio plano.jpeg", ObtenerMaquinariaPorId(14), ObtenerUsuarioPorEmail("javier.perez@mail.com"), TipoDePublicacion.PLATA);
-            Venta venta15 = new Venta(new DateTime(2025, 5, 20), 29000, "Venta de Fertilizadora modelo FertA", "/NewFolder/Foto profesional - Medio plano.jpeg", ObtenerMaquinariaPorId(15), ObtenerUsuarioPorEmail("ana.rodriguez@mail.com"), TipoDePublicacion.PLATA);
-            Venta venta16 = new Venta(new DateTime(2025, 6, 15), 43000, "Venta de Sembradora modelo S-400", "/NewFolder/Foto profesional - Medio plano.jpeg", ObtenerMaquinariaPorId(16), ObtenerUsuarioPorEmail("maria.gonzalez@mail.com"), TipoDePublicacion.ORO);
-            Venta venta17 = new Venta(new DateTime(2025, 7, 5), 37000, "Venta de Tractor modelo T-300", "/NewFolder/Foto profesional - Medio plano.jpeg", ObtenerMaquinariaPorId(17), ObtenerUsuarioPorEmail("carlos.fernandez@mail.com"), TipoDePublicacion.ORO);
-            Venta venta18 = new Venta(new DateTime(2025, 8, 22), 49000, "Venta de Cosechadora modelo CX900", "/NewFolder/Foto profesional - Medio plano.jpeg", ObtenerMaquinariaPorId(18), ObtenerUsuarioPorEmail("lucia.martinez@mail.com"), TipoDePublicacion.PREMIUM);
-            Venta venta19 = new Venta(new DateTime(2025, 9, 18), 33000, "Venta de Fertilizadora modelo FertB", "/NewFolder/Foto profesional - Medio plano.jpeg", ObtenerMaquinariaPorId(19), ObtenerUsuarioPorEmail("javier.perez@mail.com"), TipoDePublicacion.PREMIUM);
-            Venta venta20 = new Venta(new DateTime(2025, 10, 8), 45000, "Venta de Sembradora modelo S-450", "/NewFolder/Foto profesional - Medio plano.jpeg", ObtenerMaquinariaPorId(20), ObtenerUsuarioPorEmail("ana.rodriguez@mail.com"), TipoDePublicacion.PREMIUM);
+            Venta venta11 = new Venta(new DateTime(2025, 1, 18), 31000, "Venta de Fertilizadora modelo FertY", "/NewFolder/Imagen_Fertilizadora.jpg", ObtenerMaquinariaPorId(43), ObtenerUsuarioPorEmail("maria.gonzalez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta12 = new Venta(new DateTime(2025, 2, 25), 44000, "Venta de Sembradora modelo S-350", "/NewFolder/Imagen_Sembradora.jpg", ObtenerMaquinariaPorId(53), ObtenerUsuarioPorEmail("carlos.fernandez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta13 = new Venta(new DateTime(2025, 3, 12), 36000, "Venta de Tractor modelo T-250", "/NewFolder/Imagen_Tractor.jpg", ObtenerMaquinariaPorId(13), ObtenerUsuarioPorEmail("lucia.martinez@mail.com"), TipoDePublicacion.GRATIS);
+            Venta venta14 = new Venta(new DateTime(2025, 4, 10), 47000, "Venta de Cosechadora modelo CX800", "/NewFolder/Imagen_Cosechadora.jpg", ObtenerMaquinariaPorId(34), ObtenerUsuarioPorEmail("javier.perez@mail.com"), TipoDePublicacion.PLATA);
+            Venta venta15 = new Venta(new DateTime(2025, 5, 20), 29000, "Venta de Fertilizadora modelo FertA", "/NewFolder/Imagen_Fertilizadora.jpg", ObtenerMaquinariaPorId(44), ObtenerUsuarioPorEmail("ana.rodriguez@mail.com"), TipoDePublicacion.PLATA);
+            Venta venta16 = new Venta(new DateTime(2025, 6, 15), 43000, "Venta de Sembradora modelo S-400", "/NewFolder/Imagen_Sembradora.jpg", ObtenerMaquinariaPorId(54), ObtenerUsuarioPorEmail("maria.gonzalez@mail.com"), TipoDePublicacion.ORO);
+            Venta venta17 = new Venta(new DateTime(2025, 7, 5), 37000, "Venta de Tractor modelo T-300", "/NewFolder/Imagen_Tractor.jpg", ObtenerMaquinariaPorId(17), ObtenerUsuarioPorEmail("carlos.fernandez@mail.com"), TipoDePublicacion.ORO);
+            Venta venta18 = new Venta(new DateTime(2025, 8, 22), 49000, "Venta de Cosechadora modelo CX900", "/NewFolder/Imagen_Cosechadora.jpg", ObtenerMaquinariaPorId(35), ObtenerUsuarioPorEmail("lucia.martinez@mail.com"), TipoDePublicacion.PREMIUM);
+            Venta venta19 = new Venta(new DateTime(2025, 9, 18), 33000, "Venta de Fertilizadora modelo FertB", "/NewFolder/Imagen_Fertilizadora.jpg", ObtenerMaquinariaPorId(45), ObtenerUsuarioPorEmail("javier.perez@mail.com"), TipoDePublicacion.PREMIUM);
+            Venta venta20 = new Venta(new DateTime(2025, 10, 8), 45000, "Venta de Sembradora modelo S-450", "/NewFolder/Imagen_Sembradora.jpg", ObtenerMaquinariaPorId(55), ObtenerUsuarioPorEmail("ana.rodriguez@mail.com"), TipoDePublicacion.PREMIUM);
 
-            AltaPublicacion(venta1);
-            AltaPublicacion(venta2);
-            AltaPublicacion(venta3);
-            AltaPublicacion(venta4);
-            AltaPublicacion(venta5);
-            AltaPublicacion(venta6);
-            AltaPublicacion(venta7);
-            AltaPublicacion(venta8);
-            AltaPublicacion(venta9);
-            AltaPublicacion(venta10);
-            AltaPublicacion(venta11);
-            AltaPublicacion(venta12);
-            AltaPublicacion(venta13);
-            AltaPublicacion(venta14);
-            AltaPublicacion(venta15);
-            AltaPublicacion(venta16);
-            AltaPublicacion(venta17);
-            AltaPublicacion(venta18);
-            AltaPublicacion(venta19);
-            AltaPublicacion(venta20);
-
+            AltaPublicacionSegura(venta1);
+            AltaPublicacionSegura(venta2);
+            AltaPublicacionSegura(venta3);
+            AltaPublicacionSegura(venta4);
+            AltaPublicacionSegura(venta5);
+            AltaPublicacionSegura(venta6);
+            AltaPublicacionSegura(venta7);
+            AltaPublicacionSegura(venta8);
+            AltaPublicacionSegura(venta9);
+            AltaPublicacionSegura(venta10);
+            AltaPublicacionSegura(venta11);
+            AltaPublicacionSegura(venta12);
+            AltaPublicacionSegura(venta13);
+            AltaPublicacionSegura(venta14);
+            AltaPublicacionSegura(venta15);
+            AltaPublicacionSegura(venta16);
+            AltaPublicacionSegura(venta17);
+            AltaPublicacionSegura(venta18);
+            AltaPublicacionSegura(venta19);
+            AltaPublicacionSegura(venta20);
         }
+
         #endregion
 
         #region compras
@@ -760,6 +779,18 @@ namespace Dominio
             }
             throw new Exception("No existe una publicacion con ese id");
         }
+        public Publicacion ObtenerPublicacionPorMaquinariaId(int idMaquinaria)
+        {
+            foreach (Publicacion p in listaPublicaciones)
+            {
+                if (p.UnaMaquina != null && p.UnaMaquina.IdMaquinaria == idMaquinaria)
+                {
+                    return p;
+                }
+            }
+            throw new Exception("No existe una publicacion para esa maquinaria");
+        }
+
         public Maquinaria ObtenerMaquinariaPorId(int id)
         {
 

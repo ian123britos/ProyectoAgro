@@ -58,6 +58,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRm9ybXVsYXJpb1RyYWN0b3JQdWJsaWNhY2lvblZlbnRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/ObtenerMaquinariaPorId.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cT2J0ZW5lck1hcXVpbmFyaWFQb3JJZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/SeleccionarTipoMaquinaria.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cU2VsZWNjaW9uYXJUaXBvTWFxdWluYXJpYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

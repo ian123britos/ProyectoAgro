@@ -18,7 +18,6 @@ namespace Dominio
 
         public Usuario() 
         {
-            Id = UltimoId++;
 
         }
 

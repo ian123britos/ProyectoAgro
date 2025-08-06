@@ -1,15 +1,29 @@
 ﻿using Dominio;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using System.IO;
+
 
 namespace WebAgro.Controllers
 {
     public class PublicacionController : Controller
     {
-        private Sistema sistema = Sistema.ObtenerInstancia();
+        private readonly Sistema sistema;
+        private readonly IWebHostEnvironment _webHostEnvironment;
+
+        // Constructor con inyección de dependencias
+        public PublicacionController(IWebHostEnvironment webHostEnvironment)
+        {
+            _webHostEnvironment = webHostEnvironment;
+            sistema = Sistema.ObtenerInstancia(); // <- MOVIDO AQUÍ
+        }
+
         public IActionResult SeleccionarTipoMaquinaria()
         {
             return View();
         }
+
 
 
         #region Formulario para dar de alta un tractor
@@ -24,6 +38,9 @@ namespace WebAgro.Controllers
         {
             try
             {
+                // ✅ Asignar el ID manualmente porque el binding no lo hace
+                caracteristica.IdCaracteristica = Caracteristica.UltimoIdCaracteristica++;
+
                 sistema.AltaCaracteristica(caracteristica);
                 //guardo el id en la session para que se me vayan guardando los campos de  caracteristicas que se van ingresando
                 HttpContext.Session.SetInt32("IdCaracteristicaTractor", caracteristica.IdCaracteristica);
@@ -47,6 +64,9 @@ namespace WebAgro.Controllers
         {
             try
             {
+                // ✅ Asignar el ID manualmente porque el binding no lo hace
+                direccion.IdDireccion = Direccion.UltimoIdDireccion++;
+
                 sistema.AltaDireccion(direccion);
                 //guardo el id en la session para que se me vayan guardando los campos de Direcciones que se van ingresando
                 HttpContext.Session.SetInt32("IdDireccionTractor", direccion.IdDireccion);
@@ -83,6 +103,9 @@ namespace WebAgro.Controllers
                 tractor.Caracteristica = caracteristicaEnCach;
                 tractor.Direccion = direccionEnCach;
 
+                // ✅ Asignar ID manualmente
+                tractor.IdMaquinaria = Maquinaria.UltimoIdMaquinaria++;
+
                 sistema.AltaMaquinaria(tractor);
                 //Guardo el id en la session para que se me vayan guardando los campos de maquinaria que se van ingresando
                 HttpContext.Session.SetInt32("IdMaquinariaTractor", tractor.IdMaquinaria);
@@ -102,7 +125,7 @@ namespace WebAgro.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult FormularioTractorAltaPublicacionVenta(Venta venta)
+        public async Task<IActionResult> FormularioTractorAltaPublicacionVenta(Venta venta, IFormFile fotoArchivo)
         {
             try
             {
@@ -117,9 +140,36 @@ namespace WebAgro.Controllers
                 venta.UnaMaquina = tractorEnCach;
                 venta.FechaPublicacionVenta = DateTime.Now;
 
+                // Guardar la imagen si viene archivo
+                if (fotoArchivo != null && fotoArchivo.Length > 0)
+                {                                 //para chatgpt: _webHostEnvironment esto me aparece en rojo
+                    var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "uploads");
+                    if (!Directory.Exists(uploadsFolder))
+                        Directory.CreateDirectory(uploadsFolder);
+
+                    var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(fotoArchivo.FileName);
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await fotoArchivo.CopyToAsync(fileStream);// y todo esto tambien me aparece en rojo
+                    }
+
+                    venta.Foto = "/uploads/" + uniqueFileName;
+                }
+                else
+                {
+                    // Opcional: poner una imagen por defecto si no se subió ninguna foto
+                    venta.Foto = "/images/default-maquinaria.jpg";
+                }
+
+                venta.IdPublicacion = Publicacion.UltimoIdPublicacion++;
+
                 sistema.AltaPublicacion(venta);
                 ViewBag.Exito = "✅ Maquinaria Tractor publicada con éxito";
                 return View("FormularioTractorPublicacionVenta");
+                //return RedirectToAction("ObtenerMaquinariaPorId", new { id = venta.IdPublicacion });
+
             }
             catch (Exception ex)
             {
@@ -142,7 +192,7 @@ namespace WebAgro.Controllers
         {
             try
             {
-
+                caracteristica.IdCaracteristica = Caracteristica.UltimoIdCaracteristica++;
                 sistema.AltaCaracteristica(caracteristica);
                 HttpContext.Session.SetInt32("IdCaracteristicasSembradora", caracteristica.IdCaracteristica);
 
@@ -165,7 +215,7 @@ namespace WebAgro.Controllers
         {
             try
             {
-
+                direccion.IdDireccion = Direccion.UltimoIdDireccion++;
                 sistema.AltaDireccion(direccion);
                 HttpContext.Session.SetInt32("IdDireccionSembradora", direccion.IdDireccion);
 
@@ -175,7 +225,7 @@ namespace WebAgro.Controllers
             {
                 TempData["Error"] = ex.Message;
                 return Redirect("FormularioSembradoraDireccion");
-
+                
             }
         }
 
@@ -207,6 +257,7 @@ namespace WebAgro.Controllers
                 sembradora.Caracteristica = caracteristicaEnCach;
                 sembradora.Direccion = direccionEnCach;
 
+                sembradora.IdMaquinaria = Maquinaria.UltimoIdMaquinaria++;
 
                 sistema.AltaMaquinaria(sembradora);
                 //no olvidarme de hacer las session de las maquinarias como hice con las caracteristicas y direcciones
@@ -226,7 +277,7 @@ namespace WebAgro.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult FormularioSembradoraAltaPublicacionVenta(Venta venta)
+        public async Task<IActionResult> FormularioSembradoraAltaPublicacionVenta(Venta venta, IFormFile fotoArchivo)//parametro para guardar fotos
         {
             try
             {
@@ -241,9 +292,36 @@ namespace WebAgro.Controllers
                 venta.FechaPublicacionVenta = DateTime.Now;
 
 
+                // Guardar la imagen si viene archivo
+                if (fotoArchivo != null && fotoArchivo.Length > 0)
+                {                                 //para chatgpt: _webHostEnvironment esto me aparece en rojo
+                    var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "uploads");
+                    if (!Directory.Exists(uploadsFolder))
+                        Directory.CreateDirectory(uploadsFolder);
+
+                    var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(fotoArchivo.FileName);
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await fotoArchivo.CopyToAsync(fileStream);// y todo esto tambien me aparece en rojo
+                    }
+
+                    venta.Foto = "/uploads/" + uniqueFileName;
+                }
+                else
+                {
+                    // Opcional: poner una imagen por defecto si no se subió ninguna foto
+                    venta.Foto = "/images/default-maquinaria.jpg";
+                }
+
+                venta.IdPublicacion = Publicacion.UltimoIdPublicacion++;
                 sistema.AltaPublicacion(venta);
+
                 ViewBag.Exito = "✅ Maquinaria Sembradora publicada con éxito";
                 return View("FormularioSembradoraPublicacionVenta");
+                //return RedirectToAction("ObtenerMaquinariaPorId", new { id = venta.IdPublicacion });
+
 
             }
             catch (Exception ex)
@@ -288,10 +366,32 @@ namespace WebAgro.Controllers
         [HttpPost]
         public IActionResult FiltradoPorMarcaDeMaquinaria(string marca)
         {
-            List<Publicacion> VerPorMarca = sistema.ObtenerMaquinariaPorMarca(marca);
-            return View(VerPorMarca);
+            try
+            {
+                List<Publicacion> VerPorMarca = sistema.ObtenerMaquinariaPorMarca(marca);
+                return View(VerPorMarca);
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = ex.Message;
+                return Redirect("TodasLasPublicacionesEnVenta");
+            }
         }
 
         #endregion
+
+ 
+        //public IActionResult ObtenerMaquinariaPorId(int id)
+        //{
+        //    Publicacion MaquinarEnVentaSuDetalle = sistema.ObtenerPublicacionPorId(id);
+        //    return View(MaquinarEnVentaSuDetalle);
+        //}
+        public IActionResult ObtenerMaquinariaPorId(int id)
+        {
+            Publicacion publicacion = sistema.ObtenerPublicacionPorMaquinariaId(id);
+            return View(publicacion);
+        }
+        //PUDE VER DETALLE DE UNA MAQUINARIA QUE YO PUBLIQUE, ES UN BUEN AVANCE SOLO TUVE QUE IR AL ID DE LA MAQUINARIA QUE ESTA PUBLICADA, Y NO AL ID DE LA PUBLICACION
+
     }
 }

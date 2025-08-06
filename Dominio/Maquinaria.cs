@@ -20,7 +20,6 @@ namespace Dominio
 
         public Maquinaria() 
         {
-            IdMaquinaria = UltimoIdMaquinaria++;
 
         }
         public Maquinaria(Direccion direccion,Caracteristica caracteristica,string otrasCaracteristicas)

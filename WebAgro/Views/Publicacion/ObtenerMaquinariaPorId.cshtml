@@ -1,0 +1,99 @@
+﻿@using Dominio
+@model Publicacion
+@{
+    ViewData["Title"] = "Detalle de Maquinaria";
+    var venta = Model as Dominio.Venta;
+    var maquinaria = Model.UnaMaquina;
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Imagen grande -->
+        <div class="col-md-6">
+            <div class="card shadow-sm p-2 d-flex justify-content-center align-items-center" style="height: 400px; background-color: #f8f9fa;">
+                <img src="@venta.Foto"
+                     onerror="this.onerror=null; this.src='/images/sin-imagen.png';"
+                     alt="@venta.Titulo"
+                     class="rounded"
+                     style="width: 100%; height: 100%; object-fit: contain;" />
+            </div>
+        </div>
+
+
+
+      
+
+        <!-- Info general -->
+        <div class="col-md-6">
+            <div class="card shadow-sm p-4">
+                <h2 class="text-success">@venta?.Titulo</h2>
+                <h4 class="text-danger mb-4">USD @venta?.PrecioVenta</h4>
+
+                <h5 class="mb-2">Características generales</h5>
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item"><strong>Marca:</strong> @maquinaria.Caracteristica?.Marca</li>
+                    <li class="list-group-item"><strong>Modelo:</strong> @maquinaria.Caracteristica?.Modelo</li>
+                    <li class="list-group-item"><strong>Año:</strong> @maquinaria.Caracteristica?.Anio</li>
+                    <li class="list-group-item"><strong>Usado:</strong> @(maquinaria.Caracteristica?.EsUsado == true ? "Sí" : "No")</li>
+                    <li class="list-group-item"><strong>Único Dueño:</strong> @(maquinaria.Caracteristica?.UnicoDuenio == true ? "Sí" : "No")</li>
+                    <li class="list-group-item"><strong>Combustible:</strong> @maquinaria.Caracteristica?.TipoDeCombustible</li>
+                    <li class="list-group-item"><strong>Tipo de Dirección:</strong> @maquinaria.Caracteristica?.TipoDeDireccion</li>
+                </ul>
+
+                <h5 class="mb-2">Ubicación</h5>
+                <p class="mb-1"><strong>Ciudad:</strong> @maquinaria.Direccion?.Ciudad</p>
+                <p class="mb-1"><strong>Barrio:</strong> @maquinaria.Direccion?.Barrio</p>
+                <p><strong>País:</strong> @maquinaria.Direccion?.Pais</p>
+
+                <h5 class="mt-4 mb-2">Descripción adicional</h5>
+                <p>@maquinaria.OtrasCaracteristicas</p>
+
+                <h5 class="mt-4 mb-2">Detalles técnicos</h5>
+               
+                @if(Model is Publicacion publicacion)
+                {
+                if (publicacion.UnaMaquina is Tractor tractor)
+                {
+                    <p><strong>Tiene Cabina:</strong> @(tractor.TieneCabina ? "Sí" : "No")</p>
+                }
+                else if (publicacion.UnaMaquina is Sembradora sembradora)
+                {
+                    <p><strong>Tipo de Sembradora:</strong> @sembradora.TipoDeSembradora</p>
+                }
+                else if (publicacion.UnaMaquina is Cosechadora cosechadora)
+                {
+                    <p><strong>Tipo:</strong> @cosechadora.TipoCosechadora</p>
+                    <p><strong>Capacidad de Carga:</strong> @cosechadora.CapacidadDeCarga kg</p>
+                    <p><strong>Rueda Dual:</strong> @(cosechadora.EsRuedaDual ? "Sí" : "No")</p>
+                }
+                else if (publicacion.UnaMaquina is Fertilizadora fertilizadora)
+                {
+                    <p><strong>Marca Motor:</strong> @fertilizadora.MarcaMotor</p>
+                    <p><strong>Potencia:</strong> @fertilizadora.Potencia HP</p>
+                    <p><strong>Doble Tracción:</strong> @(fertilizadora.DobleTraccion ? "Sí" : "No")</p>
+                }
+
+                else if (publicacion.UnaMaquina is CargadoraPala cargadora)
+                {
+                    <p><strong>Cilindro:</strong> @cargadora.Cilindro</p>
+                    <p><strong>Marca Motor:</strong> @cargadora.MarcaMotor</p>
+                }
+                }
+
+                <!-- Botón Comprar -->
+                <form asp-action="ComprarMaquinaria" method="post" class="mt-4">
+                    <input type="hidden" name="id" value="@maquinaria.IdMaquinaria" />
+                    <button type="submit" class="btn btn-success btn-lg w-100">
+                        🛒 Comprar
+                    </button>
+                </form>
+                <a asp-action="TodasLasPublicacionesEnVenta" asp-controller="Publicacion" class="btn btn-secondary mt-3 w-100">
+                    🔙 Volver a todas las publicaciones
+                </a>
+                <p style="color:red;">Tipo detectado: @maquinaria.GetType().FullName</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+

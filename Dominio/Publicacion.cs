@@ -20,7 +20,7 @@ namespace Dominio
 
         public Publicacion() 
         {
-            IdPublicacion = UltimoIdPublicacion++;
+            
         }
         public Publicacion( string titulo, string foto, Maquinaria unaMaquina, Cliente clienteVende,TipoDePublicacion tipoDePublicacion)
         {

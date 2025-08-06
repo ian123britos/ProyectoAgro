@@ -22,7 +22,7 @@ namespace Dominio
 
         public Caracteristica()
         {
-            IdCaracteristica = UltimoIdCaracteristica++;
+          
         }
         public Caracteristica(string categoria, string marca, string modelo, int anio, bool esUsado, bool unicoDuenio, TipoCombustible tipoDeCombustible, TipoDireccion tipoDeDireccion)
         {

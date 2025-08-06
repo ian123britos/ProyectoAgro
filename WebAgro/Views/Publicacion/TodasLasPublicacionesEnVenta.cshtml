@@ -5,7 +5,13 @@
     <h2 class="mb-4">📦 Publicaciones de Venta</h2>
 
      <!-- FILTRO DE MARCA -->
-        <div class="card mb-4">
+
+     <div class="card mb-4">
+
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger">@TempData["Error"]</div>
+        }
         <div class="card-body">
             <form asp-action="FiltradoPorMarcaDeMaquinaria" method="post" class="row g-3 align-items-end">
                 <div class="col-md-6">
@@ -45,7 +51,10 @@
                 {
                     <div class="col">
                         <div class="card h-100 shadow-sm">
-                            <img src="@venta.Foto" /images/sin-imagen.png"" class="card-img-top" alt="@venta.Titulo" style="height: 200px; object-fit: cover;">
+                            @* linea para mostrar fotos: *@
+                            <img src="@venta.Foto" onerror="this.onerror=null; this.src='/images/sin-imagen.png';" class="card-img-top" alt="@venta.Titulo" style="height: 200px; object-fit: cover;">
+                            @* <img src="@venta.Foto" alt="Imagen de maquinaria" class="card-img-top" style="height: 200px; object-fit: cover;"> *@
+
                             <div class="card-body">
                                 <h5 class="card-title">@venta.Titulo</h5>
                                 @* <p class="card-text text-muted">@venta.UnaMaquina?.TipoVechiculo()</p> *@
@@ -60,11 +69,13 @@
                             </div>
                             <div class="card-footer d-flex justify-content-between align-items-center">
                                 <span class="fw-bold text-success">USD @venta.PrecioVenta</span>
-                                <form action="/" method="post">
-                                <button type="submit" style="background-color: rgba(0, 128, 0, 0.1); color: green; border: 1px solid green; border-radius: 5px; padding: 5px 10px;">
+                                <a href="@Url.Action("ObtenerMaquinariaPorId", "Publicacion", new { id = pub.UnaMaquina.IdMaquinaria })"
+                                   class="btn"
+                                   style="background-color: rgba(0, 128, 0, 0.1); color: green; border: 1px solid green; border-radius: 5px; padding: 5px 10px; transition: background-color 0.3s ease;"
+                                   onmouseover="this.style.backgroundColor='rgba(0, 128, 0, 0.2)'"
+                                   onmouseout="this.style.backgroundColor='rgba(0, 128, 0, 0.1)'">
                                     Ver Detalle
-                                </button>
-                                </form>
+                                </a>
                                 @* <small class="text-muted">@venta.FechaPublicacionVenta.ToShortDateString()</small> *@
                             </div>
                         </div>

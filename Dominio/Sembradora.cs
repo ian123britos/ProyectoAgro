@@ -15,9 +15,9 @@ namespace Dominio
         { }
         public override string TipoVechiculo() => "Sembradora";
 
-        //public override string ToString()
-        //{
-        //    return TipoVechiculo();
-        //}
+        public override string ToString()
+        {
+            return TipoVechiculo();
+        }
     }
 }
