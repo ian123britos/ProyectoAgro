@@ -1,0 +1,70 @@
+﻿@using Dominio
+@model Caracteristica
+<style>
+
+    body {
+        background-color: #e8f5e9; /* Verde suave */
+    }
+
+</style>
+
+
+<h1 class="text-center fs-4 mb-4">Complete los campos</h1>
+<div class="container p-3 rounded shadow-sm" style="background-color: #fff; max-width: 600px;">
+    <h5 class="mb-3">🛠️ Paso 1 - Características</h5>
+
+    <form asp-action="FormularioFertilizadoraAltaCaracteristicas" method="post" class="small">
+
+        <div class="mb-2">
+            <label asp-for="Categoria" class="form-label">Categoría</label>
+            <input asp-for="Categoria" class="form-control form-control-sm" />
+        </div>
+
+        <div class="mb-2">
+            <label asp-for="Marca" class="form-label">Marca</label>
+            <input asp-for="Marca" class="form-control form-control-sm" />
+        </div>
+
+        <div class="mb-2">
+            <label asp-for="Modelo" class="form-label">Modelo</label>
+            <input asp-for="Modelo" class="form-control form-control-sm" />
+        </div>
+
+        <div class="mb-2">
+            <label asp-for="Anio" class="form-label">Año fabricación</label>
+            <input asp-for="Anio" class="form-control form-control-sm" />
+        </div>
+
+        <div class="form-check form-switch mb-2">
+            <input asp-for="EsUsado" class="form-check-input" />
+            <label asp-for="EsUsado" class="form-check-label">Usado</label>
+        </div>
+
+        <div class="form-check form-switch mb-2">
+            <input asp-for="UnicoDuenio" class="form-check-input" />
+            <label asp-for="UnicoDuenio" class="form-check-label">Único Dueño</label>
+        </div>
+
+        <div class="mb-2">
+            <label asp-for="TipoDeCombustible" class="form-label">Tipo de Combustible</label>
+            <select asp-for="TipoDeCombustible" class="form-select form-select-sm"
+                    asp-items="Html.GetEnumSelectList<TipoCombustible>()"></select>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="TipoDeDireccion" class="form-label">Tipo de Dirección</label>
+            <select asp-for="TipoDeDireccion" class="form-select form-select-sm"
+                    asp-items="Html.GetEnumSelectList<TipoDireccion>()"></select>
+        </div>
+
+        <button type="submit" class="btn btn-success btn-sm w-100">Siguiente ➡️</button>
+
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger mt-2 p-2 small">@TempData["Error"]</div>
+        }
+    </form>
+</div>
+
+@* Sí, asp-for="Marca" genera internamente name="Marca" y id="Marca", junto con el value, etc.
+Pero la gran ventaja es que asp-for está fuertemente tipado y vinculado a tu modelo. *@ 

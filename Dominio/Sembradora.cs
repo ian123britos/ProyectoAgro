@@ -10,9 +10,11 @@ namespace Dominio
     {
         public string TipoDeSembradora {  get; set; }
         public Sembradora() { }
-        public Sembradora(string categoria, Direccion direccion, Caracteristica caracteristica, string otrasCaracteristicas) : 
+        public Sembradora(string tipoSembradora,string categoria, Direccion direccion, Caracteristica caracteristica, string otrasCaracteristicas) : 
             base(direccion, caracteristica, otrasCaracteristicas)
-        { }
+        {
+            TipoDeSembradora = tipoSembradora;
+        }
         public override string TipoVechiculo() => "Sembradora";
 
         public override string ToString()

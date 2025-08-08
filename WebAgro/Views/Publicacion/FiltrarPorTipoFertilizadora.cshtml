@@ -1,0 +1,76 @@
+﻿@model List<Dominio.Venta>
+
+<style>
+    body {
+        background-color: #e8f5e9; /* Verde suave */
+    }
+
+    .fertilizadora-card {
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+    }
+
+    .fertilizadora-card:hover {
+        transform: scale(1.02);
+    }
+
+    .fertilizadora-title {
+        color: #0277bd; /* Azul oscuro */
+        font-weight: bold;
+    }
+
+    .fertilizadora-footer {
+        background-color: rgba(0, 119, 189, 0.05);
+        border-top: 1px solid #b3e5fc;
+    }
+</style>
+
+<div class="container py-5">
+    <h2 class="mb-4 text-info fw-bold text-center">💧 Fertilizadoras en Venta</h2>
+
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-light text-center">No hay fertilizadoras en venta disponibles.</div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            @foreach (var venta in Model)
+            {
+                <div class="col">
+                    <div class="card h-100 fertilizadora-card">
+                        <img src="@venta.Foto" onerror="this.onerror=null; this.src='/images/sin-imagen.png';"
+                             class="card-img-top" alt="@venta.Titulo"
+                             style="height: 200px; object-fit: cover; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+
+                        <div class="card-body">
+                            <h5 class="card-title fertilizadora-title">@venta.Titulo</h5>
+                            <p class="card-text">
+                                <strong>Marca:</strong> @venta.UnaMaquina.Caracteristica.Marca <br />
+                                <strong>Modelo:</strong> @venta.UnaMaquina.Caracteristica.Modelo <br />
+                                <strong>Año:</strong> @venta.UnaMaquina.Caracteristica.Anio
+                            </p>
+                            <p class="card-text">
+                                <strong>Ubicación:</strong> @venta.UnaMaquina.Direccion.Ciudad, @venta.UnaMaquina.Direccion.Pais
+                            </p>
+                        </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center fertilizadora-footer">
+                            <span class="fw-bold text-info">USD @venta.PrecioVenta</span>
+                            <a href="@Url.Action("ObtenerMaquinariaPorId", "Publicacion", new { id = venta.UnaMaquina.IdMaquinaria })"
+                               class="btn btn-outline-info btn-sm">
+                                Ver Detalle
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    <div class="mt-4 text-center">
+        <a href="@Url.Action("TodasLasPublicacionesEnVenta", "Publicacion")" class="btn btn-secondary">
+            ⬅️ Volver a Todas las Publicaciones
+        </a>
+    </div>
+</div>

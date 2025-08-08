@@ -26,6 +26,34 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRmlsdHJhZG9Qb3JNYXJjYURlTWFxdWluYXJpYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/FiltrarPorTipoFertilizadora.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRmlsdHJhclBvclRpcG9GZXJ0aWxpemFkb3JhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/FiltrarPorTipoSembradora.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRmlsdHJhclBvclRpcG9TZW1icmFkb3JhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/FiltrarPorTipoTractor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRmlsdHJhclBvclRpcG9UcmFjdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/FormularioFertilizadoraCaracteristicas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRm9ybXVsYXJpb0ZlcnRpbGl6YWRvcmFDYXJhY3RlcmlzdGljYXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/FormularioFertilizadoraDireccion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRm9ybXVsYXJpb0ZlcnRpbGl6YWRvcmFEaXJlY2Npb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/FormularioFertilizadoraMaquinaria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRm9ybXVsYXJpb0ZlcnRpbGl6YWRvcmFNYXF1aW5hcmlhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/FormularioFertilizadoraPublicacionVenta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRm9ybXVsYXJpb0ZlcnRpbGl6YWRvcmFQdWJsaWNhY2lvblZlbnRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/FormularioSembradoraCaracteristicas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRm9ybXVsYXJpb1NlbWJyYWRvcmFDYXJhY3RlcmlzdGljYXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -76,6 +104,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/UsrCliente/FormularioLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNyQ2xpZW50ZVxGb3JtdWxhcmlvTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/UsrCliente/FormularioRegistro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNyQ2xpZW50ZVxGb3JtdWxhcmlvUmVnaXN0cm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/_ViewImports.cshtml]

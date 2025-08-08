@@ -343,6 +343,7 @@ namespace WebAgro.Controllers
         {
             try
             {
+                caracteristica.IdCaracteristica = Caracteristica.UltimoIdCaracteristica++;
                 sistema.AltaCaracteristica(caracteristica);
                 HttpContext.Session.SetInt32("IdCaracteristicaFertilizadora", caracteristica.IdCaracteristica);
                 return Redirect("FormularioFertilizadoraDireccion");
@@ -353,13 +354,140 @@ namespace WebAgro.Controllers
                 return Redirect("FormularioFertilizadoraCaracteristicas");
             }
         }
+
+        public IActionResult FormularioFertilizadoraDireccion()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult FormularioFertilizadoraAltaDireccion(Direccion direccion)
+        {
+            try
+            {
+                
+                direccion.IdDireccion = Direccion.UltimoIdDireccion++;
+                sistema.AltaDireccion(direccion);
+                HttpContext.Session.SetInt32("IdDireccionFertilizadora", direccion.IdDireccion);
+
+                return Redirect("FormularioFertilizadoraMaquinaria");
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = ex.Message;
+                return Redirect("FormularioFertilizadoraDireccion");
+
+            }
+        }
+
+        public IActionResult FormularioFertilizadoraMaquinaria()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult FormularioFertilizadoraAltaMaquinaria(Fertilizadora fertilizadora)
+        {
+            try
+            {
+                //traigo los datos para luego asignarlos a sembradora
+                int? caracteristicaCacheada = HttpContext.Session.GetInt32("IdCaracteristicaFertilizadora");
+                int? direccionCacheada = HttpContext.Session.GetInt32("IdDireccionFertilizadora");
+
+                if (caracteristicaCacheada == null || direccionCacheada == null)
+                {
+                    throw new Exception("Falto completar campos en las caracteristicas o en direccion");
+
+                }
+
+                //guardo los datos que traje
+                Caracteristica caracteristicaEnCach = sistema.ObtenerCaracteristicaPorId(caracteristicaCacheada.Value);
+                Direccion direccionEnCach = sistema.ObtenerDireccionPorId(direccionCacheada.Value);
+
+                //asigno los datos a la Sembradora
+                fertilizadora.Caracteristica = caracteristicaEnCach;
+                fertilizadora.Direccion = direccionEnCach;
+
+                fertilizadora.IdMaquinaria = Maquinaria.UltimoIdMaquinaria++;
+
+                sistema.AltaMaquinaria(fertilizadora);
+                //no olvidarme de hacer las session de las maquinarias como hice con las caracteristicas y direcciones
+                HttpContext.Session.SetInt32("IdMaquinariaFertilizadoraa", fertilizadora.IdMaquinaria);
+                return Redirect("FormularioFertilizadoraPublicacionVenta");
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = ex.Message;
+                return Redirect("FormularioFertilizadoraMaquinaria");
+            }
+
+        }
+
+        public IActionResult FormularioFertilizadoraPublicacionVenta()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> FormularioFertilizadoraAltaPublicacionVenta(Venta venta, IFormFile fotoArchivo)//parametro para guardar fotos
+        {
+            try
+            {
+                int? FertilizadoraCacheada = HttpContext.Session.GetInt32("IdMaquinariaFertilizadoraa");
+                if (FertilizadoraCacheada == null)
+                {
+                    throw new Exception("Falto completar campos en maquinaria sembradora");
+                }
+
+                Maquinaria FertilizadoraEnCach = sistema.ObtenerMaquinariaPorId(FertilizadoraCacheada.Value);
+                venta.UnaMaquina = FertilizadoraEnCach;
+                venta.FechaPublicacionVenta = DateTime.Now;
+
+
+                // Guardar la imagen si viene archivo
+                if (fotoArchivo != null && fotoArchivo.Length > 0)
+                {                                 //para chatgpt: _webHostEnvironment esto me aparece en rojo
+                    var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "uploads");
+                    if (!Directory.Exists(uploadsFolder))
+                        Directory.CreateDirectory(uploadsFolder);
+
+                    var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(fotoArchivo.FileName);
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await fotoArchivo.CopyToAsync(fileStream);// y todo esto tambien me aparece en rojo
+                    }
+
+                    venta.Foto = "/uploads/" + uniqueFileName;
+                }
+                else
+                {
+                    // Opcional: poner una imagen por defecto si no se subió ninguna foto
+                    venta.Foto = "/images/default-maquinaria.jpg";
+                }
+
+                venta.IdPublicacion = Publicacion.UltimoIdPublicacion++;
+                sistema.AltaPublicacion(venta);
+
+                ViewBag.Exito = "✅ Maquinaria Fertilizadora publicada con éxito";
+                return View("FormularioFertilizadoraPublicacionVenta");
+                //return RedirectToAction("ObtenerMaquinariaPorId", new { id = venta.IdPublicacion });
+
+
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = ex.Message;
+                return Redirect("FormularioFertilizadoraPublicacionVenta");
+            }
+        }
         #endregion
 
 
         #region Filtrados:
         public IActionResult TodasLasPublicacionesEnVenta()
         {
-            List<Publicacion> lista = sistema.GetPublicacions();
+            List<Venta> lista = sistema.ObtenerTodasLasPublicacionesVenta();
             return View(lista);
         }
 
@@ -378,9 +506,31 @@ namespace WebAgro.Controllers
             }
         }
 
+
+        //Filtrados por Maquinaria:
+        public IActionResult FiltrarPorTipoTractor()
+        {
+            List<Venta> FiltradoPorTractoresEnVenta = sistema.ObtenerListaDeTractoresEnVenta();
+            return View(FiltradoPorTractoresEnVenta);
+
+        }
+
+        public IActionResult FiltrarPorTipoSembradora()
+        {
+            List<Venta> FiltradoPorSembradorasEnVenta = sistema.ObtenerListaDeSembradorasEnVenta();
+
+            return View(FiltradoPorSembradorasEnVenta);
+        }
+
+        public IActionResult FiltrarPorTipoFertilizadora()
+        {
+            List<Venta> FiltradoPorFertilizadorasEnVenta = sistema.ObtenerListaDeFertilizadorasEnVenta();
+
+            return View(FiltradoPorFertilizadorasEnVenta);
+        }
         #endregion
 
- 
+
         //public IActionResult ObtenerMaquinariaPorId(int id)
         //{
         //    Publicacion MaquinarEnVentaSuDetalle = sistema.ObtenerPublicacionPorId(id);

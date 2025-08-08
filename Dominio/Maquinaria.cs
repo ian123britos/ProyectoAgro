@@ -1,42 +1,42 @@
 ﻿
-using Dominio.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+    using Dominio.Interfaces;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
 
 
-namespace Dominio
-{
-    public abstract class Maquinaria :IValidable
+    namespace Dominio
     {
-       public int IdMaquinaria {  get; set; }
-        public static int UltimoIdMaquinaria { get; set; } = 1;
-        public Direccion Direccion { get; set; }
-        public Caracteristica Caracteristica { get; set; }
-        public string OtrasCaracteristicas { get; set; }
+        public abstract class Maquinaria :IValidable
+        {
+           public int IdMaquinaria {  get; set; }
+            public static int UltimoIdMaquinaria { get; set; } = 1;
+            public Direccion Direccion { get; set; }
+            public Caracteristica Caracteristica { get; set; }
+            public string OtrasCaracteristicas { get; set; }
         
 
-        public Maquinaria() 
-        {
+            public Maquinaria() 
+            {
 
-        }
-        public Maquinaria(Direccion direccion,Caracteristica caracteristica,string otrasCaracteristicas)
-        {
-            IdMaquinaria = UltimoIdMaquinaria++;
-            Direccion = direccion;
-            Caracteristica = caracteristica;
-            OtrasCaracteristicas = otrasCaracteristicas;
+            }
+            public Maquinaria(Direccion direccion,Caracteristica caracteristica,string otrasCaracteristicas)
+            {
+                IdMaquinaria = UltimoIdMaquinaria++;
+                Direccion = direccion;
+                Caracteristica = caracteristica;
+                OtrasCaracteristicas = otrasCaracteristicas;
 
-        }
-        public abstract string TipoVechiculo();
+            }
+            public abstract string TipoVechiculo();
 
-        public void Validar()
-        {
-            ValidarOtrasCaracteristicas();
+            public void Validar()
+            {
+                ValidarOtrasCaracteristicas();
 
-        }
+            }
 
         private void ValidarOtrasCaracteristicas()
         {

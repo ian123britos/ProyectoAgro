@@ -1,0 +1,46 @@
+﻿@using Dominio
+@model Fertilizadora
+
+<style>
+    body {
+        background-color: #e8f5e9; /* Verde suave */
+    }
+</style>
+
+@{
+    ViewData["Title"] = "Paso 3 - Información de la Fertilizadora";
+}
+
+<div class="container p-3 rounded shadow-sm" style="background-color: #fff; max-width: 600px;">
+    <h5 class="mb-3 text-success fw-semibold">💧 Paso 3 - Información de la Fertilizadora</h5>
+
+    <form asp-action="FormularioFertilizadoraAltaMaquinaria" method="post" class="small">
+
+        <div class="mb-3">
+            <label asp-for="MarcaMotor" class="form-label">Marca del Motor</label>
+            <input asp-for="MarcaMotor" class="form-control form-control-sm" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Potencia" class="form-label">Potencia (HP)</label>
+            <input asp-for="Potencia" class="form-control form-control-sm" type="number" />
+        </div>
+
+        <div class="mb-3 form-check">
+            <input asp-for="DobleTraccion" class="form-check-input" type="checkbox" />
+            <label asp-for="DobleTraccion" class="form-check-label">¿Tiene doble tracción?</label>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="OtrasCaracteristicas" class="form-label">Otras características</label>
+            <input asp-for="OtrasCaracteristicas" class="form-control form-control-sm" />
+        </div>
+
+        <button type="submit" class="btn btn-success btn-sm w-100">Siguiente ➡️</button>
+
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger mt-2 p-2 small">@TempData["Error"]</div>
+        }
+    </form>
+</div>

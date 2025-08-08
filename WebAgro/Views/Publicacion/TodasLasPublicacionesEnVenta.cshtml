@@ -1,46 +1,84 @@
-﻿
-@using Dominio
-@model List<Publicacion>
-<div class="container mt-5">
-    <h2 class="mb-4">📦 Publicaciones de Venta</h2>
+﻿@using Dominio
+@model List<Venta>
 
-     <!-- FILTRO DE MARCA -->
+<style>
+    /* Fondo verde suave para todo el contenedor */
+    body {
+        background-color: #e8f5e9; /* Verde suave */
+    }
 
-     <div class="card mb-4">
+    /* Cards blancas con sombra y borde redondeado para separarlas del fondo */
+    .card-maquinaria {
+        background-color: white;
+        border-radius: 1rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.2s ease;
+    }
 
-        @if (TempData["Error"] != null)
-        {
-            <div class="alert alert-danger">@TempData["Error"]</div>
+        .card-maquinaria:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
+
+    /* Botones estilo uniforme */
+    .btn-custom {
+        border-radius: 0.75rem;
+        font-weight: 600;
+    }
+</style>
+
+<div class="container mt-5 fondo-verde">
+
+    <h2 class="mb-4 text-success fw-bold text-center">
+        🚜 Maquinarias Disponibles para la Venta
+    </h2>
+
+    <!-- FILTRO POR TIPO DE MAQUINARIA -->
+    <div class="card mb-4 shadow-sm rounded-4" style="background-color: #d9f2d9; border: 1px solid #a3dca3;">
         <div class="card-body">
-            <form asp-action="FiltradoPorMarcaDeMaquinaria" method="post" class="row g-3 align-items-end">
-                <div class="col-md-6">
-                    <label for="marca" class="form-label">Filtrar por marca</label>
-                    <select name="marca" id="marca" class="form-select">
-                        <option value="">Buscar Maquinaria por Marca</option>
-                        @{
-                            var marcasUnicas = Model
-                            .Where(p => p.UnaMaquina?.Caracteristica?.Marca != null)
-                            .Select(p => p.UnaMaquina.Caracteristica.Marca)
-                            .Distinct();
+            <h5 class="card-title mb-3 text-success fw-semibold">
+                🔎 Filtrá por tipo de maquinaria
+            </h5>
 
-                            foreach (var marca in marcasUnicas)
-                            {
-                                <option value="@marca">@marca</option>
-                            }
-                        }
-                    </select>
+            <div class="row justify-content-center g-3">
+                <div class="col-10 col-md-6 col-lg-4">
+                    <a asp-controller="Publicacion" asp-action="FiltrarPorTipoTractor" class="btn btn-success btn-custom w-100 shadow">
+                        🚜 TRACTOR
+                    </a>
                 </div>
-                <div class="col-md-auto">
-                    <button class="btn btn-primary mt-3" type="submit">🔍 Buscar</button>
+
+                <div class="col-10 col-md-6 col-lg-4">
+                    <a asp-controller="Publicacion" asp-action="FiltrarPorTipoSembradora" class="btn btn-primary btn-custom w-100 shadow">
+                        🌾 SEMBRADORA
+                    </a>
                 </div>
-            </form>
+
+                <div class="col-10 col-md-6 col-lg-4">
+                    <a asp-controller="Publicacion" asp-action="FiltrarPorTipoFertilizadora" class="btn btn-info btn-custom w-100 shadow">
+                        💧 FERTILIZADORA
+                    </a>
+                </div>
+
+                <div class="col-10 col-md-6 col-lg-4">
+                    <a asp-controller="Publicacion" asp-action="FiltrarPorTipoCosechadora" class="btn btn-warning btn-custom w-100 shadow">
+                        🌽 COSECHADORA
+                    </a>
+                </div>
+
+                <div class="col-10 col-md-6 col-lg-4">
+                    <a asp-controller="Publicacion" asp-action="FiltrarPorTipoCargadoraDePala" class="btn btn-danger btn-custom w-100 shadow">
+                        ☁️ CARGADORA DE PALA
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>  
+    </div>
 
+
+    <!-- LISTADO DE PUBLICACIONES -->
     @if (Model.Count == 0)
     {
-        <div class="alert alert-info">No hay publicaciones de venta cargadas.</div>
+        <div class="alert alert-info text-center">No hay publicaciones de venta cargadas.</div>
     }
     else
     {
@@ -50,14 +88,11 @@
                 if (pub is Venta venta)
                 {
                     <div class="col">
-                        <div class="card h-100 shadow-sm">
-                            @* linea para mostrar fotos: *@
-                            <img src="@venta.Foto" onerror="this.onerror=null; this.src='/images/sin-imagen.png';" class="card-img-top" alt="@venta.Titulo" style="height: 200px; object-fit: cover;">
-                            @* <img src="@venta.Foto" alt="Imagen de maquinaria" class="card-img-top" style="height: 200px; object-fit: cover;"> *@
+                        <div class="card card-maquinaria h-100 shadow-sm">
+                            <img src="@venta.Foto" onerror="this.onerror=null; this.src='/images/sin-imagen.png';" class="card-img-top rounded-top-4" alt="@venta.Titulo" style="height: 200px; object-fit: cover;">
 
                             <div class="card-body">
-                                <h5 class="card-title">@venta.Titulo</h5>
-                                @* <p class="card-text text-muted">@venta.UnaMaquina?.TipoVechiculo()</p> *@
+                                <h5 class="card-title text-success fw-bold">@venta.Titulo</h5>
                                 <p class="card-text">
                                     <strong>Marca:</strong> @venta.UnaMaquina.Caracteristica.Marca <br />
                                     <strong>Modelo:</strong> @venta.UnaMaquina.Caracteristica.Modelo <br />
@@ -67,7 +102,7 @@
                                     <strong>Ubicación:</strong> @venta.UnaMaquina.Direccion.Ciudad, @venta.UnaMaquina.Direccion.Pais
                                 </p>
                             </div>
-                            <div class="card-footer d-flex justify-content-between align-items-center">
+                            <div class="card-footer d-flex justify-content-between align-items-center bg-white border-0">
                                 <span class="fw-bold text-success">USD @venta.PrecioVenta</span>
                                 <a href="@Url.Action("ObtenerMaquinariaPorId", "Publicacion", new { id = pub.UnaMaquina.IdMaquinaria })"
                                    class="btn"
@@ -76,7 +111,6 @@
                                    onmouseout="this.style.backgroundColor='rgba(0, 128, 0, 0.1)'">
                                     Ver Detalle
                                 </a>
-                                @* <small class="text-muted">@venta.FechaPublicacionVenta.ToShortDateString()</small> *@
                             </div>
                         </div>
                     </div>
@@ -85,4 +119,3 @@
         </div>
     }
 </div>
-

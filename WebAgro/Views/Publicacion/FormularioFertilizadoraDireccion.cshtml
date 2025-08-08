@@ -1,0 +1,45 @@
+﻿
+@using Dominio
+@model Direccion
+<style>
+
+    body {
+        background-color: #e8f5e9; /* Verde suave */
+    }
+
+</style>
+<h1 class="text-center fs-4 mb-4">Complete los campos</h1>
+<div class="container p-3 rounded shadow-sm" style="background-color: #fff; max-width: 600px;">
+    <h5 class="mb-3">📍 Paso 2 - Dirección</h5>
+
+    <form asp-action="FormularioFertilizadoraAltaDireccion" method="post" class="small">
+
+        <div class="mb-2">
+            <label asp-for="Pais" class="form-label">País</label>
+            <input asp-for="Pais" class="form-control form-control-sm" />
+        </div>
+
+        <div class="mb-2">
+            <label asp-for="Ciudad" class="form-label">Ciudad</label>
+            <input asp-for="Ciudad" class="form-control form-control-sm" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Barrio" class="form-label">Barrio</label>
+            <input asp-for="Barrio" class="form-control form-control-sm" />
+        </div>
+
+        <button type="submit" class="btn btn-success btn-sm w-100">Siguiente ➡️</button>
+
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger mt-2 p-2 small">@TempData["Error"]</div>
+        }
+    </form>
+</div>
+
+
+
+
+ @* asp-for="Marca" genera internamente name="Marca" y id="Marca", junto con el value, etc.
+Pero la gran ventaja es que asp-for *@

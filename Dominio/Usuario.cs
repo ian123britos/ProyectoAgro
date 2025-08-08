@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class Usuario:IValidable
+    public abstract class Usuario:IValidable
     {
         public int Id { get; set; }
         public static int UltimoId { get; set; } = 1;
@@ -41,9 +41,6 @@ namespace Dominio
         private void ValidarPassword()
         {
             bool tieneNumero = false;
-            bool tieneMayuscula = false;
-            bool tieneMinuscula = false;
-            bool tieneCaracterEspecial = false;
             if (string.IsNullOrEmpty(Contrasenia))
             {
                 throw new Exception("La contraseña no puede ser vacía");
@@ -60,27 +57,16 @@ namespace Dominio
                     int i = 0;
                     while (i < Contrasenia.Length)
                     {
-                        if ((int)Contrasenia[i] >= 65 && (int)Contrasenia[i] <= 90)//tiene mayuscula?
-                        {
-                            tieneMayuscula = true;
-                        }
-                        if ((int)Contrasenia[i] >= 97 && (int)Contrasenia[i] <= 122)//tiene minuscula?
-                        {
-                            tieneMinuscula = true;
-                        }
+                   
                         if ((int)Contrasenia[i] >= 48 && (int)Contrasenia[i] <= 57)//tiene numero?
                         {
                             tieneNumero = true;
                         }
-                        if ((int)Contrasenia[i] >= 33 && (int)Contrasenia[i] <= 47 || (int)Contrasenia[i] >= 58 && (int)Contrasenia[i] <= 64 || (int)Contrasenia[i] >= 91 && (int)Contrasenia[i] <= 96)
-                        {
-                            tieneCaracterEspecial = true;
-                        }
                         i++;
                     }
-                    if (!tieneMayuscula || !tieneMinuscula || !tieneNumero || !tieneCaracterEspecial)
+                    if (!tieneNumero)
                     {
-                        throw new Exception("La contraseña debe de tener por lo menos una mayuscula, una minuscula , un numero y un caracter especial");
+                        throw new Exception("La contraseña debe de tener por lo menos un numero ");
 
                     }
 

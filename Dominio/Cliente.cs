@@ -12,6 +12,9 @@ namespace Dominio
         public string Apellido { get; set; }
         public int Telefono { get; set; }
 
+        public Cliente()
+        {
+        }
         public Cliente(string nombre, string apellido,int telefono,string email, string password,Rol rol) : base( email, password,rol)
         {
              Nombre = nombre;
@@ -28,14 +31,22 @@ namespace Dominio
 
         }
 
-        //private void ValidarTelefono()
-        //{
+        private void ValidarTelefono()
+        {
+            // Convertimos a string por si Telefono es int
+            string telefonoStr = Telefono.ToString();
 
-        //    if (Telefono != 9)
-        //    {
-        //        throw new Exception("Ingresa un numero de telefono correcto");
-        //    }
-        //}
+            if (string.IsNullOrWhiteSpace(telefonoStr))
+            {
+                throw new Exception("El número de teléfono no puede estar vacío");
+            }
+
+            if (telefonoStr.Length != 9 || !telefonoStr.All(char.IsDigit))
+            {
+                throw new Exception("Ingresa un número de teléfono válido con 9 dígitos");
+            }
+        }
+
         private void ValidarApellido()
         {
             if (string.IsNullOrEmpty(Apellido))

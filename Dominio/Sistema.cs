@@ -624,16 +624,16 @@ namespace Dominio
 
         private void PreCargaMaquinariaSembradora()
         {
-            Sembradora sembradora51 = new Sembradora("Neumática", ObtenerDireccionPorId(51), ObtenerCaracteristicaPorId(51), "Equipo bien cuidado");
-            Sembradora sembradora52 = new Sembradora("Precisión", ObtenerDireccionPorId(52), ObtenerCaracteristicaPorId(52), "Última revisión hecha");
-            Sembradora sembradora53 = new Sembradora("Mecánica", ObtenerDireccionPorId(53), ObtenerCaracteristicaPorId(53), "Muy buen estado general");
-            Sembradora sembradora54 = new Sembradora("Directa", ObtenerDireccionPorId(54), ObtenerCaracteristicaPorId(54), "Poco uso en campo");
-            Sembradora sembradora55 = new Sembradora("Agrícola", ObtenerDireccionPorId(55), ObtenerCaracteristicaPorId(55), "Incluye accesorios");
-            Sembradora sembradora56 = new Sembradora("Precisión", ObtenerDireccionPorId(56), ObtenerCaracteristicaPorId(56), "Perfecta para siembra de precisión");
-            Sembradora sembradora57 = new Sembradora("Neumática", ObtenerDireccionPorId(57), ObtenerCaracteristicaPorId(57), "Recién salida de servicio");
-            Sembradora sembradora58 = new Sembradora("Mecánica", ObtenerDireccionPorId(58), ObtenerCaracteristicaPorId(58), "Ideal para grandes superficies");
-            Sembradora sembradora59 = new Sembradora("Directa", ObtenerDireccionPorId(59), ObtenerCaracteristicaPorId(59), "Alta eficiencia");
-            Sembradora sembradora60 = new Sembradora("Agrícola", ObtenerDireccionPorId(60), ObtenerCaracteristicaPorId(60), "Equipamiento completo");
+            Sembradora sembradora51 = new Sembradora("Sembradora de Voleo", "Neumática", ObtenerDireccionPorId(51), ObtenerCaracteristicaPorId(51), "Equipo bien cuidado");
+            Sembradora sembradora52 = new Sembradora("Sembradora para siembra directa", "Precisión", ObtenerDireccionPorId(52), ObtenerCaracteristicaPorId(52), "Última revisión hecha");
+            Sembradora sembradora53 = new Sembradora("Sembradora de Voleo", "Mecánica", ObtenerDireccionPorId(53), ObtenerCaracteristicaPorId(53), "Muy buen estado general");
+            Sembradora sembradora54 = new Sembradora("Sembradora en línea", "Directa", ObtenerDireccionPorId(54), ObtenerCaracteristicaPorId(54), "Poco uso en campo");
+            Sembradora sembradora55 = new Sembradora("Sembradora para siembra directa", "Agrícola", ObtenerDireccionPorId(55), ObtenerCaracteristicaPorId(55), "Incluye accesorios");
+            Sembradora sembradora56 = new Sembradora("Sembradora de Voleo", "Precisión", ObtenerDireccionPorId(56), ObtenerCaracteristicaPorId(56), "Perfecta para siembra de precisión");
+            Sembradora sembradora57 = new Sembradora("Sembradora para siembra directa", "Neumática", ObtenerDireccionPorId(57), ObtenerCaracteristicaPorId(57), "Recién salida de servicio");
+            Sembradora sembradora58 = new Sembradora("Sembradora en línea", "Mecánica", ObtenerDireccionPorId(58), ObtenerCaracteristicaPorId(58), "Ideal para grandes superficies");
+            Sembradora sembradora59 = new Sembradora("Sembradora de Voleo", "Directa", ObtenerDireccionPorId(59), ObtenerCaracteristicaPorId(59), "Alta eficiencia");
+            Sembradora sembradora60 = new Sembradora("Sembradora en línea", "Agrícola", ObtenerDireccionPorId(60), ObtenerCaracteristicaPorId(60), "Equipamiento completo");
 
             AltaMaquinaria(sembradora51);
             AltaMaquinaria(sembradora52);
@@ -764,6 +764,43 @@ namespace Dominio
             return VerMaquinariasPorMarca;
         }
 
+        public List<Venta> ObtenerListaDeTractoresEnVenta()
+        {
+            List<Venta> ListaTractoresEnVenta = new List<Venta>();
+            foreach (Publicacion p in listaPublicaciones)
+            {
+                if (p is Venta v && p.UnaMaquina is Tractor)
+                {
+                    ListaTractoresEnVenta.Add(v);
+                }
+            }
+            return ListaTractoresEnVenta;
+        }
+        public List<Venta> ObtenerListaDeSembradorasEnVenta()
+        {
+            List<Venta> ListaSembradorasEnVenta = new List<Venta>();
+            foreach (Publicacion p in listaPublicaciones)
+            {
+                if (p is Venta v && p.UnaMaquina is Sembradora)
+                {
+                    ListaSembradorasEnVenta.Add(v);
+                }
+            }
+            return ListaSembradorasEnVenta;
+        }
+        
+        public List<Venta> ObtenerListaDeFertilizadorasEnVenta()
+        {
+            List<Venta> ListaDeFertilizadorasEnVenta =new List<Venta>();
+            foreach(Publicacion p in listaPublicaciones)
+            {
+                if(p is Venta v && p.UnaMaquina is Fertilizadora)
+                {
+                    ListaDeFertilizadorasEnVenta.Add(v);
+                }
+            }
+            return ListaDeFertilizadorasEnVenta;
+        }
 
         #endregion
 
@@ -842,7 +879,11 @@ namespace Dominio
             throw new Exception("No existe una direccion con ese Id");
         }
 
+
+        
        
+
+
 
 
 
