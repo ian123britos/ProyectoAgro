@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebAgro")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+024de26012452f27d494ac631ea39fb791553070")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8185bdb4258290b9fadbb7704aac8e90057df365")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebAgro")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebAgro")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
