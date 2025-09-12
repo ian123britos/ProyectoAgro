@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "By1PLfpYSfSthj++o0+n7N1aKQKzNbm5DP3AKBqPB7g=",
+  "Hash": "46gvEQLNEBA0zskAFRPuA4kpxnh3DQ+EPVb5aKysaGs=",
   "Source": "WebAgro",
   "BasePath": "_content/WebAgro",
   "Mode": "Default",
@@ -1535,6 +1535,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\95102495-c32e-457d-8c9d-64cbb5b044b2.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\uploads\\a0959de0-ed6d-4bcb-bd6b-c859e8e4a4e2.jpeg",
+      "SourceId": "WebAgro",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\",
+      "BasePath": "_content/WebAgro",
+      "RelativePath": "uploads/a0959de0-ed6d-4bcb-bd6b-c859e8e4a4e2.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\a0959de0-ed6d-4bcb-bd6b-c859e8e4a4e2.jpeg"
     },
     {
       "Identity": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\uploads\\a5db715b-4a5e-40fc-a091-f1736c6abffd.jpeg",

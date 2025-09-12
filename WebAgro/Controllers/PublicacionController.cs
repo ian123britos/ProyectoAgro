@@ -1,22 +1,38 @@
-﻿using Dominio;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using System.IO;
+using Dominio.EntidadesNegocio;
+using CasosDeUsos.InterfacesCasosDeUso.ICaracteristicaCasoDeUso;
+using CasosDeUsos.DTOs.CaracteristicaDTOs;
+using ExcepcionesPropias;
+using CasosDeUsos.InterfacesCasosDeUso.IDireccionCasoDeUso;
+using CasosDeUsos.DTOs.DireccionDTO;
+using CasosDeUsos.InterfacesCasosDeUso.IMaquinariaCasosDeUso;
+using CasosDeUsos.DTOs.MaquinariaDTO;
 
 
 namespace WebAgro.Controllers
 {
     public class PublicacionController : Controller
     {
-        private readonly Sistema sistema;
+        public ICUAltaCaracteristica CUAltaCaracteristica { get; set; }
+        public ICUAltaDireccion CUAltaDireccion { get; set; }
+        public ICUAltaMaquinariaTractor CUAltaMaquinariaTractor { get; set; }
+        public ICUAltaMaquinariaSembradora CUAltaMaquinariaSembradora { get; set; }
+        public ICUAltaMaquinariaFertilizadora CUAltaMaquinariaFertilizadora { get; set; }
+
         private readonly IWebHostEnvironment _webHostEnvironment;
 
         // Constructor con inyección de dependencias
-        public PublicacionController(IWebHostEnvironment webHostEnvironment)
+        public PublicacionController(IWebHostEnvironment webHostEnvironment,ICUAltaCaracteristica cUAltaCaracteristica, ICUAltaDireccion cUAltaDireccion, ICUAltaMaquinariaTractor cUAltaMaquinariaTractor, ICUAltaMaquinariaSembradora cUAltaMaquinariaSembradora, ICUAltaMaquinariaFertilizadora cUAltaMaquinariaFertilizadora)
         {
+            CUAltaCaracteristica = cUAltaCaracteristica;
             _webHostEnvironment = webHostEnvironment;
-            sistema = Sistema.ObtenerInstancia(); // <- MOVIDO AQUÍ
+            CUAltaDireccion = cUAltaDireccion;
+            CUAltaMaquinariaTractor = cUAltaMaquinariaTractor;
+            CUAltaMaquinariaSembradora = cUAltaMaquinariaSembradora;
+            CUAltaMaquinariaFertilizadora = cUAltaMaquinariaFertilizadora;
         }
 
         public IActionResult SeleccionarTipoMaquinaria()
@@ -34,24 +50,30 @@ namespace WebAgro.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult FormularioTractorAltaCaracteristica(Caracteristica caracteristica)
+        [ValidateAntiForgeryToken]
+        public IActionResult FormularioTractorAltaCaracteristica(CaracteristicaDTO caracteristicaDTO)
         {
             try
             {
-                // ✅ Asignar el ID manualmente porque el binding no lo hace
-                caracteristica.IdCaracteristica = Caracteristica.UltimoIdCaracteristica++;
 
-                sistema.AltaCaracteristica(caracteristica);
-                //guardo el id en la session para que se me vayan guardando los campos de  caracteristicas que se van ingresando
-                HttpContext.Session.SetInt32("IdCaracteristicaTractor", caracteristica.IdCaracteristica);
+               //Verifica si el modelo(cliente en tu caso) pasó todas las validaciones definidas.
+               if(ModelState.IsValid)
+                {
+                    CUAltaCaracteristica.Ejecutar(caracteristicaDTO);
+                    return Redirect("FormularioTractorDireccion");
+                }
 
-                return Redirect("FormularioTractorDireccion");
+            }
+            catch (CaracteristicaException ex)
+            {
+                TempData["Error"] = ex.Message;
             }
             catch (Exception ex)
             {
                 TempData["Error"] = ex.Message;
-                return Redirect("FormularioTractorCaracteristicas");
             }
+            return RedirectToAction("FormularioTractorCaracteristicas");
+
         }
 
 
@@ -60,63 +82,78 @@ namespace WebAgro.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult FormularioTractorAltaDireccion(Direccion direccion)
+        [ValidateAntiForgeryToken]
+        public IActionResult FormularioTractorAltaDireccion(DireccionDTO direccionDTO)
         {
             try
             {
-                // ✅ Asignar el ID manualmente porque el binding no lo hace
-                direccion.IdDireccion = Direccion.UltimoIdDireccion++;
 
-                sistema.AltaDireccion(direccion);
-                //guardo el id en la session para que se me vayan guardando los campos de Direcciones que se van ingresando
-                HttpContext.Session.SetInt32("IdDireccionTractor", direccion.IdDireccion);
-                return Redirect("FormularioTractorMaquinaria");
+                ////guardo el id en la session para que se me vayan guardando los campos de Direcciones que se van ingresando
+                //HttpContext.Session.SetInt32("IdDireccionTractor", direccion.IdDireccion);
+                if (ModelState.IsValid)
+                {
+                    CUAltaDireccion.Ejecutar(direccionDTO);
+                    return Redirect("FormularioTractorMaquinaria");
+
+                }
             }
-            catch (Exception ex)
+            catch (DireccionException ex)
             {
                 TempData["Error"] = ex.Message;
-                return Redirect("FormularioTractorDireccion");
             }
+            catch(Exception ex)
+            {
+                TempData["Error"] = ex.Message;
+            }
+            return RedirectToAction("FormularioTractorDireccion");
+          
         }
         public IActionResult FormularioTractorMaquinaria()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult FormularioTractorAltaMaquinaria(Tractor tractor)
+        [ValidateAntiForgeryToken]
+        public IActionResult FormularioTractorAltaMaquinaria(TractorDTO tractorDTO)
         {
             try
             {
                 //Traigo los datos guardados que han sido ingresados en caracteristicas y direccion para que se guarden aqui
-                int? caracteristicasCacheada = HttpContext.Session.GetInt32("IdCaracteristicaTractor");
-                int? direccionCacheada = HttpContext.Session.GetInt32("IdDireccionTractor");
-                if(caracteristicasCacheada == null || direccionCacheada == null)
-                {
-                    throw new Exception("Falto completar campos en las caracteristicas o en direccion");
-                }
+                //int? caracteristicasCacheada = HttpContext.Session.GetInt32("IdCaracteristicaTractor");
+                //int? direccionCacheada = HttpContext.Session.GetInt32("IdDireccionTractor");
+                //if(caracteristicasCacheada == null || direccionCacheada == null)
+                //{
+                //    throw new Exception("Falto completar campos en las caracteristicas o en direccion");
+                //}
 
-                //obtenemos las caracteristicas y las direcciones guardadas
-                Caracteristica caracteristicaEnCach = sistema.ObtenerCaracteristicaPorId(caracteristicasCacheada.Value);
-                Direccion direccionEnCach = sistema.ObtenerDireccionPorId(direccionCacheada.Value);
+                ////obtenemos las caracteristicas y las direcciones guardadas
+                //Caracteristica caracteristicaEnCach = sistema.ObtenerCaracteristicaPorId(caracteristicasCacheada.Value);
+                //Direccion direccionEnCach = sistema.ObtenerDireccionPorId(direccionCacheada.Value);
 
                 //asigno los datos al tractor
-                tractor.Caracteristica = caracteristicaEnCach;
-                tractor.Direccion = direccionEnCach;
+                //tractor.Caracteristica = caracteristicaEnCach;
+                //tractor.Direccion = direccionEnCach;
 
                 // ✅ Asignar ID manualmente
-                tractor.IdMaquinaria = Maquinaria.UltimoIdMaquinaria++;
+                //tractor.IdMaquinaria = Maquinaria.UltimoIdMaquinaria++;
 
-                sistema.AltaMaquinaria(tractor);
+                //sistema.AltaMaquinaria(tractor);
                 //Guardo el id en la session para que se me vayan guardando los campos de maquinaria que se van ingresando
-                HttpContext.Session.SetInt32("IdMaquinariaTractor", tractor.IdMaquinaria);
+                //HttpContext.Session.SetInt32("IdMaquinariaTractor", tractor.IdMaquinaria);
 
-                return Redirect("FormularioTractorPublicacionVenta");
+                if (ModelState.IsValid)
+                {
+                    CUAltaMaquinariaTractor.Ejecutar(tractorDTO);
+                    return Redirect("FormularioTractorPublicacionVenta");
+
+                }
             }
             catch (Exception ex)
             {
                 TempData["Error"] = ex.Message;
-                return Redirect("FormularioTractorMaquinaria");
             }
+            return RedirectToAction("FormularioTractorMaquinaria");
+
         }
 
 
@@ -125,6 +162,7 @@ namespace WebAgro.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> FormularioTractorAltaPublicacionVenta(Venta venta, IFormFile fotoArchivo)
         {
             try
@@ -163,7 +201,7 @@ namespace WebAgro.Controllers
                     venta.Foto = "/images/default-maquinaria.jpg";
                 }
 
-                venta.IdPublicacion = Publicacion.UltimoIdPublicacion++;
+                //venta.IdPublicacion = Publicacion.UltimoIdPublicacion++;
 
                 sistema.AltaPublicacion(venta);
                 ViewBag.Exito = "✅ Maquinaria Tractor publicada con éxito";
@@ -188,21 +226,30 @@ namespace WebAgro.Controllers
         }
 
         [HttpPost]
-        public IActionResult FormularioSembradoraAltaCaracteristicas(Caracteristica caracteristica)
+        [ValidateAntiForgeryToken]
+        public IActionResult FormularioSembradoraAltaCaracteristicas(CaracteristicaDTO caracteristicaDTO)
         {
             try
             {
-                caracteristica.IdCaracteristica = Caracteristica.UltimoIdCaracteristica++;
-                sistema.AltaCaracteristica(caracteristica);
-                HttpContext.Session.SetInt32("IdCaracteristicasSembradora", caracteristica.IdCaracteristica);
 
-                return Redirect("FormularioSembradoraDireccion");
+                //Verifica si el modelo(caracteristica en tu caso) pasó todas las validaciones definidas.
+                if (ModelState.IsValid)
+                {
+                    CUAltaCaracteristica.Ejecutar(caracteristicaDTO);
+                    return Redirect("FormularioSembradoraDireccion");
+                }
+
+            }
+            catch (CaracteristicaException ex)
+            {
+                TempData["Error"] = ex.Message;
             }
             catch (Exception ex)
             {
                 TempData["Error"] = ex.Message;
-                return Redirect("FormularioSembradoraCaracteristicas");
             }
+            return RedirectToAction("FormularioSembradoraCaracteristicas");
+
         }
 
         public IActionResult FormularioSembradoraDireccion()
@@ -211,22 +258,31 @@ namespace WebAgro.Controllers
         }
 
         [HttpPost]
-        public IActionResult FormularioSembradoraAltaDireccion(Direccion direccion)
+        [ValidateAntiForgeryToken]
+        public IActionResult FormularioSembradoraAltaDireccion(DireccionDTO direccionDTO)
         {
             try
             {
-                direccion.IdDireccion = Direccion.UltimoIdDireccion++;
-                sistema.AltaDireccion(direccion);
-                HttpContext.Session.SetInt32("IdDireccionSembradora", direccion.IdDireccion);
+                //HttpContext.Session.SetInt32("IdDireccionSembradora", direccion.IdDireccion);
+                if (ModelState.IsValid)
+                {
+                    CUAltaDireccion.Ejecutar(direccionDTO);
+                    return Redirect("FormularioSembradoraMaquinaria");
+                }
+            }
+            catch (DireccionException ex)
+            {
+                TempData["Error"] = ex.Message;
 
-                return Redirect("FormularioSembradoraMaquinaria");
             }
             catch (Exception ex)
             {
                 TempData["Error"] = ex.Message;
-                return Redirect("FormularioSembradoraDireccion");
-                
+
+
             }
+            return RedirectToAction("FormularioSembradoraDireccion");
+
         }
 
         public IActionResult FormularioSembradoraMaquinaria()
@@ -235,40 +291,29 @@ namespace WebAgro.Controllers
         }
 
         [HttpPost]
-        public IActionResult FormularioSembradoraAltaMaquinaria(Sembradora sembradora)
+        [ValidateAntiForgeryToken]
+        public IActionResult FormularioSembradoraAltaMaquinaria(SembradoraDTO sembradoraDTO)
         {
             try
             {
-                //traigo los datos para luego asignarlos a sembradora
-                int? caracteristicaCacheada = HttpContext.Session.GetInt32("IdCaracteristicasSembradora");
-                int? direccionCacheada = HttpContext.Session.GetInt32("IdDireccionSembradora");
-
-                if (caracteristicaCacheada == null || direccionCacheada == null)
+                if (ModelState.IsValid)
                 {
-                    throw new Exception("Falto completar campos en las caracteristicas o en direccion");
-
+                    CUAltaMaquinariaSembradora.Ejecutar(sembradoraDTO);
+                    return Redirect("FormularioSembradoraPublicacionVenta");
                 }
-
-                //guardo los datos que traje
-                Caracteristica caracteristicaEnCach = sistema.ObtenerCaracteristicaPorId(caracteristicaCacheada.Value);
-                Direccion direccionEnCach = sistema.ObtenerDireccionPorId(direccionCacheada.Value);
-
-                //asigno los datos a la Sembradora
-                sembradora.Caracteristica = caracteristicaEnCach;
-                sembradora.Direccion = direccionEnCach;
-
-                sembradora.IdMaquinaria = Maquinaria.UltimoIdMaquinaria++;
-
-                sistema.AltaMaquinaria(sembradora);
-                //no olvidarme de hacer las session de las maquinarias como hice con las caracteristicas y direcciones
-                HttpContext.Session.SetInt32("IdMaquinariaSembradora", sembradora.IdMaquinaria);
-                return Redirect("FormularioSembradoraPublicacionVenta");
+            }
+            catch (MaquinariaSembradoraException ex)
+            {
+                TempData["Error"] = ex.Message;
+               
             }
             catch (Exception ex)
             {
                 TempData["Error"] = ex.Message;
-                return Redirect("FormularioSembradoraMaquinaria");
+
             }
+            return RedirectToAction("FormularioSembradoraMaquinaria");
+
 
         }
 
@@ -315,7 +360,7 @@ namespace WebAgro.Controllers
                     venta.Foto = "/images/default-maquinaria.jpg";
                 }
 
-                venta.IdPublicacion = Publicacion.UltimoIdPublicacion++;
+                //venta.IdPublicacion = Publicacion.UltimoIdPublicacion++;
                 sistema.AltaPublicacion(venta);
 
                 ViewBag.Exito = "✅ Maquinaria Sembradora publicada con éxito";
@@ -339,20 +384,30 @@ namespace WebAgro.Controllers
         }
 
         [HttpPost]
-        public IActionResult FormularioFertilizadoraAltaCaracteristicas(Caracteristica caracteristica)
+        [ValidateAntiForgeryToken]
+        public IActionResult FormularioFertilizadoraAltaCaracteristicas(CaracteristicaDTO caracteristicaDTO)
         {
             try
             {
-                caracteristica.IdCaracteristica = Caracteristica.UltimoIdCaracteristica++;
-                sistema.AltaCaracteristica(caracteristica);
-                HttpContext.Session.SetInt32("IdCaracteristicaFertilizadora", caracteristica.IdCaracteristica);
-                return Redirect("FormularioFertilizadoraDireccion");
+
+                //Verifica si el modelo(cliente en tu caso) pasó todas las validaciones definidas.
+                if (ModelState.IsValid)
+                {
+                    CUAltaCaracteristica.Ejecutar(caracteristicaDTO);
+                    return Redirect("FormularioFertilizadoraDireccion");
+                }
+
+            }
+            catch (CaracteristicaException ex)
+            {
+                TempData["Error"] = ex.Message;
             }
             catch (Exception ex)
             {
                 TempData["Error"] = ex.Message;
-                return Redirect("FormularioFertilizadoraCaracteristicas");
             }
+            return RedirectToAction("FormularioFertilizadoraCaracteristicas");
+
         }
 
         public IActionResult FormularioFertilizadoraDireccion()
@@ -361,23 +416,30 @@ namespace WebAgro.Controllers
         }
 
         [HttpPost]
-        public IActionResult FormularioFertilizadoraAltaDireccion(Direccion direccion)
+        [ValidateAntiForgeryToken]
+        public IActionResult FormularioFertilizadoraAltaDireccion(DireccionDTO direccionDTO)
         {
             try
             {
-                
-                direccion.IdDireccion = Direccion.UltimoIdDireccion++;
-                sistema.AltaDireccion(direccion);
-                HttpContext.Session.SetInt32("IdDireccionFertilizadora", direccion.IdDireccion);
+                if (ModelState.IsValid)
+                {
+                    //HttpContext.Session.SetInt32("IdDireccionFertilizadora", direccion.IdDireccion);
+                    CUAltaDireccion.Ejecutar(direccionDTO);
+                    return Redirect("FormularioFertilizadoraMaquinaria");
+                }
+            }
+            catch (DireccionException ex)
+            {
+                TempData["Error"] = ex.Message;
 
-                return Redirect("FormularioFertilizadoraMaquinaria");
             }
             catch (Exception ex)
             {
                 TempData["Error"] = ex.Message;
-                return Redirect("FormularioFertilizadoraDireccion");
-
             }
+            return RedirectToAction("FormularioFertilizadoraDireccion");
+
+
         }
 
         public IActionResult FormularioFertilizadoraMaquinaria()
@@ -386,40 +448,27 @@ namespace WebAgro.Controllers
         }
 
         [HttpPost]
-        public IActionResult FormularioFertilizadoraAltaMaquinaria(Fertilizadora fertilizadora)
+        [ValidateAntiForgeryToken]
+        public IActionResult FormularioFertilizadoraAltaMaquinaria(FertilizadoraDTO fertilizadoraDTO)
         {
             try
             {
-                //traigo los datos para luego asignarlos a sembradora
-                int? caracteristicaCacheada = HttpContext.Session.GetInt32("IdCaracteristicaFertilizadora");
-                int? direccionCacheada = HttpContext.Session.GetInt32("IdDireccionFertilizadora");
-
-                if (caracteristicaCacheada == null || direccionCacheada == null)
+                if (ModelState.IsValid)
                 {
-                    throw new Exception("Falto completar campos en las caracteristicas o en direccion");
-
+                    CUAltaMaquinariaFertilizadora.Ejecutar(fertilizadoraDTO);
+                    return Redirect("FormularioFertilizadoraPublicacionVenta");
                 }
-
-                //guardo los datos que traje
-                Caracteristica caracteristicaEnCach = sistema.ObtenerCaracteristicaPorId(caracteristicaCacheada.Value);
-                Direccion direccionEnCach = sistema.ObtenerDireccionPorId(direccionCacheada.Value);
-
-                //asigno los datos a la Sembradora
-                fertilizadora.Caracteristica = caracteristicaEnCach;
-                fertilizadora.Direccion = direccionEnCach;
-
-                fertilizadora.IdMaquinaria = Maquinaria.UltimoIdMaquinaria++;
-
-                sistema.AltaMaquinaria(fertilizadora);
-                //no olvidarme de hacer las session de las maquinarias como hice con las caracteristicas y direcciones
-                HttpContext.Session.SetInt32("IdMaquinariaFertilizadoraa", fertilizadora.IdMaquinaria);
-                return Redirect("FormularioFertilizadoraPublicacionVenta");
+            }
+            catch (MaquinariaFertilizadoraException ex)
+            {
+                TempData["Error"] = ex.Message;
             }
             catch (Exception ex)
             {
                 TempData["Error"] = ex.Message;
-                return Redirect("FormularioFertilizadoraMaquinaria");
             }
+            return RedirectToAction("FormularioFertilizadoraMaquinaria");
+
 
         }
 
@@ -466,7 +515,7 @@ namespace WebAgro.Controllers
                     venta.Foto = "/images/default-maquinaria.jpg";
                 }
 
-                venta.IdPublicacion = Publicacion.UltimoIdPublicacion++;
+                //venta.IdPublicacion = Publicacion.UltimoIdPublicacion++;
                 sistema.AltaPublicacion(venta);
 
                 ViewBag.Exito = "✅ Maquinaria Fertilizadora publicada con éxito";

@@ -1,0 +1,6 @@
+C:\Users\hlbc7\Desktop\ProyectoAgro\LogicaAplicacion\obj\Debug\net8.0\LogicaAplicacion.csproj.AssemblyReference.cache
+C:\Users\hlbc7\Desktop\ProyectoAgro\LogicaAplicacion\obj\Debug\net8.0\LogicaAplicacion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hlbc7\Desktop\ProyectoAgro\LogicaAplicacion\obj\Debug\net8.0\LogicaAplicacion.AssemblyInfoInputs.cache
+C:\Users\hlbc7\Desktop\ProyectoAgro\LogicaAplicacion\obj\Debug\net8.0\LogicaAplicacion.AssemblyInfo.cs
+C:\Users\hlbc7\Desktop\ProyectoAgro\LogicaAplicacion\obj\Debug\net8.0\LogicaAplicacion.csproj.CoreCompileInputs.cache
+C:\Users\hlbc7\Desktop\ProyectoAgro\LogicaAplicacion\obj\Debug\net8.0\LogicaAplicacion.sourcelink.json

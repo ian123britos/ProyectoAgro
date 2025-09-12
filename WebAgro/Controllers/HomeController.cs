@@ -1,4 +1,4 @@
-using Dominio;
+using Dominio.EntidadesNegocio;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WebAgro.Models;

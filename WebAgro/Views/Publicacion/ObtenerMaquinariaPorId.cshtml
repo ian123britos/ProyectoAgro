@@ -1,4 +1,5 @@
-﻿@using Dominio
+﻿@    using Dominio;
+    using Dominio.EntidadesNegocio
 @model Publicacion
 <style>
 
@@ -9,7 +10,7 @@
 </style>
 @{
     ViewData["Title"] = "Detalle de Maquinaria";
-    var venta = Model as Dominio.Venta;
+    var venta = Model as Venta;
     var maquinaria = Model.UnaMaquina;
 }
 

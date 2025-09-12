@@ -1,0 +1,6 @@
+C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\obj\Debug\net8.0\CasosDeUsos.csproj.AssemblyReference.cache
+C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\obj\Debug\net8.0\CasosDeUsos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\obj\Debug\net8.0\CasosDeUsos.AssemblyInfoInputs.cache
+C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\obj\Debug\net8.0\CasosDeUsos.AssemblyInfo.cs
+C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\obj\Debug\net8.0\CasosDeUsos.csproj.CoreCompileInputs.cache
+C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\obj\Debug\net8.0\CasosDeUsos.sourcelink.json
