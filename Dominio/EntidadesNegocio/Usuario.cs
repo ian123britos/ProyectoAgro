@@ -8,34 +8,39 @@ using System.Threading.Tasks;
 
 namespace Dominio.EntidadesNegocio
 {
-    public abstract class Usuario
+    public abstract class Usuario:IEquatable<Usuario>
     {
         public int Id { get; private set; }
-        public static int UltimoId;
+
         public Email Email { get; set; }
         public Contrasenia Contrasenia { get; set; }
         public Rol Rol { get; set; }
 
 
-        public Usuario()
+        protected Usuario()
         {
-            Id = UltimoId++;
+          
 
         }
 
         public Usuario(string email, string password, Rol rol)
         {
-            Id = UltimoId++;
+           
             Email = new Email(email);
             Contrasenia = new Contrasenia(password);
             Rol = rol;
             
         }
        
-        public override bool Equals(object? obj)
+        //public override bool Equals(object? obj)
+        //{
+        //    Usuario usuario = (Usuario)obj;
+        //    return usuario.Email == Email;
+        //}
+
+        public bool Equals(Usuario? other)
         {
-            Usuario usuario = (Usuario)obj;
-            return usuario.Email == Email;
+            return Email == other.Email;
         }
     }
 }

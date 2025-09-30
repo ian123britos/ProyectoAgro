@@ -8,6 +8,10 @@ namespace CasosDeUsos.DTOs.MaquinariaDTO
 {
     public class TractorDTO:MaquinariaDTO
     {
+        public int id {  get; set; }
         public bool TieneCabina { get; set; }
+        // Propiedades para relacionar con entidades existentes
+        public int CaracteristicaId { get; set; }
+        public int DireccionId { get; set; }
     }
 }

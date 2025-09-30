@@ -1,3 +1,22 @@
+using CasosDeUsos.InterfacesCasosDeUso.ICaracteristicaCasoDeUso;
+using CasosDeUsos.InterfacesCasosDeUso.IDireccionCasoDeUso;
+using CasosDeUsos.InterfacesCasosDeUso.IMaquinariaCasosDeUso;
+using CasosDeUsos.InterfacesCasosDeUso.IPublicacionVenta;
+using Dominio.InterfacesRepositorio.InterfacesRepositorioCaracteristicas;
+using Dominio.InterfacesRepositorio.InterfacesRepositorioDireccion;
+using Dominio.InterfacesRepositorio.InterfacesRepositorioMaquinarias;
+using Dominio.InterfacesRepositorio.IRepositorioPublicacionVenta;
+using LogicaAccesoDatos;
+using LogicaAccesoDatos.Repositorios.RepositorioCaracteristicas;
+using LogicaAccesoDatos.Repositorios.RepositorioDirecciones;
+using LogicaAccesoDatos.Repositorios.RepositorioPublicacionVenta;
+using LogicaAccesoDatos.Repositorios.RepositoriosMaquinarias;
+using LogicaAplicacion.CasosDeUso.CasosDeUsoCaracteristica;
+using LogicaAplicacion.CasosDeUso.CasosDeUsoDireccion;
+using LogicaAplicacion.CasosDeUso.CasosDeUsoMaquinaria;
+using LogicaAplicacion.CasosDeUso.CasosDeUsoPublicacionVenta;
+using Microsoft.EntityFrameworkCore;
+
 namespace WebAgro
 {
     public class Program
@@ -9,14 +28,29 @@ namespace WebAgro
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            builder.Services.AddSession(
-                options =>
-                {
-                    options.IdleTimeout = TimeSpan.FromHours(5);
-                    options.Cookie.HttpOnly = true;
-                    options.Cookie.IsEssential = true;
-                });
+            //Repositorios
+            builder.Services.AddScoped<IRepositorioCaracteristica, RepositorioCaracteristicasEF>();
+            builder.Services.AddScoped<IRepositorioDireccion, RepositorioDireccionEF>();
+            builder.Services.AddScoped<IRepositorioMaquinaria, RepositorioMaquinaria>();
+            builder.Services.AddScoped<IRepositorioPublicacionVenta, RepositorioPublicacionVenta>();
 
+
+            //Casos de uso
+            builder.Services.AddScoped<ICUAltaDireccion, CUAltaDireccion>();
+            builder.Services.AddScoped<ICUAltaCaracteristica, CUAltaCaracteristica>();
+            builder.Services.AddScoped<ICUAltaMaquinariaTractor, CUAltaMaquinariaTractor>();
+            builder.Services.AddScoped<ICUAltaMaquinariaFertilizadora, CUAltaMaquinariaFertilizadora>();
+            builder.Services.AddScoped<ICUAltaPublicacionVenta, CUAltaPublicacionVenta>();
+
+            string conexionDB = builder.Configuration.GetConnectionString("CadenaConexionAgro");
+            builder.Services.AddDbContext<EmpresaContexto>(options => options.UseSqlServer(conexionDB));
+
+
+
+
+
+            //para trabajar con Session:
+            builder.Services.AddSession();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -30,6 +64,8 @@ namespace WebAgro
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            //para trabajar con Session:
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthorization();
@@ -37,7 +73,7 @@ namespace WebAgro
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
-            app.UseSession();
+    
 
             app.Run();
         }

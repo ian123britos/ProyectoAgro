@@ -8,6 +8,7 @@ namespace Dominio.EntidadesNegocio
 {
     public class Rol
     {
+        public int Id { get; set; }
         public string TipoDeRol {  get; set; }
 
         public Rol() { }

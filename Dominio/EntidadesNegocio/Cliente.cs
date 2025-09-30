@@ -14,7 +14,7 @@ namespace Dominio.EntidadesNegocio
         public string Apellido { get; set; }
         public Telefono Telefono { get; set; }
 
-        public Cliente()
+        public Cliente() : base()
         {
         }
         public Cliente(string nombre, string apellido, int telefono, string email, string password, Rol rol) : base(email, password, rol)

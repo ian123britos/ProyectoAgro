@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "Microsoft.EntityFrameworkCore.Abstractions/8.0.19": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "CasosDeUsos/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -19,7 +32,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "ExcepcionesPropias": "1.0.0"
+          "ExcepcionesPropias": "1.0.0",
+          "Microsoft.EntityFrameworkCore.Abstractions": "8.0.19"
         },
         "compile": {
           "bin/placeholder/Dominio.dll": {}
@@ -41,6 +55,21 @@
     }
   },
   "libraries": {
+    "Microsoft.EntityFrameworkCore.Abstractions/8.0.19": {
+      "sha512": "3INN1Vti9EUVwb83o5uygUdjHgZCPLmQPpKptixh3hivggUCq1eZmU9QtyxwmK0HA6NXbZ5tyPIHSQNsMPS6aw==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.abstractions/8.0.19",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
+        "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
+        "microsoft.entityframeworkcore.abstractions.8.0.19.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.nuspec"
+      ]
+    },
     "CasosDeUsos/1.0.0": {
       "type": "project",
       "path": "../CasosDeUsos/CasosDeUsos.csproj",

@@ -10,25 +10,23 @@ namespace Dominio.EntidadesNegocio
 {
     public class Caracteristica : IValidable
     {
-        public int IdCaracteristica { get; private set; }
-        public static int UltimoIdCaracteristica;
+        public int Id { get; private set; }
+
         public string Categoria { get; set; }
         public string Marca { get; set; }
         public string Modelo { get; set; }
         public int Anio { get; set; }
         public bool EsUsado { get; set; }
         public bool UnicoDuenio { get; set; }
-        public TipoCombustible TipoDeCombustible { get; set; }
-        public TipoDireccion TipoDeDireccion { get; set; }
+        public string TipoDeCombustible { get; set; }
+        public string TipoDeDireccion { get; set; }
 
         public Caracteristica()
         {
-            IdCaracteristica = UltimoIdCaracteristica++;
 
         }
-        public Caracteristica(string categoria, string marca, string modelo, int anio, bool esUsado, bool unicoDuenio, TipoCombustible tipoDeCombustible, TipoDireccion tipoDeDireccion)
+        public Caracteristica(string categoria, string marca, string modelo, int anio, bool esUsado, bool unicoDuenio, string tipoDeCombustible, string tipoDeDireccion)
         {
-            IdCaracteristica = UltimoIdCaracteristica++;
             Categoria = categoria;
             Marca = marca;
             Modelo = modelo;
@@ -45,9 +43,26 @@ namespace Dominio.EntidadesNegocio
             ValidarMarca();
             ValidarModelo();
             ValidarAnio();
+            ValidarTipoDeCombustible();
+            ValidarTipoDeDireccion();
 
         }
 
+        private void ValidarTipoDeDireccion()
+        {
+            if(string.IsNullOrEmpty(TipoDeDireccion))
+            {
+                throw new CaracteristicaException("El tipo de direccion no puede ser vacio (Manual,Automático,etc)");
+            }
+        }
+
+        private void ValidarTipoDeCombustible()
+        {
+            if (string.IsNullOrEmpty(TipoDeCombustible))
+            {
+                throw new CaracteristicaException("El tipo de combustible no puede ser vacio (Diesel,Nafta,etc)");
+            }
+        }
 
         private void ValidarAnio()
         {

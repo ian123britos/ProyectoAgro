@@ -25,6 +25,13 @@ namespace LogicaAccesoDatos.Repositorios.RepositorioDirecciones
                                    //SQL necesarias(INSERT, UPDATE, DELETE) para que la base de datos quede sincronizada con lo que tenés en memoria. :D
         }
 
+        public Direccion FindById(int id)
+        {
+            return Contexto.direcciones.Find(id);
+
+        }
+
+
         public void Delete(Direccion item)
         {
             throw new NotImplementedException();
@@ -35,10 +42,7 @@ namespace LogicaAccesoDatos.Repositorios.RepositorioDirecciones
             throw new NotImplementedException();
         }
 
-        public Direccion FindById(int id)
-        {
-            throw new NotImplementedException();
-        }
+     
 
         public void Update(int id, Direccion item)
         {

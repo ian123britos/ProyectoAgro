@@ -24,6 +24,9 @@ namespace LogicaAplicacion.CasosDeUso.CasosDeUsoDireccion
         {
             Direccion direccion = MapperDireccion.DireccionDTOoDireccion(direccionDTO);
             RepositorioDireccion.Add(direccion);
+
+            direccionDTO.Id = direccion.Id;//guardo el id con sus datos recientemente ingresados y los asigno al id de mi entidad
+            //luego va a persistir ese id en la session y esto me dio vidaaaaa, vamooo ahora se persisten los datos en objetos encadenados vamooo
         }
     }
 }

@@ -10,6 +10,10 @@ using CasosDeUsos.InterfacesCasosDeUso.IDireccionCasoDeUso;
 using CasosDeUsos.DTOs.DireccionDTO;
 using CasosDeUsos.InterfacesCasosDeUso.IMaquinariaCasosDeUso;
 using CasosDeUsos.DTOs.MaquinariaDTO;
+//using AspNetCore;
+using CasosDeUsos.InterfacesCasosDeUso.IPublicacionVenta;
+using CasosDeUsos.DTOs.PublicacionVentaDTO;
+using System.Reflection.PortableExecutable;
 
 
 namespace WebAgro.Controllers
@@ -18,20 +22,20 @@ namespace WebAgro.Controllers
     {
         public ICUAltaCaracteristica CUAltaCaracteristica { get; set; }
         public ICUAltaDireccion CUAltaDireccion { get; set; }
+        public ICUAltaPublicacionVenta CUAltaPublicacionVenta {  get; set; }
         public ICUAltaMaquinariaTractor CUAltaMaquinariaTractor { get; set; }
-        public ICUAltaMaquinariaSembradora CUAltaMaquinariaSembradora { get; set; }
         public ICUAltaMaquinariaFertilizadora CUAltaMaquinariaFertilizadora { get; set; }
 
         private readonly IWebHostEnvironment _webHostEnvironment;
 
         // Constructor con inyección de dependencias
-        public PublicacionController(IWebHostEnvironment webHostEnvironment,ICUAltaCaracteristica cUAltaCaracteristica, ICUAltaDireccion cUAltaDireccion, ICUAltaMaquinariaTractor cUAltaMaquinariaTractor, ICUAltaMaquinariaSembradora cUAltaMaquinariaSembradora, ICUAltaMaquinariaFertilizadora cUAltaMaquinariaFertilizadora)
+        public PublicacionController(IWebHostEnvironment webHostEnvironment,ICUAltaCaracteristica cUAltaCaracteristica, ICUAltaDireccion cUAltaDireccion, ICUAltaMaquinariaTractor cUAltaMaquinariaTractor, ICUAltaPublicacionVenta cUAltaPublicacionVenta, ICUAltaMaquinariaFertilizadora cUAltaMaquinariaFertilizadora)
         {
-            CUAltaCaracteristica = cUAltaCaracteristica;
             _webHostEnvironment = webHostEnvironment;
+            CUAltaCaracteristica = cUAltaCaracteristica;
             CUAltaDireccion = cUAltaDireccion;
             CUAltaMaquinariaTractor = cUAltaMaquinariaTractor;
-            CUAltaMaquinariaSembradora = cUAltaMaquinariaSembradora;
+            CUAltaPublicacionVenta = cUAltaPublicacionVenta;
             CUAltaMaquinariaFertilizadora = cUAltaMaquinariaFertilizadora;
         }
 
@@ -43,7 +47,6 @@ namespace WebAgro.Controllers
 
 
         #region Formulario para dar de alta un tractor
-
         public IActionResult FormularioTractorCaracteristicas()
         {
 
@@ -56,12 +59,12 @@ namespace WebAgro.Controllers
             try
             {
 
-               //Verifica si el modelo(cliente en tu caso) pasó todas las validaciones definidas.
-               if(ModelState.IsValid)
-                {
-                    CUAltaCaracteristica.Ejecutar(caracteristicaDTO);
-                    return Redirect("FormularioTractorDireccion");
-                }
+                  CUAltaCaracteristica.Ejecutar(caracteristicaDTO);
+
+                // guardo el id en Session
+                HttpContext.Session.SetInt32("CaracteristicaId", caracteristicaDTO.Id);
+
+                return Redirect("FormularioTractorDireccion");
 
             }
             catch (CaracteristicaException ex)
@@ -88,14 +91,13 @@ namespace WebAgro.Controllers
             try
             {
 
-                ////guardo el id en la session para que se me vayan guardando los campos de Direcciones que se van ingresando
-                //HttpContext.Session.SetInt32("IdDireccionTractor", direccion.IdDireccion);
-                if (ModelState.IsValid)
-                {
-                    CUAltaDireccion.Ejecutar(direccionDTO);
-                    return Redirect("FormularioTractorMaquinaria");
+                  CUAltaDireccion.Ejecutar(direccionDTO);
+                //Al crear el objeto (DireccionDTO) todavía no tiene un Id válido.
+                //El Id se asigna recién después de ejecutar
+                HttpContext.Session.SetInt32("DireccionId", direccionDTO.Id);
 
-                }
+                return Redirect("FormularioTractorMaquinaria");
+              
             }
             catch (DireccionException ex)
             {
@@ -108,6 +110,7 @@ namespace WebAgro.Controllers
             return RedirectToAction("FormularioTractorDireccion");
           
         }
+
         public IActionResult FormularioTractorMaquinaria()
         {
             return View();
@@ -118,35 +121,27 @@ namespace WebAgro.Controllers
         {
             try
             {
-                //Traigo los datos guardados que han sido ingresados en caracteristicas y direccion para que se guarden aqui
-                //int? caracteristicasCacheada = HttpContext.Session.GetInt32("IdCaracteristicaTractor");
-                //int? direccionCacheada = HttpContext.Session.GetInt32("IdDireccionTractor");
-                //if(caracteristicasCacheada == null || direccionCacheada == null)
-                //{
-                //    throw new Exception("Falto completar campos en las caracteristicas o en direccion");
-                //}
 
-                ////obtenemos las caracteristicas y las direcciones guardadas
-                //Caracteristica caracteristicaEnCach = sistema.ObtenerCaracteristicaPorId(caracteristicasCacheada.Value);
-                //Direccion direccionEnCach = sistema.ObtenerDireccionPorId(direccionCacheada.Value);
 
-                //asigno los datos al tractor
-                //tractor.Caracteristica = caracteristicaEnCach;
-                //tractor.Direccion = direccionEnCach;
+                //// Recupero los Ids de Característica y Dirección de la Session
+                int? caracteristicaId = HttpContext.Session.GetInt32("CaracteristicaId");
+                int? direccionId = HttpContext.Session.GetInt32("DireccionId");
 
-                // ✅ Asignar ID manualmente
-                //tractor.IdMaquinaria = Maquinaria.UltimoIdMaquinaria++;
-
-                //sistema.AltaMaquinaria(tractor);
-                //Guardo el id en la session para que se me vayan guardando los campos de maquinaria que se van ingresando
-                //HttpContext.Session.SetInt32("IdMaquinariaTractor", tractor.IdMaquinaria);
-
-                if (ModelState.IsValid)
+                if (!caracteristicaId.HasValue || !direccionId.HasValue)
                 {
-                    CUAltaMaquinariaTractor.Ejecutar(tractorDTO);
+                    TempData["Error"] = "Faltan datos de Característica o Dirección.";
+                    return RedirectToAction("FormularioTractorMaquinaria");
+                }
+
+                // Asigno los Ids al DTO para que el CU pueda relacionarlos
+                tractorDTO.CaracteristicaId = caracteristicaId.Value;
+                tractorDTO.DireccionId = direccionId.Value;
+
+
+                CUAltaMaquinariaTractor.Ejecutar(tractorDTO);
                     return Redirect("FormularioTractorPublicacionVenta");
 
-                }
+                
             }
             catch (Exception ex)
             {
@@ -163,20 +158,12 @@ namespace WebAgro.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> FormularioTractorAltaPublicacionVenta(Venta venta, IFormFile fotoArchivo)
+        public async Task<IActionResult> FormularioTractorAltaPublicacionVenta(VentaDTO ventaDTO, IFormFile fotoArchivo)
         {
             try
             {
-                int? tractorCacheado = HttpContext.Session.GetInt32("IdMaquinariaTractor");
-                if(tractorCacheado == null)
-                {
-                    throw new Exception("Falta completar datos en maquinaria");
-                }
+               
 
-                Maquinaria tractorEnCach = sistema.ObtenerMaquinariaPorId(tractorCacheado.Value);
-
-                venta.UnaMaquina = tractorEnCach;
-                venta.FechaPublicacionVenta = DateTime.Now;
 
                 // Guardar la imagen si viene archivo
                 if (fotoArchivo != null && fotoArchivo.Length > 0)
@@ -193,21 +180,18 @@ namespace WebAgro.Controllers
                         await fotoArchivo.CopyToAsync(fileStream);// y todo esto tambien me aparece en rojo
                     }
 
-                    venta.Foto = "/uploads/" + uniqueFileName;
+                    ventaDTO.Foto = "/uploads/" + uniqueFileName;
                 }
                 else
                 {
                     // Opcional: poner una imagen por defecto si no se subió ninguna foto
-                    venta.Foto = "/images/default-maquinaria.jpg";
+                    ventaDTO.Foto = "/images/default-maquinaria.jpg";
                 }
 
-                //venta.IdPublicacion = Publicacion.UltimoIdPublicacion++;
-
-                sistema.AltaPublicacion(venta);
+                CUAltaPublicacionVenta.Ejecutar(ventaDTO);
                 ViewBag.Exito = "✅ Maquinaria Tractor publicada con éxito";
                 return View("FormularioTractorPublicacionVenta");
                 //return RedirectToAction("ObtenerMaquinariaPorId", new { id = venta.IdPublicacion });
-
             }
             catch (Exception ex)
             {
@@ -233,11 +217,10 @@ namespace WebAgro.Controllers
             {
 
                 //Verifica si el modelo(caracteristica en tu caso) pasó todas las validaciones definidas.
-                if (ModelState.IsValid)
-                {
+
                     CUAltaCaracteristica.Ejecutar(caracteristicaDTO);
                     return Redirect("FormularioSembradoraDireccion");
-                }
+                
 
             }
             catch (CaracteristicaException ex)
@@ -256,7 +239,6 @@ namespace WebAgro.Controllers
         {
             return View();
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult FormularioSembradoraAltaDireccion(DireccionDTO direccionDTO)
@@ -264,11 +246,10 @@ namespace WebAgro.Controllers
             try
             {
                 //HttpContext.Session.SetInt32("IdDireccionSembradora", direccion.IdDireccion);
-                if (ModelState.IsValid)
-                {
+
                     CUAltaDireccion.Ejecutar(direccionDTO);
                     return Redirect("FormularioSembradoraMaquinaria");
-                }
+                
             }
             catch (DireccionException ex)
             {
@@ -296,11 +277,10 @@ namespace WebAgro.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    CUAltaMaquinariaSembradora.Ejecutar(sembradoraDTO);
+
+                    //CUAltaMaquinariaSembradora.Ejecutar(sembradoraDTO);
                     return Redirect("FormularioSembradoraPublicacionVenta");
-                }
+                
             }
             catch (MaquinariaSembradoraException ex)
             {
@@ -313,8 +293,6 @@ namespace WebAgro.Controllers
 
             }
             return RedirectToAction("FormularioSembradoraMaquinaria");
-
-
         }
 
         public IActionResult FormularioSembradoraPublicacionVenta()
@@ -322,20 +300,11 @@ namespace WebAgro.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> FormularioSembradoraAltaPublicacionVenta(Venta venta, IFormFile fotoArchivo)//parametro para guardar fotos
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> FormularioSembradoraAltaPublicacionVenta(VentaDTO ventaDTO, IFormFile fotoArchivo)//parametro para guardar fotos
         {
             try
             {
-                int? sembradoraCacheada = HttpContext.Session.GetInt32("IdMaquinariaSembradora");
-                if (sembradoraCacheada == null)
-                {
-                    throw new Exception("Falto completar campos en maquinaria sembradora");
-                }
-
-                Maquinaria sembradoraEnCach = sistema.ObtenerMaquinariaPorId(sembradoraCacheada.Value);
-                venta.UnaMaquina = sembradoraEnCach;
-                venta.FechaPublicacionVenta = DateTime.Now;
-
 
                 // Guardar la imagen si viene archivo
                 if (fotoArchivo != null && fotoArchivo.Length > 0)
@@ -352,22 +321,20 @@ namespace WebAgro.Controllers
                         await fotoArchivo.CopyToAsync(fileStream);// y todo esto tambien me aparece en rojo
                     }
 
-                    venta.Foto = "/uploads/" + uniqueFileName;
+                    ventaDTO.Foto = "/uploads/" + uniqueFileName;
                 }
                 else
                 {
                     // Opcional: poner una imagen por defecto si no se subió ninguna foto
-                    venta.Foto = "/images/default-maquinaria.jpg";
+                    ventaDTO.Foto = "/images/default-maquinaria.jpg";
                 }
 
                 //venta.IdPublicacion = Publicacion.UltimoIdPublicacion++;
-                sistema.AltaPublicacion(venta);
+                CUAltaPublicacionVenta.Ejecutar(ventaDTO);
 
                 ViewBag.Exito = "✅ Maquinaria Sembradora publicada con éxito";
                 return View("FormularioSembradoraPublicacionVenta");
                 //return RedirectToAction("ObtenerMaquinariaPorId", new { id = venta.IdPublicacion });
-
-
             }
             catch (Exception ex)
             {
@@ -391,11 +358,11 @@ namespace WebAgro.Controllers
             {
 
                 //Verifica si el modelo(cliente en tu caso) pasó todas las validaciones definidas.
-                if (ModelState.IsValid)
-                {
+                //if (ModelState.IsValid)
+                //{
                     CUAltaCaracteristica.Ejecutar(caracteristicaDTO);
                     return Redirect("FormularioFertilizadoraDireccion");
-                }
+                //}
 
             }
             catch (CaracteristicaException ex)
@@ -421,12 +388,11 @@ namespace WebAgro.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
+
                     //HttpContext.Session.SetInt32("IdDireccionFertilizadora", direccion.IdDireccion);
                     CUAltaDireccion.Ejecutar(direccionDTO);
                     return Redirect("FormularioFertilizadoraMaquinaria");
-                }
+                
             }
             catch (DireccionException ex)
             {
@@ -453,11 +419,10 @@ namespace WebAgro.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
+
                     CUAltaMaquinariaFertilizadora.Ejecutar(fertilizadoraDTO);
                     return Redirect("FormularioFertilizadoraPublicacionVenta");
-                }
+                
             }
             catch (MaquinariaFertilizadoraException ex)
             {
@@ -477,22 +442,11 @@ namespace WebAgro.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> FormularioFertilizadoraAltaPublicacionVenta(Venta venta, IFormFile fotoArchivo)//parametro para guardar fotos
+        public async Task<IActionResult> FormularioFertilizadoraAltaPublicacionVenta(VentaDTO ventaDTO, IFormFile fotoArchivo)//parametro para guardar fotos
         {
             try
             {
-                int? FertilizadoraCacheada = HttpContext.Session.GetInt32("IdMaquinariaFertilizadoraa");
-                if (FertilizadoraCacheada == null)
-                {
-                    throw new Exception("Falto completar campos en maquinaria sembradora");
-                }
-
-                Maquinaria FertilizadoraEnCach = sistema.ObtenerMaquinariaPorId(FertilizadoraCacheada.Value);
-                venta.UnaMaquina = FertilizadoraEnCach;
-                venta.FechaPublicacionVenta = DateTime.Now;
-
-
-                // Guardar la imagen si viene archivo
+                // ----------LOGICA PARA GUARDAR LA FOTO QUE EL CLIENTE PUBLICA PARA LA VENTA-----------------
                 if (fotoArchivo != null && fotoArchivo.Length > 0)
                 {                                 //para chatgpt: _webHostEnvironment esto me aparece en rojo
                     var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "uploads");
@@ -507,16 +461,17 @@ namespace WebAgro.Controllers
                         await fotoArchivo.CopyToAsync(fileStream);// y todo esto tambien me aparece en rojo
                     }
 
-                    venta.Foto = "/uploads/" + uniqueFileName;
+                    ventaDTO.Foto = "/uploads/" + uniqueFileName;
                 }
                 else
                 {
                     // Opcional: poner una imagen por defecto si no se subió ninguna foto
-                    venta.Foto = "/images/default-maquinaria.jpg";
+                    ventaDTO.Foto = "/images/default-maquinaria.jpg";
                 }
+                //------------------------------------------------------------------------------------------------------------
 
-                //venta.IdPublicacion = Publicacion.UltimoIdPublicacion++;
-                sistema.AltaPublicacion(venta);
+                
+                CUAltaPublicacionVenta.Ejecutar(ventaDTO);
 
                 ViewBag.Exito = "✅ Maquinaria Fertilizadora publicada con éxito";
                 return View("FormularioFertilizadoraPublicacionVenta");
@@ -533,51 +488,51 @@ namespace WebAgro.Controllers
         #endregion
 
 
-        #region Filtrados:
-        public IActionResult TodasLasPublicacionesEnVenta()
-        {
-            List<Venta> lista = sistema.ObtenerTodasLasPublicacionesVenta();
-            return View(lista);
-        }
+        //#region Filtrados:
+        //public IActionResult TodasLasPublicacionesEnVenta()
+        //{
+        //    List<Venta> lista = sistema.ObtenerTodasLasPublicacionesVenta();
+        //    return View(lista);
+        //}
 
-        [HttpPost]
-        public IActionResult FiltradoPorMarcaDeMaquinaria(string marca)
-        {
-            try
-            {
-                List<Publicacion> VerPorMarca = sistema.ObtenerMaquinariaPorMarca(marca);
-                return View(VerPorMarca);
-            }
-            catch (Exception ex)
-            {
-                TempData["Error"] = ex.Message;
-                return Redirect("TodasLasPublicacionesEnVenta");
-            }
-        }
+        //[HttpPost]
+        //public IActionResult FiltradoPorMarcaDeMaquinaria(string marca)
+        //{
+        //    try
+        //    {
+        //        List<Publicacion> VerPorMarca = sistema.ObtenerMaquinariaPorMarca(marca);
+        //        return View(VerPorMarca);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        TempData["Error"] = ex.Message;
+        //        return Redirect("TodasLasPublicacionesEnVenta");
+        //    }
+        //}
 
 
-        //Filtrados por Maquinaria:
-        public IActionResult FiltrarPorTipoTractor()
-        {
-            List<Venta> FiltradoPorTractoresEnVenta = sistema.ObtenerListaDeTractoresEnVenta();
-            return View(FiltradoPorTractoresEnVenta);
+        ////Filtrados por Maquinaria:
+        //public IActionResult FiltrarPorTipoTractor()
+        //{
+        //    List<Venta> FiltradoPorTractoresEnVenta = sistema.ObtenerListaDeTractoresEnVenta();
+        //    return View(FiltradoPorTractoresEnVenta);
 
-        }
+        //}
 
-        public IActionResult FiltrarPorTipoSembradora()
-        {
-            List<Venta> FiltradoPorSembradorasEnVenta = sistema.ObtenerListaDeSembradorasEnVenta();
+        //public IActionResult FiltrarPorTipoSembradora()
+        //{
+        //    List<Venta> FiltradoPorSembradorasEnVenta = sistema.ObtenerListaDeSembradorasEnVenta();
 
-            return View(FiltradoPorSembradorasEnVenta);
-        }
+        //    return View(FiltradoPorSembradorasEnVenta);
+        //}
 
-        public IActionResult FiltrarPorTipoFertilizadora()
-        {
-            List<Venta> FiltradoPorFertilizadorasEnVenta = sistema.ObtenerListaDeFertilizadorasEnVenta();
+        //public IActionResult FiltrarPorTipoFertilizadora()
+        //{
+        //    List<Venta> FiltradoPorFertilizadorasEnVenta = sistema.ObtenerListaDeFertilizadorasEnVenta();
 
-            return View(FiltradoPorFertilizadorasEnVenta);
-        }
-        #endregion
+        //    return View(FiltradoPorFertilizadorasEnVenta);
+        //}
+        //#endregion
 
 
         //public IActionResult ObtenerMaquinariaPorId(int id)
@@ -585,11 +540,11 @@ namespace WebAgro.Controllers
         //    Publicacion MaquinarEnVentaSuDetalle = sistema.ObtenerPublicacionPorId(id);
         //    return View(MaquinarEnVentaSuDetalle);
         //}
-        public IActionResult ObtenerMaquinariaPorId(int id)
-        {
-            Publicacion publicacion = sistema.ObtenerPublicacionPorMaquinariaId(id);
-            return View(publicacion);
-        }
+        //public IActionResult ObtenerMaquinariaPorId(int id)
+        //{
+        //    Publicacion publicacion = sistema.ObtenerPublicacionPorMaquinariaId(id);
+        //    return View(publicacion);
+        //}
         //PUDE VER DETALLE DE UNA MAQUINARIA QUE YO PUBLIQUE, ES UN BUEN AVANCE SOLO TUVE QUE IR AL ID DE LA MAQUINARIA QUE ESTA PUBLICADA, Y NO AL ID DE LA PUBLICACION
 
     }

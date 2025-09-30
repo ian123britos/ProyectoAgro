@@ -11,21 +11,18 @@ namespace Dominio.EntidadesNegocio
 {
     public abstract class Maquinaria 
     {
-        public int IdMaquinaria { get; private set; }
-        public static int UltimoIdMaquinaria;
+        public int Id { get; private set; }
         public Direccion Direccion { get; set; }
         public Caracteristica Caracteristica { get; set; }
         public OtrasCaracteristicas OtrasCaracteristicas { get; set; }
 
 
-        public Maquinaria()
+        protected Maquinaria()
         {
-            IdMaquinaria = UltimoIdMaquinaria++;
 
         }
         public Maquinaria(Direccion direccion, Caracteristica caracteristica, string otrasCaracteristicas)
         {
-            IdMaquinaria = UltimoIdMaquinaria++;
             Direccion = direccion;
             Caracteristica = caracteristica;
             OtrasCaracteristicas = new OtrasCaracteristicas(otrasCaracteristicas);

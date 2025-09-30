@@ -13,7 +13,7 @@ namespace Dominio.EntidadesNegocio
         public int Cilindro { get; set; }
         public string MarcaMotor { get; set; }
 
-        public CargadoraPala() { }
+        protected CargadoraPala() : base() { }
         public CargadoraPala(int cilindro, string marcaMotor, Direccion direccion, Caracteristica caracteristica, string otrasCaracteristicas) :
             base(direccion, caracteristica, otrasCaracteristicas)
         {

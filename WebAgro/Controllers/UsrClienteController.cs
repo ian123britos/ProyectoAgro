@@ -5,11 +5,7 @@ namespace WebAgro.Controllers
 {
     public class UsrClienteController : Controller
     {
-        private readonly Sistema sistema;
-        public UsrClienteController()
-        {
-            sistema = Sistema.ObtenerInstancia();
-        }
+        
         public IActionResult FormularioRegistro()
         {
             return View();
@@ -21,7 +17,7 @@ namespace WebAgro.Controllers
         {
             try
             {
-                sistema.AltaUsuario(cliente);
+                //sistema.AltaUsuario(cliente);
                 return Redirect("FormularioLogin");
             }
             catch (Exception ex)

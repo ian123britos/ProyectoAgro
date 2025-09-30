@@ -8,20 +8,26 @@ namespace Dominio.EntidadesNegocio
 {
     public class Compra
     {
-        public int IdCompra { get; private set; }
-        public static int UltimoIdCompra;
+        public int Id { get; private set; }
         public DateTime FechaCompra { get; set; }
-        public Cliente ClienteCompra { get; set; }
-        public Publicacion PublicacionComprada { get; set; }
 
-        public Compra()
+
+        // 🔹 FK explícita
+        public int ClienteCompraId { get; set; }
+        public Cliente ClienteCompra { get; set; }
+
+        // 🔹 FK explícita
+        public int PublicacionCompradaId { get; set; }
+        public Publicacion PublicacionComprada { get; set; }
+    
+
+
+        private Compra()
         {
-            IdCompra = UltimoIdCompra++;
 
         }
         public Compra(DateTime fechaCompra, Cliente clienteCompra, Publicacion publicacionComprada)
         {
-            IdCompra = UltimoIdCompra++;
             FechaCompra = fechaCompra;
             ClienteCompra = clienteCompra;
             PublicacionComprada = publicacionComprada;

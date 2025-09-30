@@ -1,4 +1,5 @@
-﻿using ExcepcionesPropias;
+﻿using Dominio.Interfaces;
+using ExcepcionesPropias;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Dominio.EntidadesNegocio
 {
-    public class Fertilizadora : Maquinaria
+    public class Fertilizadora : Maquinaria,IValidable
     {
         public string MarcaMotor { get; set; }
         public int Potencia { get; set; }
         public bool DobleTraccion { get; set; }
 
-        public Fertilizadora() { }
+        protected Fertilizadora() : base(){ }
 
         public Fertilizadora(string marcaMotor, int potencia, bool dobleTraccion, Direccion direccion, Caracteristica caracteristica, string otrasCaracteristicas) :
             base(direccion, caracteristica, otrasCaracteristicas)
@@ -31,7 +32,7 @@ namespace Dominio.EntidadesNegocio
 
         private void ValidarPotencia()
         {
-            if (Potencia <+ 0)
+            if (Potencia <= 0)
             {
                 throw new MaquinariaFertilizadoraException("La potencia de fertilizadora no puede ser 0 ni menor a 0");
             }

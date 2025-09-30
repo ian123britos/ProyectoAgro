@@ -10,3 +10,7 @@ C:\Users\hlbc7\Desktop\ProyectoAgro\Dominio\obj\Debug\net8.0\Dominio.dll
 C:\Users\hlbc7\Desktop\ProyectoAgro\Dominio\obj\Debug\net8.0\refint\Dominio.dll
 C:\Users\hlbc7\Desktop\ProyectoAgro\Dominio\obj\Debug\net8.0\Dominio.pdb
 C:\Users\hlbc7\Desktop\ProyectoAgro\Dominio\obj\Debug\net8.0\ref\Dominio.dll
+C:\Users\hlbc7\Desktop\ProyectoAgro\Dominio\bin\Debug\net8.0\ExcepcionesPropias.dll
+C:\Users\hlbc7\Desktop\ProyectoAgro\Dominio\bin\Debug\net8.0\ExcepcionesPropias.pdb
+C:\Users\hlbc7\Desktop\ProyectoAgro\Dominio\obj\Debug\net8.0\Dominio.csproj.AssemblyReference.cache
+C:\Users\hlbc7\Desktop\ProyectoAgro\Dominio\obj\Debug\net8.0\Dominio.csproj.Up2Date

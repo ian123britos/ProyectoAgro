@@ -12,7 +12,7 @@ namespace Dominio.EntidadesNegocio
         public int CapacidadDeCarga { get; set; }
         public bool EsRuedaDual { get; set; }
 
-        public Cosechadora() { }
+        protected Cosechadora() : base() { }
         public Cosechadora(string tipoCosechadora, int capacidadDeCarga, bool esRuedaDual, Direccion direccion, Caracteristica caracteristica, string otrasCaracteristicas) :
             base(direccion, caracteristica, otrasCaracteristicas)
         {

@@ -1,4 +1,5 @@
 ﻿using CasosDeUsos.DTOs.CaracteristicaDTOs;
+using CasosDeUsos.DTOs.MaquinariaDTO;
 using Dominio.EntidadesNegocio;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,10 @@ namespace LogicaAplicacion.Mapper.MapperCaracteristicas
     {
         public static Caracteristica CaracteristicaDTOoCaracteristica(CaracteristicaDTO caracteristicaDTO)
         {
+            if (caracteristicaDTO == null)
+            {
+                throw new ArgumentNullException("Datos incorrectos");
+            }
             return new Caracteristica(caracteristicaDTO.Categoria, caracteristicaDTO.Marca, caracteristicaDTO.Modelo, caracteristicaDTO.Anio, caracteristicaDTO.EsUsado, caracteristicaDTO.UnicoDuenio, caracteristicaDTO.TipoDeCombustible, caracteristicaDTO.TipoDeDireccion);
 
         }

@@ -7,7 +7,7 @@ namespace WebAgro.Controllers
 {
     public class HomeController : Controller
     {
-        private Sistema sis = Sistema.ObtenerInstancia();
+       
 
         public IActionResult Index()
         {

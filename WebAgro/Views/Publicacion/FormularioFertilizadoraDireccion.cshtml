@@ -31,11 +31,12 @@
 
         <button type="submit" class="btn btn-success btn-sm w-100">Siguiente ➡️</button>
 
-        @if (TempData["Error"] != null)
-        {
-            <div class="alert alert-danger mt-2 p-2 small">@TempData["Error"]</div>
-        }
+
     </form>
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger mt-2 p-2 small">@TempData["Error"]</div>
+    }
 </div>
 
 

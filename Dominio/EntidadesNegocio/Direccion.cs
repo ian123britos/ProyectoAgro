@@ -10,21 +10,18 @@ namespace Dominio.EntidadesNegocio
 {
     public class Direccion:IValidable
     {
-        public int IdDireccion { get; private set; }
-        public static int UltimoIdDireccion { get; set; } = 1;
+        public int Id { get; private set; }
         public string Pais { get; set; }
         public string Ciudad { get; set; }
         public string Barrio { get; set; }
 
-        public Direccion()
+        private Direccion()
         {
-            IdDireccion = UltimoIdDireccion++;
 
         }
 
         public Direccion(string pais, string ciudad, string barrio)
         {
-            IdDireccion = UltimoIdDireccion++;
             Pais = pais;
             Ciudad = ciudad;
             Barrio = barrio;

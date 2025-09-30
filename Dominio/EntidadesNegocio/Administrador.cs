@@ -11,7 +11,7 @@ namespace Dominio.EntidadesNegocio
     {
         public string Apodo { get; set; }
 
-        public Administrador() { }
+        public Administrador() : base() { }
         public Administrador(string apodo, string email, string password, Rol rol) : base(email, password, rol)
         {
             Apodo = apodo;

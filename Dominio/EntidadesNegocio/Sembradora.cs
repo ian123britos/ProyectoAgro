@@ -11,7 +11,7 @@ namespace Dominio.EntidadesNegocio
     public class Sembradora : Maquinaria,IValidable
     {
         public string TipoDeSembradora { get; set; }
-        public Sembradora() { }
+        protected Sembradora(): base() { }
         public Sembradora(string tipoSembradora, Direccion direccion, Caracteristica caracteristica, string otrasCaracteristicas) :
             base(direccion, caracteristica, otrasCaracteristicas)
         {

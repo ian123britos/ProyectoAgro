@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xYx1o4PlCkE=",
+  "dgSpecHash": "YjmQazcLh5c=",
   "success": true,
   "projectFilePath": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\CasosDeUsos\\CasosDeUsos.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\hlbc7\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.19\\microsoft.entityframeworkcore.abstractions.8.0.19.nupkg.sha512"
+  ],
   "logs": []
 }

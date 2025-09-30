@@ -1,13 +1,15 @@
 ﻿using Dominio.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Dominio.ValueObject
 {
-    public class Email : IValidable
+    [ComplexType]
+    public record Email : IValidable
     {
         public string EmailUsr { get; private set; }
 

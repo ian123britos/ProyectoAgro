@@ -25,6 +25,8 @@ namespace LogicaAplicacion.CasosDeUso.CasosDeUsoCaracteristica
         {
             Caracteristica caracteristica = MapperCaracteristica.CaracteristicaDTOoCaracteristica(caracteristicaDTO);
             RepositorioCaracteristica.Add(caracteristica);
+
+            caracteristicaDTO.Id = caracteristica.Id;//Lo necesito para traer el id de característica asi lo uso en la session de Setint32.
         }
     }
 }

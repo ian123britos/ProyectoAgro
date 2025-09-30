@@ -4,3 +4,15 @@ C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\obj\Debug\net8.0\CasosDeUsos.Ass
 C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\obj\Debug\net8.0\CasosDeUsos.AssemblyInfo.cs
 C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\obj\Debug\net8.0\CasosDeUsos.csproj.CoreCompileInputs.cache
 C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\obj\Debug\net8.0\CasosDeUsos.sourcelink.json
+C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\bin\Debug\net8.0\CasosDeUsos.deps.json
+C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\bin\Debug\net8.0\CasosDeUsos.dll
+C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\bin\Debug\net8.0\CasosDeUsos.pdb
+C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\bin\Debug\net8.0\Dominio.dll
+C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\bin\Debug\net8.0\ExcepcionesPropias.dll
+C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\bin\Debug\net8.0\Dominio.pdb
+C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\bin\Debug\net8.0\ExcepcionesPropias.pdb
+C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\obj\Debug\net8.0\CasosDeU.F428964E.Up2Date
+C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\obj\Debug\net8.0\CasosDeUsos.dll
+C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\obj\Debug\net8.0\refint\CasosDeUsos.dll
+C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\obj\Debug\net8.0\CasosDeUsos.pdb
+C:\Users\hlbc7\Desktop\ProyectoAgro\CasosDeUsos\obj\Debug\net8.0\ref\CasosDeUsos.dll

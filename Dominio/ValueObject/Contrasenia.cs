@@ -1,14 +1,17 @@
 ﻿using Dominio.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Dominio.ValueObject
 {
-    public class Contrasenia : IValidable
+    [ComplexType]
+    public record Contrasenia : IValidable
     {
+       
         public string Pass { get; private set; }
 
         public Contrasenia(string pass)

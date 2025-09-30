@@ -9,6 +9,6 @@ namespace CasosDeUsos.InterfacesCasosDeUso.IMaquinariaCasosDeUso
 {
     public interface ICUAltaMaquinariaTractor
     {
-        void Ejecutar(TractorDTO tractorDTO);
+        void Ejecutar(TractorDTO tractorDTO);//CREO QUE RECIBE UNA MaquinariaDTO
     }
 }

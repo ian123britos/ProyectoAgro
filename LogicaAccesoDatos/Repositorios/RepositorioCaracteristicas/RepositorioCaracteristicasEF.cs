@@ -25,6 +25,10 @@ namespace LogicaAccesoDatos.Repositorios.RepositorioCaracteristicas
             //SQL necesarias(INSERT, UPDATE, DELETE) para que la base de datos quede sincronizada con lo que tenés en memoria. :D
 
         }
+        public Caracteristica FindById(int id)
+        {
+            return Contexto.caracteristicas.Find(id);
+        }
 
         public void Delete(Caracteristica item)
         {
@@ -36,10 +40,7 @@ namespace LogicaAccesoDatos.Repositorios.RepositorioCaracteristicas
             throw new NotImplementedException();
         }
 
-        public Caracteristica FindById(int id)
-        {
-            throw new NotImplementedException();
-        }
+      
 
         public void Update(int id, Caracteristica item)
         {

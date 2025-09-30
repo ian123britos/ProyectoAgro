@@ -9,7 +9,7 @@ namespace Dominio.EntidadesNegocio
     public class Tractor : Maquinaria
     {
         public bool TieneCabina { get; set; }
-        public Tractor() { }
+        protected Tractor() :base() { }
         public Tractor(bool tieneCabina, Direccion direccion, Caracteristica caracteristica, string otrasCaracteristicas) :
             base(direccion, caracteristica, otrasCaracteristicas)
         {

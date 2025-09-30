@@ -12,12 +12,15 @@ namespace Dominio.EntidadesNegocio
         public DateTime FechaPublicacionVenta { get; set; }
         public double PrecioVenta { get; set; }
 
+
         public Venta() { }
         public Venta(DateTime fechaPublicacionVenta, double precioVenta, string titulo, string foto, Maquinaria unaMaquina, Cliente clienteVende, TipoDePublicacion tipoDePublicacion)
             : base(titulo, foto, unaMaquina, clienteVende, tipoDePublicacion)
         {
+            
             FechaPublicacionVenta = fechaPublicacionVenta;
             PrecioVenta = precioVenta;
+            Validar();
 
 
         }
