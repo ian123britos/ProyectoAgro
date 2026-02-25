@@ -1,0 +1,90 @@
+﻿@model CasosDeUsos.DTOs.ClienteDTO.LoginUsuarioDTO
+
+@{
+    ViewData["Title"] = "Iniciar Sesión";
+}
+
+<style>
+    .login-container {
+        max-width: 380px;
+        margin: 60px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .login-container h2 {
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .form-control {
+        height: 45px;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    .btn-ml {
+        background-color: #fff159;
+        color: #333;
+        font-weight: bold;
+        width: 100%;
+        height: 48px;
+        border-radius: 8px;
+        border: none;
+        margin-top: 15px;
+        transition: opacity .2s ease;
+    }
+
+    .btn-ml:hover {
+        opacity: 0.85;
+    }
+
+    .error-box {
+        background: #ffdddd;
+        border-left: 4px solid #d60000;
+        padding: 10px;
+        font-size: 14px;
+        margin-top: 15px;
+        border-radius: 6px;
+    }
+
+    .link-centrado {
+        display: block;
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+</style>
+
+<div class="login-container">
+    <h2>Iniciar Sesión</h2>
+
+    <form asp-action="LoginUsuario">
+
+        <div class="form-group mb-3">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Contrasenia" class="form-label"></label>
+            <input asp-for="Contrasenia" class="form-control" type="password" />
+        </div>
+
+        <button type="submit" class="btn-ml">Ingresar</button>
+    </form>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="error-box">
+            @TempData["Error"]
+        </div>
+    }
+
+    <a asp-action="FormularioRegistroUsuario" asp-controller="Usuario" class="link-centrado">
+        ¿No tenés cuenta? Registrate
+    </a>
+</div>

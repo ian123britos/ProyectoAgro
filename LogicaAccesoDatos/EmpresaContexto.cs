@@ -7,12 +7,12 @@ using Dominio.EntidadesNegocio;
 using Microsoft.EntityFrameworkCore;
 namespace LogicaAccesoDatos
 {
-    public class EmpresaContexto:DbContext
+    public class EmpresaContexto : DbContext
     {
 
 
         //-----------------------------------------------------
-        public DbSet<Caracteristica> caracteristicas {  get; set; }
+        public DbSet<Caracteristica> caracteristicas { get; set; }
         public DbSet<Direccion> direcciones { get; set; }
 
         //-----------------------------------------------------------
@@ -28,6 +28,7 @@ namespace LogicaAccesoDatos
         public DbSet<Venta> ventas { get; set; }
 
         //-------------------------------------------------------
+        public DbSet<Rol> Rol { get; set; }
         public DbSet<Usuario> usuarios { get; set; }
         public DbSet<Cliente> clientes { get; set; }
         public DbSet<Administrador> administradores { get; set; }
@@ -51,10 +52,24 @@ namespace LogicaAccesoDatos
                 .WithMany() // o .WithMany(p => p.Compras) si lo tenés
                 .HasForeignKey(c => c.PublicacionCompradaId)
                 .OnDelete(DeleteBehavior.Cascade); // ✅ cascada lógica
+
+
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Usuario>(entity =>
+            {
+                entity.OwnsOne(u => u.Email, e =>
+                {
+                    e.Property(p => p.EmailUsr)
+                     .HasColumnName("Email_EmailUsr")
+                     .HasColumnType("nvarchar(max)")
+                     .IsRequired();
+                });
+
+                entity.Property(u => u.Id).ValueGeneratedOnAdd();
+            });
         }
-
-
-
+    
 
 
 

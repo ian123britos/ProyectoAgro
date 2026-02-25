@@ -10,7 +10,7 @@ namespace LogicaAplicacion.Mapper.MappersDeMaquinarias
 {
     public class MapperMaquinariaFertilizadora
     {
-        public static Fertilizadora MaquinariaFertilizadoraDTOaEntidad(FertilizadoraDTO fertilizadoraDTO,/*prueba*/Caracteristica caracteristica)
+        public static Fertilizadora MaquinariaFertilizadoraDTOaEntidad(FertilizadoraDTO fertilizadoraDTO,/*prueba*/Caracteristica caracteristica,Direccion direccion)
         {
             if (fertilizadoraDTO == null)
             {
@@ -18,7 +18,7 @@ namespace LogicaAplicacion.Mapper.MappersDeMaquinarias
             }
 
             return new Fertilizadora(fertilizadoraDTO.MarcaMotor, fertilizadoraDTO.Potencia, fertilizadoraDTO.DobleTraccion,
-                fertilizadoraDTO.Direccion, /*prueba*/caracteristica, fertilizadoraDTO.OtrasCaracteristicas);
+                direccion, /*prueba*/caracteristica, fertilizadoraDTO.OtrasCaracteristicas);
         }
     }
 }

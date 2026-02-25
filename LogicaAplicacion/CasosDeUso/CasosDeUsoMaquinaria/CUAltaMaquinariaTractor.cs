@@ -40,12 +40,13 @@ namespace LogicaAplicacion.CasosDeUso.CasosDeUsoMaquinaria
             Direccion direccion = RepositorioDireccion.FindById(tractorDTO.DireccionId);
             if(direccion == null) { throw new Exception("No se encontro la direccion seleccionada");}
 
-                Tractor tractor = MapperMaquinariaTractor.MaquinariaTractorDTOaEntidad(tractorDTO,caracteristica,direccion);
+            Tractor tractor = MapperMaquinariaTractor.MaquinariaTractorDTOaEntidad(tractorDTO,caracteristica,direccion);
+                
 
-                //tractor.Caracteristica = caracteristica;
-                //tractor.Direccion = direccion;
+            RepositorioMaquinaria.Add(tractor);
 
-                RepositorioMaquinaria.Add(tractor);
+            tractorDTO.Id = tractor.Id;//me traigo el id de la maquinaria que se esta pusheando
+
         }
     }
 }

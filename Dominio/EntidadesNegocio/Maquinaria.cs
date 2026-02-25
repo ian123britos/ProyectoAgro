@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Dominio.EntidadesNegocio
 {
-    public abstract class Maquinaria 
+    public abstract class Maquinaria
     {
         public int Id { get; private set; }
         public Direccion Direccion { get; set; }

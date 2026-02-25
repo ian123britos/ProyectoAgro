@@ -1,5 +1,6 @@
 ﻿using Dominio.EntidadesNegocio;
 using Dominio.InterfacesRepositorio.IRepositorioPublicacionVenta;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,16 @@ namespace LogicaAccesoDatos.Repositorios.RepositorioPublicacionVenta
             Contexto.SaveChanges();
         }
 
+        public IEnumerable<Venta> FindAllPublicacionesVenta()
+        {
+            return Contexto.publicaciones
+                .OfType<Venta>()
+                .Include(v => v.UnaMaquina)                  // Carga la maquinaria
+                    .ThenInclude(m => m.Caracteristica)     // Carga la característica
+                .Include(v => v.UnaMaquina)                  // Repetir Include para otra propiedad
+                    .ThenInclude(m => m.Direccion)          // Carga la dirección
+                .ToList();
+        }
 
         public Publicacion FindById(int id)
         {
@@ -40,6 +51,16 @@ namespace LogicaAccesoDatos.Repositorios.RepositorioPublicacionVenta
         }
 
         public void Update(int id, Publicacion item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Publicacion FindByEmail(string item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Publicacion FindByEmailConRol(string item)
         {
             throw new NotImplementedException();
         }

@@ -1,0 +1,97 @@
+﻿@model CasosDeUsos.DTOs.ClienteDTO.AltaClienteDTO
+
+@{
+    ViewData["Title"] = "Registro de Cliente";
+}
+
+<style>
+    .registro-container {
+        max-width: 420px;
+        margin: 50px auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .registro-container h2 {
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .form-control {
+        height: 45px;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    .btn-ml {
+        background-color: #fff159;
+        color: #333;
+        font-weight: bold;
+        width: 100%;
+        height: 48px;
+        border-radius: 8px;
+        border: none;
+        margin-top: 15px;
+        transition: opacity .2s ease;
+    }
+
+    .btn-ml:hover {
+        opacity: 0.85;
+    }
+
+    .error-box {
+        background: #ffdddd;
+        border-left: 4px solid #d60000;
+        padding: 10px;
+        font-size: 14px;
+        margin-top: 15px;
+        border-radius: 6px;
+    }
+</style>
+
+
+<div class="registro-container">
+    <h2>Crea tu cuenta</h2>
+
+    <form asp-action="AltaCliente">
+        <div class="form-group mb-3">
+            <label asp-for="Nombre" class="form-label"></label>
+            <input asp-for="Nombre" class="form-control" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Apellido" class="form-label"></label>
+            <input asp-for="Apellido" class="form-control" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Telefono" class="form-label"></label>
+            <input asp-for="Telefono" class="form-control" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Email" class="form-label"></label>
+            <input asp-for="Email" class="form-control" />
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Contrasenia" class="form-label"></label>
+            <input asp-for="Contrasenia" class="form-control" type="password" />
+        </div>
+
+        <button type="submit" class="btn-ml">Registrarse</button>
+    </form>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="error-box">
+            @TempData["Error"]
+        </div>
+    }
+    <a asp-action="FormularioLoginUsuario" asp-controller="Usuario" class="link-centrado">
+        ¿Ya tenes una cuenta? Iniciar Sesion
+    </a>
+</div>

@@ -1,0 +1,6 @@
+@WebApiAgroMercado_HostAddress = http://localhost:5261
+
+GET {{WebApiAgroMercado_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

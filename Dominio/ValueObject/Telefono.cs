@@ -1,39 +1,34 @@
 ﻿using Dominio.Interfaces;
+
+using ExcepcionesPropias.ExceptionUsuarios;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dominio.ValueObject
 {
-    [ComplexType ]
+    [ComplexType]
     public record Telefono : IValidable
     {
-        public int Tel { get; private set; }
+        public string Tel { get; private set; }
 
-        public Telefono(int tel)
+        public Telefono(string tel)
         {
-            Tel = tel;
+            Tel = tel?.Trim(); // eliminamos espacios
             Validar();
         }
 
         public void Validar()
         {
-            // Convertimos a string por si Telefono es int
-            string telefonoStr = Tel.ToString();
-
-            if (string.IsNullOrWhiteSpace(telefonoStr))
+            if (string.IsNullOrWhiteSpace(Tel))
             {
-                throw new Exception("El número de teléfono no puede estar vacío");
+                throw new UsuarioException("El número de teléfono no puede estar vacío");
             }
 
-            if (telefonoStr.Length != 9 || !telefonoStr.All(char.IsDigit))
+            if (Tel.Length != 9 || !Tel.All(char.IsDigit))
             {
-                throw new Exception("Ingresa un número de teléfono válido con 9 dígitos");
+                throw new UsuarioException("Ingresa un número de teléfono válido con 9 dígitos");
             }
         }
-
     }
 }

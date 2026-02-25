@@ -11,7 +11,6 @@ namespace Dominio.EntidadesNegocio
     public abstract class Usuario:IEquatable<Usuario>
     {
         public int Id { get; private set; }
-
         public Email Email { get; set; }
         public Contrasenia Contrasenia { get; set; }
         public Rol Rol { get; set; }
@@ -23,24 +22,24 @@ namespace Dominio.EntidadesNegocio
 
         }
 
-        public Usuario(string email, string password, Rol rol)
+        // Constructor solo con email y password
+        protected Usuario(string email, string password)
         {
-           
             Email = new Email(email);
             Contrasenia = new Contrasenia(password);
-            Rol = rol;
-            
         }
-       
-        //public override bool Equals(object? obj)
-        //{
-        //    Usuario usuario = (Usuario)obj;
-        //    return usuario.Email == Email;
-        //}
+
+        // Constructor completo opcional
+        protected Usuario(string email, string password, Rol rol)
+            : this(email, password)
+        {
+            Rol = rol;
+        }
+
 
         public bool Equals(Usuario? other)
         {
-            return Email == other.Email;
+            return Email.Equals(other.Email);
         }
     }
 }

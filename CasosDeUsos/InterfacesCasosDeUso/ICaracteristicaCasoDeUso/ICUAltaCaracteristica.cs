@@ -1,4 +1,4 @@
-﻿using CasosDeUsos.DTOs.CaracteristicaDTOs;
+﻿using CasosDeUsos.DTOs.CaracteristicaDTO;
 using Dominio.EntidadesNegocio;
 using System;
 using System.Collections.Generic;

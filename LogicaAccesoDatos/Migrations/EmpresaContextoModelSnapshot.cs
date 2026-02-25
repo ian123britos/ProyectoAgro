@@ -242,15 +242,6 @@ namespace LogicaAccesoDatos.Migrations
                                 .HasColumnType("nvarchar(max)");
                         });
 
-                    b.ComplexProperty<Dictionary<string, object>>("Email", "Dominio.EntidadesNegocio.Usuario.Email#Email", b1 =>
-                        {
-                            b1.IsRequired();
-
-                            b1.Property<string>("EmailUsr")
-                                .IsRequired()
-                                .HasColumnType("nvarchar(max)");
-                        });
-
                     b.HasKey("Id");
 
                     b.HasIndex("RolId");
@@ -377,8 +368,9 @@ namespace LogicaAccesoDatos.Migrations
                         {
                             b1.IsRequired();
 
-                            b1.Property<int>("Tel")
-                                .HasColumnType("int");
+                            b1.Property<string>("Tel")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
                         });
 
                     b.HasDiscriminator().HasValue("Cliente");
@@ -447,6 +439,27 @@ namespace LogicaAccesoDatos.Migrations
                         .WithMany()
                         .HasForeignKey("RolId")
                         .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.OwnsOne("Dominio.ValueObject.Email", "Email", b1 =>
+                        {
+                            b1.Property<int>("UsuarioId")
+                                .HasColumnType("int");
+
+                            b1.Property<string>("EmailUsr")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)")
+                                .HasColumnName("Email_EmailUsr");
+
+                            b1.HasKey("UsuarioId");
+
+                            b1.ToTable("usuarios");
+
+                            b1.WithOwner()
+                                .HasForeignKey("UsuarioId");
+                        });
+
+                    b.Navigation("Email")
                         .IsRequired();
 
                     b.Navigation("Rol");

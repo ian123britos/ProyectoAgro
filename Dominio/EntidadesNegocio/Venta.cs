@@ -13,48 +13,48 @@ namespace Dominio.EntidadesNegocio
         public double PrecioVenta { get; set; }
 
 
-        public Venta() { }
+        public Venta(DateTime fechaPublicacionVenta) { }
         public Venta(DateTime fechaPublicacionVenta, double precioVenta, string titulo, string foto, Maquinaria unaMaquina, Cliente clienteVende, TipoDePublicacion tipoDePublicacion)
             : base(titulo, foto, unaMaquina, clienteVende, tipoDePublicacion)
         {
             
             FechaPublicacionVenta = fechaPublicacionVenta;
             PrecioVenta = precioVenta;
-            Validar();
+            //Validar();
 
 
         }
 
-        public override void Validar()
-        {
-            base.Validar();
-            ValidarPrecioVenta();
-        }
+        //public override void Validar()
+        //{
+        //    base.Validar();
+        //    ValidarPrecioVenta();
+        //}
 
-        private void ValidarPrecioVenta()
-        {
-            if (PrecioVenta <= 0)
-            {
-                throw new Exception("El precio de venta debe de ser mayor a 0");
-            }
-        }
+        //private void ValidarPrecioVenta()
+        //{
+        //    if (PrecioVenta <= 0)
+        //    {
+        //        throw new Exception("El precio de venta debe de ser mayor a 0");
+        //    }
+        //}
 
-        public override string ToString()
-        {
-            string UnicoDuenio = EsUnicoDuenioSioNo(UnaMaquina.Caracteristica.UnicoDuenio);
-            string Usado = EsUsadoSioNo(UnaMaquina.Caracteristica.EsUsado);
-            string dato = $"{Titulo}\n" +
-                $"la fecha de publicacion es {FechaPublicacionVenta}\n" +
-                $"la categoria del vechiculo es: {UnaMaquina.Caracteristica.Categoria}\n" +
-                $"su modelo es: {UnaMaquina.Caracteristica.Modelo}\n" +
-                $"la marca es: {UnaMaquina.Caracteristica.Marca}\n" +
-                $"Es usado?: {Usado}n" +
-                $"Es único dueño?: {UnicoDuenio}n" +
-                $"año de fabricación: {UnaMaquina.Caracteristica.Anio}\n" +
-                $"la maquina a vender es: {UnaMaquina.TipoVechiculo()}\n" +
-                $"su precio de venta es: {PrecioVenta}";
-            return dato;
-        }
+        //public override string ToString()
+        //{
+        //    string UnicoDuenio = EsUnicoDuenioSioNo(UnaMaquina.Caracteristica.UnicoDuenio);
+        //    string Usado = EsUsadoSioNo(UnaMaquina.Caracteristica.EsUsado);
+        //    string dato = $"{Titulo}\n" +
+        //        $"la fecha de publicacion es {FechaPublicacionVenta}\n" +
+        //        $"la categoria del vechiculo es: {UnaMaquina.Caracteristica.Categoria}\n" +
+        //        $"su modelo es: {UnaMaquina.Caracteristica.Modelo}\n" +
+        //        $"la marca es: {UnaMaquina.Caracteristica.Marca}\n" +
+        //        $"Es usado?: {Usado}n" +
+        //        $"Es único dueño?: {UnicoDuenio}n" +
+        //        $"año de fabricación: {UnaMaquina.Caracteristica.Anio}\n" +
+        //        $"la maquina a vender es: {UnaMaquina.TipoVechiculo()}\n" +
+        //        $"su precio de venta es: {PrecioVenta}";
+        //    return dato;
+        //}
 
         public double CalcularPrecioFinal(double precio)
         {

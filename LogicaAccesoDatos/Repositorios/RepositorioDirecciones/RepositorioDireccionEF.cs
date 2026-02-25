@@ -48,5 +48,15 @@ namespace LogicaAccesoDatos.Repositorios.RepositorioDirecciones
         {
             throw new NotImplementedException();
         }
+
+        public Direccion FindByEmail(string item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Direccion FindByEmailConRol(string item)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

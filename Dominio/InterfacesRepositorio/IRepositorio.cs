@@ -10,6 +10,8 @@ namespace Dominio.InterfacesRepositorio
     public interface IRepositorio<T>
     {
         //Maquinaria FindByIdConCaracteristicasyDireccion(int id);
+        T FindByEmailConRol(string item);
+        T FindByEmail(string item);
         void Add(T item);
         T FindById(int id);
         IEnumerable<T> FindAll();

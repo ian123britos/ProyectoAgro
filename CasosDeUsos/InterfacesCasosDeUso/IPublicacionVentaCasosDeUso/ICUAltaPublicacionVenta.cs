@@ -10,6 +10,6 @@ namespace CasosDeUsos.InterfacesCasosDeUso.IPublicacionVenta
 {
     public interface ICUAltaPublicacionVenta
     {
-        void Ejecutar(VentaDTO ventaDTO);
+        void Ejecutar(VentaDTO ventaDTO,string email);
     }
 }

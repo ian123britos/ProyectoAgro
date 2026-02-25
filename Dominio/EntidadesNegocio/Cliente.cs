@@ -1,5 +1,7 @@
 ﻿using Dominio.Interfaces;
 using Dominio.ValueObject;
+using ExcepcionesPropias;
+using ExcepcionesPropias.ExceptionUsuarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +19,16 @@ namespace Dominio.EntidadesNegocio
         public Cliente() : base()
         {
         }
-        public Cliente(string nombre, string apellido, int telefono, string email, string password, Rol rol) : base(email, password, rol)
+        public Cliente(string nombre, string apellido, string telefono, string email, string password) : base(email, password)
         {
+            
+            Telefono = new Telefono(telefono);
             Nombre = nombre;
             Apellido = apellido;
-            Telefono = new Telefono(telefono);
+
+            // Asignar rol fijo
+            this.Rol = new Rol("Cliente");
+
             Validar();
         }
 
@@ -37,7 +44,7 @@ namespace Dominio.EntidadesNegocio
         {
             if (string.IsNullOrEmpty(Apellido))
             {
-                throw new Exception("El apellido no puede ser vacio");
+                throw new UsuarioException("El apellido no puede ser vacio");
             }
         }
 
@@ -45,7 +52,7 @@ namespace Dominio.EntidadesNegocio
         {
             if (string.IsNullOrEmpty(Nombre))
             {
-                throw new Exception("El nombre no puede ser vacio");
+                throw new UsuarioException("El nombre no puede ser vacio");
             }
         }
 

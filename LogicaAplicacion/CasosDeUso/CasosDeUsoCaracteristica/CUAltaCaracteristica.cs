@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CasosDeUsos.DTOs.CaracteristicaDTOs;
+using CasosDeUsos.DTOs.CaracteristicaDTO;
 using CasosDeUsos.InterfacesCasosDeUso.ICaracteristicaCasoDeUso;
 using Dominio.EntidadesNegocio;
 using Dominio.InterfacesRepositorio.InterfacesRepositorioCaracteristicas;

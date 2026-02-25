@@ -12,13 +12,15 @@ namespace Dominio.EntidadesNegocio
         public string Apodo { get; set; }
 
         public Administrador() : base() { }
-        public Administrador(string apodo, string email, string password, Rol rol) : base(email, password, rol)
+        public Administrador(string apodo, string email, string password) : base(email, password)
         {
             Apodo = apodo;
+
+            this.Rol = new Rol("Admin");
             Validar();
         }
 
-        public  void Validar()
+        public void Validar()
         {
           
             ValidarApodo();

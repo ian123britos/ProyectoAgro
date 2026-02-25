@@ -6,8 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace CasosDeUsos.DTOs.CaracteristicaDTOs
+namespace CasosDeUsos.DTOs.CaracteristicaDTO
 {
+
     public class CaracteristicaDTO
     {
         public int Id { get; set; }
@@ -20,4 +21,5 @@ namespace CasosDeUsos.DTOs.CaracteristicaDTOs
         public string TipoDeCombustible { get; set; }
         public string TipoDeDireccion { get; set; }
     }
+
 }

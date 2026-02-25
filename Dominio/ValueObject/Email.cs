@@ -1,4 +1,6 @@
 ﻿using Dominio.Interfaces;
+using ExcepcionesPropias;
+using ExcepcionesPropias.ExceptionUsuarios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,7 +13,7 @@ namespace Dominio.ValueObject
     [ComplexType]
     public record Email : IValidable
     {
-        public string EmailUsr { get; private set; }
+        public string EmailUsr { get;  set; }
 
         public Email(string emailUsr)
         {
@@ -33,12 +35,12 @@ namespace Dominio.ValueObject
 
                 if (!tieneArroba)
                 {
-                    throw new Exception("Direccion de Email no valida falta el @");
+                    throw new UsuarioException("Direccion de Email no valida falta el @");
                 }
             }
             else
             {
-                throw new Exception("El Email no puede ser vacio");
+                throw new UsuarioException("El Email no puede ser vacio");
             }
         }
 

@@ -4,8 +4,7 @@ using Microsoft.AspNetCore.Http;
 using System.IO;
 using Dominio.EntidadesNegocio;
 using CasosDeUsos.InterfacesCasosDeUso.ICaracteristicaCasoDeUso;
-using CasosDeUsos.DTOs.CaracteristicaDTOs;
-using ExcepcionesPropias;
+using CasosDeUsos.DTOs.CaracteristicaDTO;
 using CasosDeUsos.InterfacesCasosDeUso.IDireccionCasoDeUso;
 using CasosDeUsos.DTOs.DireccionDTO;
 using CasosDeUsos.InterfacesCasosDeUso.IMaquinariaCasosDeUso;
@@ -14,22 +13,28 @@ using CasosDeUsos.DTOs.MaquinariaDTO;
 using CasosDeUsos.InterfacesCasosDeUso.IPublicacionVenta;
 using CasosDeUsos.DTOs.PublicacionVentaDTO;
 using System.Reflection.PortableExecutable;
+using CasosDeUsos.InterfacesCasosDeUso.IPublicacionVentaCasosDeUso;
+using ExcepcionesPropias.ExceptionMaquinarias;
+using ExcepcionesPropias.ExeptionDireccion;
+using ExcepcionesPropias.ExceptionCaracteristicas;
 
 
 namespace WebAgro.Controllers
 {
     public class PublicacionController : Controller
     {
-        public ICUAltaCaracteristica CUAltaCaracteristica { get; set; }
-        public ICUAltaDireccion CUAltaDireccion { get; set; }
-        public ICUAltaPublicacionVenta CUAltaPublicacionVenta {  get; set; }
-        public ICUAltaMaquinariaTractor CUAltaMaquinariaTractor { get; set; }
-        public ICUAltaMaquinariaFertilizadora CUAltaMaquinariaFertilizadora { get; set; }
+        public ICUListadoPublicacionesVenta CUListadoPublicacionesVenta { get; set; }
+        public ICUAltaCaracteristica CUAltaCaracteristica { get; set; }//alta funcionando
+        public ICUAltaDireccion CUAltaDireccion { get; set; }//alta funcionando
+        public ICUAltaMaquinariaTractor CUAltaMaquinariaTractor { get; set; }//alta funcionando, trae los datos de dir y caract.. con ids.
+
+        public ICUAltaPublicacionVenta CUAltaPublicacionVenta {  get; set; }//faltante
+        public ICUAltaMaquinariaFertilizadora CUAltaMaquinariaFertilizadora { get; set; }//faltante
 
         private readonly IWebHostEnvironment _webHostEnvironment;
 
         // Constructor con inyección de dependencias
-        public PublicacionController(IWebHostEnvironment webHostEnvironment,ICUAltaCaracteristica cUAltaCaracteristica, ICUAltaDireccion cUAltaDireccion, ICUAltaMaquinariaTractor cUAltaMaquinariaTractor, ICUAltaPublicacionVenta cUAltaPublicacionVenta, ICUAltaMaquinariaFertilizadora cUAltaMaquinariaFertilizadora)
+        public PublicacionController(IWebHostEnvironment webHostEnvironment,ICUAltaCaracteristica cUAltaCaracteristica, ICUAltaDireccion cUAltaDireccion, ICUAltaMaquinariaTractor cUAltaMaquinariaTractor, ICUAltaPublicacionVenta cUAltaPublicacionVenta, ICUAltaMaquinariaFertilizadora cUAltaMaquinariaFertilizadora, ICUListadoPublicacionesVenta cUListadoPublicacionesVenta)
         {
             _webHostEnvironment = webHostEnvironment;
             CUAltaCaracteristica = cUAltaCaracteristica;
@@ -37,6 +42,27 @@ namespace WebAgro.Controllers
             CUAltaMaquinariaTractor = cUAltaMaquinariaTractor;
             CUAltaPublicacionVenta = cUAltaPublicacionVenta;
             CUAltaMaquinariaFertilizadora = cUAltaMaquinariaFertilizadora;
+            CUListadoPublicacionesVenta = cUListadoPublicacionesVenta;
+        }
+
+        public IActionResult TodasLasPublicacionesEnVenta()
+        {
+            IEnumerable<ListadoPublicacionesEnVentaDTO> listadoPublicacionesEnVentaDTOs = new List<ListadoPublicacionesEnVentaDTO>();
+            try
+            {
+                listadoPublicacionesEnVentaDTOs = CUListadoPublicacionesVenta.Ejecutar();
+                return View(listadoPublicacionesEnVentaDTOs);
+            }
+            catch (Exception ex)
+            {
+
+                TempData["Error"] = ex.Message;
+                return View();
+            }
+
+
+
+
         }
 
         public IActionResult SeleccionarTipoMaquinaria()
@@ -139,7 +165,12 @@ namespace WebAgro.Controllers
 
 
                 CUAltaMaquinariaTractor.Ejecutar(tractorDTO);
-                    return Redirect("FormularioTractorPublicacionVenta");
+
+                // guardo el id en Session
+                HttpContext.Session.SetInt32("tractorId", tractorDTO.Id);
+
+
+                return Redirect("FormularioTractorPublicacionVenta");
 
                 
             }
@@ -162,7 +193,9 @@ namespace WebAgro.Controllers
         {
             try
             {
-               
+                string Email = HttpContext.Session.GetString("EmailUsuario");
+
+                int? maquinariaId = HttpContext.Session.GetInt32("tractorId");
 
 
                 // Guardar la imagen si viene archivo
@@ -188,7 +221,17 @@ namespace WebAgro.Controllers
                     ventaDTO.Foto = "/images/default-maquinaria.jpg";
                 }
 
-                CUAltaPublicacionVenta.Ejecutar(ventaDTO);
+
+                if (!maquinariaId.HasValue )
+                {
+                    TempData["Error"] = "Faltan datos de Maquinaria.";
+                    return RedirectToAction("FormularioTractorPublicacionVenta");
+                }
+
+                // Asigno los Ids al DTO para que el CU pueda relacionarlos
+                ventaDTO.MaquinariaId = maquinariaId.Value;
+
+                CUAltaPublicacionVenta.Ejecutar(ventaDTO,Email);
                 ViewBag.Exito = "✅ Maquinaria Tractor publicada con éxito";
                 return View("FormularioTractorPublicacionVenta");
                 //return RedirectToAction("ObtenerMaquinariaPorId", new { id = venta.IdPublicacion });
@@ -330,7 +373,7 @@ namespace WebAgro.Controllers
                 }
 
                 //venta.IdPublicacion = Publicacion.UltimoIdPublicacion++;
-                CUAltaPublicacionVenta.Ejecutar(ventaDTO);
+                //CUAltaPublicacionVenta.Ejecutar(ventaDTO);
 
                 ViewBag.Exito = "✅ Maquinaria Sembradora publicada con éxito";
                 return View("FormularioSembradoraPublicacionVenta");
@@ -471,7 +514,7 @@ namespace WebAgro.Controllers
                 //------------------------------------------------------------------------------------------------------------
 
                 
-                CUAltaPublicacionVenta.Ejecutar(ventaDTO);
+                //CUAltaPublicacionVenta.Ejecutar(ventaDTO);
 
                 ViewBag.Exito = "✅ Maquinaria Fertilizadora publicada con éxito";
                 return View("FormularioFertilizadoraPublicacionVenta");
@@ -486,14 +529,6 @@ namespace WebAgro.Controllers
             }
         }
         #endregion
-
-
-        //#region Filtrados:
-        //public IActionResult TodasLasPublicacionesEnVenta()
-        //{
-        //    List<Venta> lista = sistema.ObtenerTodasLasPublicacionesVenta();
-        //    return View(lista);
-        //}
 
         //[HttpPost]
         //public IActionResult FiltradoPorMarcaDeMaquinaria(string marca)

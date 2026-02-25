@@ -2,19 +2,26 @@ using CasosDeUsos.InterfacesCasosDeUso.ICaracteristicaCasoDeUso;
 using CasosDeUsos.InterfacesCasosDeUso.IDireccionCasoDeUso;
 using CasosDeUsos.InterfacesCasosDeUso.IMaquinariaCasosDeUso;
 using CasosDeUsos.InterfacesCasosDeUso.IPublicacionVenta;
+using CasosDeUsos.InterfacesCasosDeUso.IPublicacionVentaCasosDeUso;
+using CasosDeUsos.InterfacesCasosDeUso.IUsuarioCasosDeUso;
 using Dominio.InterfacesRepositorio.InterfacesRepositorioCaracteristicas;
 using Dominio.InterfacesRepositorio.InterfacesRepositorioDireccion;
 using Dominio.InterfacesRepositorio.InterfacesRepositorioMaquinarias;
 using Dominio.InterfacesRepositorio.IRepositorioPublicacionVenta;
+using Dominio.InterfacesRepositorio.IRepositorioRol;
+using Dominio.InterfacesRepositorio.IRepositorioUsuario;
 using LogicaAccesoDatos;
 using LogicaAccesoDatos.Repositorios.RepositorioCaracteristicas;
 using LogicaAccesoDatos.Repositorios.RepositorioDirecciones;
 using LogicaAccesoDatos.Repositorios.RepositorioPublicacionVenta;
+using LogicaAccesoDatos.Repositorios.RepositorioRol;
 using LogicaAccesoDatos.Repositorios.RepositoriosMaquinarias;
+using LogicaAccesoDatos.Repositorios.RepositorioUsuario;
 using LogicaAplicacion.CasosDeUso.CasosDeUsoCaracteristica;
 using LogicaAplicacion.CasosDeUso.CasosDeUsoDireccion;
 using LogicaAplicacion.CasosDeUso.CasosDeUsoMaquinaria;
 using LogicaAplicacion.CasosDeUso.CasosDeUsoPublicacionVenta;
+using LogicaAplicacion.CasosDeUso.CasosDeUsoUsuario;
 using Microsoft.EntityFrameworkCore;
 
 namespace WebAgro
@@ -33,6 +40,9 @@ namespace WebAgro
             builder.Services.AddScoped<IRepositorioDireccion, RepositorioDireccionEF>();
             builder.Services.AddScoped<IRepositorioMaquinaria, RepositorioMaquinaria>();
             builder.Services.AddScoped<IRepositorioPublicacionVenta, RepositorioPublicacionVenta>();
+            builder.Services.AddScoped<IRepositorioUsuario, RepositorioUsuario>();
+            builder.Services.AddScoped<IRepositorioRol, RepositorioRol>();
+
 
 
             //Casos de uso
@@ -41,6 +51,12 @@ namespace WebAgro
             builder.Services.AddScoped<ICUAltaMaquinariaTractor, CUAltaMaquinariaTractor>();
             builder.Services.AddScoped<ICUAltaMaquinariaFertilizadora, CUAltaMaquinariaFertilizadora>();
             builder.Services.AddScoped<ICUAltaPublicacionVenta, CUAltaPublicacionVenta>();
+            builder.Services.AddScoped<ICUAltaUsuarioCliente, CUAltaUsuarioCliente>();
+            builder.Services.AddScoped<ICULoginUsuario, CULoginUsuario>();
+            builder.Services.AddScoped<ICUListadoPublicacionesVenta, CUListadoPublicacionesVenta>();
+
+
+
 
             string conexionDB = builder.Configuration.GetConnectionString("CadenaConexionAgro");
             builder.Services.AddDbContext<EmpresaContexto>(options => options.UseSqlServer(conexionDB));

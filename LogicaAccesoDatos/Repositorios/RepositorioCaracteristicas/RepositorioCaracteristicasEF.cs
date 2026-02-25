@@ -46,5 +46,15 @@ namespace LogicaAccesoDatos.Repositorios.RepositorioCaracteristicas
         {
             throw new NotImplementedException();
         }
+
+        public Caracteristica FindByEmail(string item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Caracteristica FindByEmailConRol(string item)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace LogicaAccesoDatos.Repositorios.RepositoriosMaquinarias
         }
         public Maquinaria FindById(int id)
         {
-            throw new NotImplementedException();
+            return Contexto.maquinarias.Find(id);
         }
 
         //public Maquinaria FindByIdConCaracteristicasyDireccion(int id)
@@ -52,6 +52,14 @@ namespace LogicaAccesoDatos.Repositorios.RepositoriosMaquinarias
             throw new NotImplementedException();
         }
 
+        public Maquinaria FindByEmail(string item)
+        {
+            throw new NotImplementedException();
+        }
 
+        public Maquinaria FindByEmailConRol(string item)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

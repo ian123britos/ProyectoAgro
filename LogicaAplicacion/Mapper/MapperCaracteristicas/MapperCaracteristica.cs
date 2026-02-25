@@ -1,4 +1,4 @@
-﻿using CasosDeUsos.DTOs.CaracteristicaDTOs;
+﻿using CasosDeUsos.DTOs.CaracteristicaDTO;
 using CasosDeUsos.DTOs.MaquinariaDTO;
 using Dominio.EntidadesNegocio;
 using System;
