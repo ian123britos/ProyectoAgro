@@ -16,7 +16,7 @@ namespace Dominio.EntidadesNegocio
             TieneCabina = tieneCabina;
         }
 
-        public override string TipoVechiculo() => "Tractor";
+        public override string TipoVehiculo() => "Tractor";
 
 
         public static string TieneSiNo(bool EsConCabina)

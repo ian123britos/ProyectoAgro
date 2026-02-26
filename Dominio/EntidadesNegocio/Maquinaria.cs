@@ -28,7 +28,7 @@ namespace Dominio.EntidadesNegocio
             OtrasCaracteristicas = new OtrasCaracteristicas(otrasCaracteristicas);
 
         }
-        public abstract string TipoVechiculo();
+        public abstract string TipoVehiculo();
 
 
        

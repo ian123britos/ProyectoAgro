@@ -47,7 +47,7 @@ namespace Dominio.EntidadesNegocio
             }
         }
 
-        public override string TipoVechiculo() => "Fertilizadora";
+        public override string TipoVehiculo() => "Fertilizadora";
         //public override string ToString()
         //{
         //    return TipoVechiculo();

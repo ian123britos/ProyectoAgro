@@ -22,7 +22,7 @@ namespace Dominio.EntidadesNegocio
 
         }
 
-        public override string TipoVechiculo() => "CargadoraDePala";
+        public override string TipoVehiculo() => "CargadoraDePala";
 
 
         //public override string ToString()

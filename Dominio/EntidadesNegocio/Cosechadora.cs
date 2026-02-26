@@ -21,13 +21,17 @@ namespace Dominio.EntidadesNegocio
             EsRuedaDual = esRuedaDual;
         }
 
-        public override string TipoVechiculo() => "Cosechadora";
+        public override string TipoVehiculo() => "Cosechadora";
 
         //public override string ToString()
         //{
         //    return TipoVechiculo();
         //}
 
+
+
+        //en duda de si este metodo tiene alguna utilidad ya que pasar de
+        //booleans a text lo aplicamos en el front
         public static string ObtenerSiNo(bool esDual)
         {
             string Texto = "";

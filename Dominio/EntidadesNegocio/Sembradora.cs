@@ -26,11 +26,11 @@ namespace Dominio.EntidadesNegocio
                 throw new MaquinariaSembradoraException("El campo tipo de sembradora no puede ser vacio");
             }
         }
-        public override string TipoVechiculo() => "Sembradora";
+        public override string TipoVehiculo() => "Sembradora";
 
-        public override string ToString()
-        {
-            return TipoVechiculo();
-        }
+        //public override string ToString()
+        //{
+        //    return TipoVehiculo();
+        //}
     }
 }

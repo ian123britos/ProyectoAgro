@@ -16,6 +16,7 @@ namespace Dominio.EntidadesNegocio
         {
             Apodo = apodo;
 
+            //harcodeo el rol como admin aqui
             this.Rol = new Rol("Admin");
             Validar();
         }

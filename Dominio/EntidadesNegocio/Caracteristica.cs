@@ -22,7 +22,7 @@ namespace Dominio.EntidadesNegocio
         public string TipoDeCombustible { get; set; }
         public string TipoDeDireccion { get; set; }
 
-        public Caracteristica()
+        private Caracteristica()
         {
 
         }

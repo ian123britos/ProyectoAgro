@@ -26,7 +26,7 @@ namespace Dominio.EntidadesNegocio
             Nombre = nombre;
             Apellido = apellido;
 
-            // Asignar rol fijo
+            // Asignar rol fijo, cliente es rol cliente harcodeo
             this.Rol = new Rol("Cliente");
 
             Validar();
