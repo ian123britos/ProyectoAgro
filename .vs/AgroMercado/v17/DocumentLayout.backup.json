@@ -3,8 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\entidadesnegocio\\tractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\entidadesnegocio\\tractor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\entidadesnegocio\\sembradora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\entidadesnegocio\\sembradora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\entidadesnegocio\\fertilizadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\entidadesnegocio\\fertilizadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\entidadesnegocio\\cosechadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\entidadesnegocio\\cosechadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\entidadesnegocio\\cargadorapala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\entidadesnegocio\\cargadorapala.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\entidadesnegocio\\caracteristica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\entidadesnegocio\\caracteristica.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\entidadesnegocio\\maquinaria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\entidadesnegocio\\maquinaria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\valueobject\\contrasenia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,11 +87,76 @@
         },
         {
           "DockedHeight": 103,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CargadoraPala.cs",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\CargadoraPala.cs",
+              "RelativeDocumentMoniker": "Dominio\\EntidadesNegocio\\CargadoraPala.cs",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\CargadoraPala.cs",
+              "RelativeToolTip": "Dominio\\EntidadesNegocio\\CargadoraPala.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T00:40:28.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Cosechadora.cs",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Cosechadora.cs",
+              "RelativeDocumentMoniker": "Dominio\\EntidadesNegocio\\Cosechadora.cs",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Cosechadora.cs",
+              "RelativeToolTip": "Dominio\\EntidadesNegocio\\Cosechadora.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T00:40:22.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Fertilizadora.cs",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Fertilizadora.cs",
+              "RelativeDocumentMoniker": "Dominio\\EntidadesNegocio\\Fertilizadora.cs",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Fertilizadora.cs",
+              "RelativeToolTip": "Dominio\\EntidadesNegocio\\Fertilizadora.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAADwvzMAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T00:40:14.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Sembradora.cs",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Sembradora.cs",
+              "RelativeDocumentMoniker": "Dominio\\EntidadesNegocio\\Sembradora.cs",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Sembradora.cs",
+              "RelativeToolTip": "Dominio\\EntidadesNegocio\\Sembradora.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T00:40:39.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Tractor.cs",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Tractor.cs",
+              "RelativeDocumentMoniker": "Dominio\\EntidadesNegocio\\Tractor.cs",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Tractor.cs",
+              "RelativeToolTip": "Dominio\\EntidadesNegocio\\Tractor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T00:40:43.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Caracteristica.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Caracteristica.cs",
               "RelativeDocumentMoniker": "Dominio\\EntidadesNegocio\\Caracteristica.cs",
@@ -80,7 +169,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
+              "Title": "Maquinaria.cs",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Maquinaria.cs",
+              "RelativeDocumentMoniker": "Dominio\\EntidadesNegocio\\Maquinaria.cs",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Maquinaria.cs",
+              "RelativeToolTip": "Dominio\\EntidadesNegocio\\Maquinaria.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T00:36:16.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Contrasenia.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\ValueObject\\Contrasenia.cs",
               "RelativeDocumentMoniker": "Dominio\\ValueObject\\Contrasenia.cs",
@@ -93,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Cliente.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Cliente.cs",
               "RelativeDocumentMoniker": "Dominio\\EntidadesNegocio\\Cliente.cs",
@@ -106,12 +208,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "Administrador.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Administrador.cs",
               "RelativeDocumentMoniker": "Dominio\\EntidadesNegocio\\Administrador.cs",
-              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Administrador.cs*",
-              "RelativeToolTip": "Dominio\\EntidadesNegocio\\Administrador.cs*",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Administrador.cs",
+              "RelativeToolTip": "Dominio\\EntidadesNegocio\\Administrador.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwB8AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-26T00:10:10.665Z",
@@ -123,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "WebApiAgroMercado",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebApiAgroMercado\\WebApiAgroMercado.csproj",
               "RelativeDocumentMoniker": "WebApiAgroMercado\\WebApiAgroMercado.csproj",
@@ -134,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebApiAgroMercado\\Program.cs",
               "RelativeDocumentMoniker": "WebApiAgroMercado\\Program.cs",
@@ -147,7 +249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "RepositorioUsuario.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\LogicaAccesoDatos\\Repositorios\\RepositorioUsuario\\RepositorioUsuario.cs",
               "RelativeDocumentMoniker": "LogicaAccesoDatos\\Repositorios\\RepositorioUsuario\\RepositorioUsuario.cs",
@@ -159,7 +261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "CULoginUsuario.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\LogicaAplicacion\\CasosDeUso\\CasosDeUsoUsuario\\CULoginUsuario.cs",
               "RelativeDocumentMoniker": "LogicaAplicacion\\CasosDeUso\\CasosDeUsoUsuario\\CULoginUsuario.cs",
@@ -171,7 +273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "ManejadorToken.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebApiAgroMercado\\Token\\ManejadorToken.cs",
               "RelativeDocumentMoniker": "WebApiAgroMercado\\Token\\ManejadorToken.cs",
@@ -183,7 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "UsuarioWebApiController.cs",
               "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebApiAgroMercado\\Controllers\\UsuarioWebApiController.cs",
               "RelativeDocumentMoniker": "WebApiAgroMercado\\Controllers\\UsuarioWebApiController.cs",
@@ -195,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "dbo.usuarios.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/miempresaAgro/True/SqlTable/dbo.usuarios.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/miempresaAgro/True/SqlTable/dbo.usuarios.sql",

@@ -22,7 +22,7 @@ namespace Dominio.EntidadesNegocio
     
 
 
-        private Compra()
+        protected Compra()
         {
 
         }

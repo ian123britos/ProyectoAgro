@@ -18,7 +18,6 @@ namespace Dominio.EntidadesNegocio
 
         public override string TipoVehiculo() => "Tractor";
 
-
         public static string TieneSiNo(bool EsConCabina)
         {
             string texto = "";
