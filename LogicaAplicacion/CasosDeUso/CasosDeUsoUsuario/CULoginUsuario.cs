@@ -33,7 +33,7 @@ namespace LogicaAplicacion.CasosDeUso.CasosDeUsoUsuario
 
             if (usuario == null)
             {
-                throw new NotFoundException("No se encontro un usuario con esos datos, intente otra vez");
+                throw new NotFoundException("Email o Contraseña incorrectos");
             }
 
             return MapperUsuario.UsuarioToUsuarioLogeadoDTO(usuario);

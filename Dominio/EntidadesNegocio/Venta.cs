@@ -13,7 +13,7 @@ namespace Dominio.EntidadesNegocio
         public double PrecioVenta { get; set; }
 
 
-        public Venta(DateTime fechaPublicacionVenta) { }
+        public Venta() { }
         public Venta(DateTime fechaPublicacionVenta, double precioVenta, string titulo, string foto, Maquinaria unaMaquina, Cliente clienteVende, TipoDePublicacion tipoDePublicacion)
             : base(titulo, foto, unaMaquina, clienteVende, tipoDePublicacion)
         {

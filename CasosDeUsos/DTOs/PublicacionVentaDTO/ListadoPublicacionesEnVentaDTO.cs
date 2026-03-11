@@ -11,6 +11,8 @@ namespace CasosDeUsos.DTOs.PublicacionVentaDTO
         {
             public int Id { get; set; }
             public string Titulo { get; set; }
+            public string Foto {  get; set; }
+            public double Precio { get; set; }
 
             public int CaracteristicaId { get; set; }
             public string Marca { get; set; }

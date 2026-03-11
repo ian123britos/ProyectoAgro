@@ -43,14 +43,25 @@
             <label asp-for="TipoDeDireccion" class="form-label">Tipo de Direccion</label>
             <input asp-for="TipoDeDireccion" class="form-control form-control-sm" />
         </div>
-        <div class="form-check form-switch mb-2">
-            <input asp-for="EsUsado" class="form-check-input" />
-            <label asp-for="EsUsado" class="form-check-label">Usado</label>
+
+        <div class="card p-3 mb-3 shadow-sm">
+            <div class="form-check form-switch">
+                <input asp-for="EsUsado" class="form-check-input" />
+                <label asp-for="EsUsado" class="form-check-label fw-semibold">
+                    ¿La maquinaria es usada?
+                </label>
+            </div>
         </div>
 
-        <div class="form-check form-switch mb-2">
-            <input asp-for="UnicoDuenio" class="form-check-input" />
-            <label asp-for="UnicoDuenio" class="form-check-label">Único Dueño</label>
+        <div class="card p-3 mb-3 shadow-sm">
+
+            <div class="form-check form-switch">
+                <input asp-for="UnicoDuenio" class="form-check-input" />
+                <label asp-for="UnicoDuenio" class="form-check-label fw-semibold">
+                    ¿La maquinaria tuvo un único dueño?
+                </label>
+            </div>
+
         </div>
 
 

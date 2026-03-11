@@ -61,7 +61,7 @@ namespace LogicaAccesoDatos.Repositorios.RepositorioUsuario
         {
             return Contexto.usuarios
                 .Include(u => u.Rol)
-                .Where(u => u.Email.Equals(email) && u.Contrasenia.Equals(password))
+                .Where(u => u.Email.EmailUsr.Equals(email) && u.Contrasenia.Pass.Equals(password))
                 .SingleOrDefault();
         }
         public void Delete(Usuario item)

@@ -48,12 +48,23 @@ namespace WebAgro
             //Casos de uso
             builder.Services.AddScoped<ICUAltaDireccion, CUAltaDireccion>();
             builder.Services.AddScoped<ICUAltaCaracteristica, CUAltaCaracteristica>();
+
+
             builder.Services.AddScoped<ICUAltaMaquinariaTractor, CUAltaMaquinariaTractor>();
+            builder.Services.AddScoped<ICUAltaMaquinariaSembradora, CUAltaMaquinariaSembradora>();
             builder.Services.AddScoped<ICUAltaMaquinariaFertilizadora, CUAltaMaquinariaFertilizadora>();
-            builder.Services.AddScoped<ICUAltaPublicacionVenta, CUAltaPublicacionVenta>();
+
+
             builder.Services.AddScoped<ICUAltaUsuarioCliente, CUAltaUsuarioCliente>();
             builder.Services.AddScoped<ICULoginUsuario, CULoginUsuario>();
+
             builder.Services.AddScoped<ICUListadoPublicacionesVenta, CUListadoPublicacionesVenta>();
+            builder.Services.AddScoped<ICUBuscarPublicacionEnVenta, CUBuscarPublicacionEnVenta>();
+            builder.Services.AddScoped<ICUAltaPublicacionVenta, CUAltaPublicacionVenta>();
+
+
+
+
 
 
 

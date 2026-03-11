@@ -1,0 +1,241 @@
+﻿@model CasosDeUsos.DTOs.PublicacionVentaDTO.DetallePublicacionEnVentaDTO
+<style>
+
+    body {
+        background-color: #e8f5e9; /* Verde suave */
+    }
+
+</style>
+<div class="container mt-5">
+
+    <div class="card shadow-lg p-4">
+
+        <div class="row">
+
+            <!-- IMAGEN -->
+            <div class="col-md-6 text-center">
+                <img src="@Url.Content(Model.Foto)" class="img-fluid rounded" style="max-height:400px;" />
+            </div>
+
+            <!-- INFORMACION PRINCIPAL -->
+            <div class="col-md-6">
+
+                <h2 class="mb-3">@Model.Titulo</h2>
+
+                <h1 class="text-success fw-bold">
+                    USD @Model.Precio
+                </h1>
+
+                <p class="text-muted">
+                    Publicado: @Model.FechaPublicacionVenta.ToShortDateString()
+                </p>
+
+                <div class="mb-3">
+
+                    @if (Model.EsUsado)
+                    {
+                        <span class="badge bg-warning text-dark">Usado</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success">Nuevo</span>
+                    }
+
+                    @if (Model.UnicoDuenio)
+                    {
+                        <span class="badge bg-info text-dark">Único dueño</span>
+                    }
+
+                </div>
+
+                <hr />
+
+                <h5>Ubicación</h5>
+
+                <p class="fs-5">
+                    📍 @Model.Ciudad, @Model.Pais
+                </p>
+
+                <a asp-action="TodasLasPublicacionesEnVenta"
+                   class="btn btn-secondary mt-3">
+                    Volver al listado
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CARACTERISTICAS GENERALES -->
+    <div class="card shadow mt-4 p-4">
+
+        <h4 class="mb-3">Características de la maquinaria</h4>
+
+        <table class="table table-striped">
+
+            <tbody>
+
+                <tr>
+                    <th>Categoría</th>
+                    <td>@Model.Categoria</td>
+                </tr>
+
+                <tr>
+                    <th>Marca</th>
+                    <td>@Model.Marca</td>
+                </tr>
+
+                <tr>
+                    <th>Modelo</th>
+                    <td>@Model.Modelo</td>
+                </tr>
+
+                <tr>
+                    <th>Año</th>
+                    <td>@Model.Anio</td>
+                </tr>
+
+                <tr>
+                    <th>Combustible</th>
+                    <td>@Model.TipoDeCombustible</td>
+                </tr>
+
+                <tr>
+                    <th>Tipo de dirección</th>
+                    <td>@Model.TipoDeDireccion</td>
+                </tr>
+
+                <tr>
+                    <th>Otras características</th>
+                    <td>@Model.CaracteristicasFaltantes</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- DETALLES SEGÚN MAQUINARIA -->
+    <div class="card shadow mt-4 p-4">
+
+        <h4 class="mb-3">Detalles específicos</h4>
+
+        <table class="table table-striped">
+
+            <tbody>
+
+                <tr>
+                    <th>Tipo de maquinaria</th>
+                    <td>@Model.TipoMaquinaria</td>
+                </tr>
+
+                @if (Model.TieneCabina != null)
+                {
+                    <tr>
+                        <th>Tiene Cabina</th>
+                        <td>@(Model.TieneCabina == true ? "Sí" : "No")</td>
+                    </tr>
+                }
+
+                @if (Model.TipoSembradora != null)
+                {
+                    <tr>
+                        <th>Tipo de Sembradora</th>
+                        <td>@Model.TipoSembradora</td>
+                    </tr>
+                }
+
+                @if (Model.MarcaMotor != null)
+                {
+                    <tr>
+                        <th>Marca Motor</th>
+                        <td>@Model.MarcaMotor</td>
+                    </tr>
+                }
+
+                @if (Model.Potencia != null)
+                {
+                    <tr>
+                        <th>Potencia</th>
+                        <td>@Model.Potencia HP</td>
+                    </tr>
+                }
+
+                @if (Model.DobleTraccion != null)
+                {
+                    <tr>
+                        <th>Doble Tracción</th>
+                        <td>@(Model.DobleTraccion == true ? "Sí" : "No")</td>
+                    </tr>
+                }
+
+                @if (Model.TipoCosechadora != null)
+                {
+                    <tr>
+                        <th>Tipo Cosechadora</th>
+                        <td>@Model.TipoCosechadora</td>
+                    </tr>
+                }
+
+                @if (Model.CapacidadDeCarga != null)
+                {
+                    <tr>
+                        <th>Capacidad de carga</th>
+                        <td>@Model.CapacidadDeCarga</td>
+                    </tr>
+                }
+
+                @if (Model.EsRuedaDual != null)
+                {
+                    <tr>
+                        <th>Rueda Dual</th>
+                        <td>@(Model.EsRuedaDual == true ? "Sí" : "No")</td>
+                    </tr>
+                }
+
+                @if (Model.Cilindro != null)
+                {
+                    <tr>
+                        <th>Cilindros</th>
+                        <td>@Model.Cilindro</td>
+                    </tr>
+                }
+
+                @if (Model.MarcaMotorCP != null)
+                {
+                    <tr>
+                        <th>Marca Motor</th>
+                        <td>@Model.MarcaMotorCP</td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <div class="card shadow mt-4 p-4">
+
+        <h4 class="mb-3">Información del vendedor</h4>
+
+        <p>
+            <strong>Nombre:</strong> @Model.NombreVendedor
+        </p>
+
+        <p>
+            <strong>Email:</strong> @Model.EmailVendedor
+        </p>
+
+        <p>
+            <strong>Teléfono:</strong> @Model.TelefonoVendedor
+        </p>
+
+    </div>
+
+</div>

@@ -19,6 +19,7 @@ namespace WebAgro.Controllers
 
         }
 
+        #region Registrar un usuario
         public ActionResult FormularioRegistroUsuario()
         {
             return View();
@@ -28,11 +29,8 @@ namespace WebAgro.Controllers
         public ActionResult AltaCliente(AltaClienteDTO altaClienteDTO)
         {
 
-
-
             try
             {
-                
 
                 CUAltaUsuarioCliente.Ejecutar(altaClienteDTO);
                 return Redirect("FormularioLoginUsuario");
@@ -48,6 +46,8 @@ namespace WebAgro.Controllers
             return View("FormularioRegistroUsuario");
 
         }
+        #endregion
+
 
         public ActionResult FormularioLoginUsuario()
         {
@@ -57,12 +57,14 @@ namespace WebAgro.Controllers
         [HttpPost]
         public ActionResult LoginUsuario(LoginUsuarioDTO loginUsuarioDTO)
         {
-            //HttpContext.Session.SetString("EmailUsuario", loginUsuarioDTO.Email);
-            //HttpContext.Session.SetInt32("RolUsuario", loginUsuarioDTO.);
+           
             try
             {
                 CULoginUsuario.Ejecutar(loginUsuarioDTO);
-                return RedirectToAction("Publicacion", "SeleccionarTipoMaquinaria");
+                HttpContext.Session.SetString("EmailUsuario", loginUsuarioDTO.Email);
+               
+
+                return RedirectToAction("TodasLasPublicacionesEnVenta", "Publicacion");
             }
             catch (UsuarioException ex)
             {
@@ -96,6 +98,8 @@ namespace WebAgro.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
+            HttpContext.Session.Remove("EmailUsuario");
+
             return RedirectToAction("FormularioLoginUsuario");
         }
 

@@ -1,4 +1,5 @@
 ﻿using Dominio.EntidadesNegocio;
+using Dominio.InterfacesRepositorio;
 using Dominio.InterfacesRepositorio.IRepositorioPublicacionVenta;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -35,9 +36,17 @@ namespace LogicaAccesoDatos.Repositorios.RepositorioPublicacionVenta
                 .ToList();
         }
 
-        public Publicacion FindById(int id)
+        public Venta FindById(int id)
         {
-            throw new NotImplementedException();
+            return Contexto.publicaciones
+                        .OfType<Venta>()
+            .Include(p => p.UnaMaquina)
+                .ThenInclude(m => m.Caracteristica)
+            .Include(p => p.UnaMaquina)
+                .ThenInclude(m => m.Direccion)
+            .Include(p => p.ClienteVende)
+            .Include(p => p.ClienteVende)
+            .FirstOrDefault(p => p.Id == id);//TRAEMOS TODO JUNTO PARA NO TENER PROBLEMAS DE CARGA
         }
 
         public IEnumerable<Publicacion> FindAll()
@@ -61,6 +70,11 @@ namespace LogicaAccesoDatos.Repositorios.RepositorioPublicacionVenta
         }
 
         public Publicacion FindByEmailConRol(string item)
+        {
+            throw new NotImplementedException();
+        }
+
+        Publicacion IRepositorio<Publicacion>.FindById(int id)
         {
             throw new NotImplementedException();
         }

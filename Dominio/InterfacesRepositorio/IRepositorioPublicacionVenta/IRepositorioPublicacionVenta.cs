@@ -10,5 +10,6 @@ namespace Dominio.InterfacesRepositorio.IRepositorioPublicacionVenta
     public interface IRepositorioPublicacionVenta:IRepositorio<Publicacion>
     {
         IEnumerable<Venta> FindAllPublicacionesVenta();
+        Venta FindById(int id);
     }
 }

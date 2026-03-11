@@ -18,6 +18,7 @@ namespace Dominio.EntidadesNegocio
 
         public Cliente() : base()
         {
+            
         }
         public Cliente(string nombre, string apellido, string telefono, string email, string password) : base(email, password)
         {
@@ -27,7 +28,7 @@ namespace Dominio.EntidadesNegocio
             Apellido = apellido;
 
             // Asignar rol fijo, cliente es rol cliente harcodeo
-            this.Rol = new Rol("Cliente");
+            this.Rol = new Rol("Cliente"); 
 
             Validar();
         }

@@ -24,29 +24,39 @@ namespace WebAgro.Controllers
     public class PublicacionController : Controller
     {
         public ICUListadoPublicacionesVenta CUListadoPublicacionesVenta { get; set; }
+        public ICUBuscarPublicacionEnVenta CUBuscarPublicacionEnVenta { get; set; }
         public ICUAltaCaracteristica CUAltaCaracteristica { get; set; }//alta funcionando
         public ICUAltaDireccion CUAltaDireccion { get; set; }//alta funcionando
         public ICUAltaMaquinariaTractor CUAltaMaquinariaTractor { get; set; }//alta funcionando, trae los datos de dir y caract.. con ids.
-
+        public ICUAltaMaquinariaSembradora CUAltaMaquinariaSembradora { get; set; }
         public ICUAltaPublicacionVenta CUAltaPublicacionVenta {  get; set; }//faltante
         public ICUAltaMaquinariaFertilizadora CUAltaMaquinariaFertilizadora { get; set; }//faltante
 
         private readonly IWebHostEnvironment _webHostEnvironment;
 
         // Constructor con inyección de dependencias
-        public PublicacionController(IWebHostEnvironment webHostEnvironment,ICUAltaCaracteristica cUAltaCaracteristica, ICUAltaDireccion cUAltaDireccion, ICUAltaMaquinariaTractor cUAltaMaquinariaTractor, ICUAltaPublicacionVenta cUAltaPublicacionVenta, ICUAltaMaquinariaFertilizadora cUAltaMaquinariaFertilizadora, ICUListadoPublicacionesVenta cUListadoPublicacionesVenta)
+        public PublicacionController(ICUListadoPublicacionesVenta cUListadoPublicacionesVenta, ICUBuscarPublicacionEnVenta cUBuscarPublicacionEnVenta,
+            IWebHostEnvironment webHostEnvironment,ICUAltaCaracteristica cUAltaCaracteristica, ICUAltaDireccion cUAltaDireccion, ICUAltaMaquinariaTractor cUAltaMaquinariaTractor,
+            ICUAltaPublicacionVenta cUAltaPublicacionVenta, ICUAltaMaquinariaFertilizadora cUAltaMaquinariaFertilizadora, ICUAltaMaquinariaSembradora cUAltaMaquinariaSembradora)
         {
             _webHostEnvironment = webHostEnvironment;
             CUAltaCaracteristica = cUAltaCaracteristica;
             CUAltaDireccion = cUAltaDireccion;
-            CUAltaMaquinariaTractor = cUAltaMaquinariaTractor;
+
             CUAltaPublicacionVenta = cUAltaPublicacionVenta;
-            CUAltaMaquinariaFertilizadora = cUAltaMaquinariaFertilizadora;
             CUListadoPublicacionesVenta = cUListadoPublicacionesVenta;
+            CUBuscarPublicacionEnVenta = cUBuscarPublicacionEnVenta;
+
+            CUAltaMaquinariaTractor = cUAltaMaquinariaTractor;
+            CUAltaMaquinariaFertilizadora = cUAltaMaquinariaFertilizadora;
+            CUAltaMaquinariaSembradora = cUAltaMaquinariaSembradora;
+
+
         }
 
         public IActionResult TodasLasPublicacionesEnVenta()
         {
+            
             IEnumerable<ListadoPublicacionesEnVentaDTO> listadoPublicacionesEnVentaDTOs = new List<ListadoPublicacionesEnVentaDTO>();
             try
             {
@@ -60,13 +70,27 @@ namespace WebAgro.Controllers
                 return View();
             }
 
-
-
-
         }
 
+        public ActionResult DetallePublicacionEnVenta(int id)
+        {
+            DetallePublicacionEnVentaDTO detallePublicacionEnVentaDTO = new DetallePublicacionEnVentaDTO();
+
+            try
+            {
+                detallePublicacionEnVentaDTO = CUBuscarPublicacionEnVenta.Ejecutar(id);
+                return View(detallePublicacionEnVentaDTO);
+            }
+            catch (Exception ex) 
+            {
+                TempData["Error"] = ex.Message;
+                return RedirectToAction("TodasLasPublicacionesEnVenta");
+            }
+
+        }
         public IActionResult SeleccionarTipoMaquinaria()
         {
+           
             return View();
         }
 
@@ -231,6 +255,7 @@ namespace WebAgro.Controllers
                 // Asigno los Ids al DTO para que el CU pueda relacionarlos
                 ventaDTO.MaquinariaId = maquinariaId.Value;
 
+                Console.WriteLine(ventaDTO.Foto);
                 CUAltaPublicacionVenta.Ejecutar(ventaDTO,Email);
                 ViewBag.Exito = "✅ Maquinaria Tractor publicada con éxito";
                 return View("FormularioTractorPublicacionVenta");
@@ -259,10 +284,14 @@ namespace WebAgro.Controllers
             try
             {
 
-                //Verifica si el modelo(caracteristica en tu caso) pasó todas las validaciones definidas.
 
-                    CUAltaCaracteristica.Ejecutar(caracteristicaDTO);
-                    return Redirect("FormularioSembradoraDireccion");
+                CUAltaCaracteristica.Ejecutar(caracteristicaDTO);
+
+
+                // guardo el id en Session
+                HttpContext.Session.SetInt32("CaracteristicaId", caracteristicaDTO.Id);
+
+                return Redirect("FormularioSembradoraDireccion");
                 
 
             }
@@ -288,10 +317,13 @@ namespace WebAgro.Controllers
         {
             try
             {
-                //HttpContext.Session.SetInt32("IdDireccionSembradora", direccion.IdDireccion);
+
 
                     CUAltaDireccion.Ejecutar(direccionDTO);
-                    return Redirect("FormularioSembradoraMaquinaria");
+                //El Id se asigna recién después de ejecutar
+                HttpContext.Session.SetInt32("DireccionId", direccionDTO.Id);
+
+                return Redirect("FormularioSembradoraMaquinaria");
                 
             }
             catch (DireccionException ex)
@@ -321,8 +353,28 @@ namespace WebAgro.Controllers
             try
             {
 
-                    //CUAltaMaquinariaSembradora.Ejecutar(sembradoraDTO);
-                    return Redirect("FormularioSembradoraPublicacionVenta");
+                //// Recupero los Ids de Característica y Dirección de la Session
+                int? caracteristicaId = HttpContext.Session.GetInt32("CaracteristicaId");
+                int? direccionId = HttpContext.Session.GetInt32("DireccionId");
+
+                if (!caracteristicaId.HasValue || !direccionId.HasValue)
+                {
+                    TempData["Error"] = "Faltan datos de Característica o Dirección.";
+                    return RedirectToAction("FormularioTractorMaquinaria");
+                }
+
+                // Asigno los Ids al DTO para que el CU pueda relacionarlos
+                sembradoraDTO.CaracteristicaId = caracteristicaId.Value;
+                sembradoraDTO.DireccionId = direccionId.Value;
+
+
+
+                CUAltaMaquinariaSembradora.Ejecutar(sembradoraDTO);
+
+                // guardo el id en Session
+                HttpContext.Session.SetInt32("SembradoraId", sembradoraDTO.Id);
+
+                return Redirect("FormularioSembradoraPublicacionVenta");
                 
             }
             catch (MaquinariaSembradoraException ex)
@@ -348,6 +400,9 @@ namespace WebAgro.Controllers
         {
             try
             {
+                string Email = HttpContext.Session.GetString("EmailUsuario");
+
+                int? maquinariaId = HttpContext.Session.GetInt32("SembradoraId");
 
                 // Guardar la imagen si viene archivo
                 if (fotoArchivo != null && fotoArchivo.Length > 0)
@@ -372,11 +427,20 @@ namespace WebAgro.Controllers
                     ventaDTO.Foto = "/images/default-maquinaria.jpg";
                 }
 
-                //venta.IdPublicacion = Publicacion.UltimoIdPublicacion++;
-                //CUAltaPublicacionVenta.Ejecutar(ventaDTO);
 
+                if (!maquinariaId.HasValue)
+                {
+                    TempData["Error"] = "Faltan datos de Maquinaria.";
+                    return RedirectToAction("FormularioTractorPublicacionVenta");
+                }
+
+                // Asigno los Ids al DTO para que el CU pueda relacionarlos
+                ventaDTO.MaquinariaId = maquinariaId.Value;
+
+                Console.WriteLine(ventaDTO.Foto);
+                CUAltaPublicacionVenta.Ejecutar(ventaDTO, Email);
                 ViewBag.Exito = "✅ Maquinaria Sembradora publicada con éxito";
-                return View("FormularioSembradoraPublicacionVenta");
+                return View("FormularioTractorPublicacionVenta");
                 //return RedirectToAction("ObtenerMaquinariaPorId", new { id = venta.IdPublicacion });
             }
             catch (Exception ex)
