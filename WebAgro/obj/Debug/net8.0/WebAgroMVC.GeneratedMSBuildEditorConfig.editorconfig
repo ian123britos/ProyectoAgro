@@ -46,6 +46,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRmlsdHJhclBvclRpcG9UcmFjdG9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/FormularioCosechadoraCaracteristicas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRm9ybXVsYXJpb0Nvc2VjaGFkb3JhQ2FyYWN0ZXJpc3RpY2FzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/FormularioCosechadoraDireccion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRm9ybXVsYXJpb0Nvc2VjaGFkb3JhRGlyZWNjaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/FormularioCosechadoraMaquinaria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRm9ybXVsYXJpb0Nvc2VjaGFkb3JhTWFxdWluYXJpYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/FormularioCosechadoraPublicacionVenta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRm9ybXVsYXJpb0Nvc2VjaGFkb3JhUHVibGljYWNpb25WZW50YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/hlbc7/Desktop/ProyectoAgro/WebAgro/Views/Publicacion/FormularioFertilizadoraCaracteristicas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cRm9ybXVsYXJpb0ZlcnRpbGl6YWRvcmFDYXJhY3RlcmlzdGljYXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

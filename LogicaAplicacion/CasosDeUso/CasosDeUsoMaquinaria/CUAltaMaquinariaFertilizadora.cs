@@ -23,25 +23,28 @@ namespace LogicaAplicacion.CasosDeUso.CasosDeUsoMaquinaria
 
         public IRepositorioDireccion RepositorioDireccion { get; set; }
        
-        public CUAltaMaquinariaFertilizadora(IRepositorioMaquinaria repositorioMaquinaria,/*PRUEBA:*/IRepositorioCaracteristica repositorioCaracteristica,IRepositorioDireccion repositorioDireccion)
+        public CUAltaMaquinariaFertilizadora(IRepositorioMaquinaria repositorioMaquinaria,IRepositorioCaracteristica repositorioCaracteristica,IRepositorioDireccion repositorioDireccion)
         {
             RepositorioMaquinaria = repositorioMaquinaria;
-           /* PRUEBA:*/ RepositorioCaracteristica = repositorioCaracteristica;
+         RepositorioCaracteristica = repositorioCaracteristica;
             RepositorioDireccion = repositorioDireccion;
         }
 
         public void Ejecutar(FertilizadoraDTO fertilizadoraDTO)
         {
-            /*prueba:*/ Caracteristica caracteristica = RepositorioCaracteristica.FindById(fertilizadoraDTO.CaracteristicaId);
+            Caracteristica caracteristica = RepositorioCaracteristica.FindById(fertilizadoraDTO.CaracteristicaId);
+            if (caracteristica == null)
+            { throw new Exception("No se encontro la caracteristica seleccionada"); }
 
             Direccion direccion = RepositorioDireccion.FindById(fertilizadoraDTO.DireccionId);
+            if (direccion == null) { throw new Exception("No se encontro la direccion seleccionada"); }
 
-            if (caracteristica != null)
-            {
+            Fertilizadora fertilizadora = MapperMaquinariaFertilizadora.MaquinariaFertilizadoraDTOaEntidad(fertilizadoraDTO,caracteristica, direccion);
+            RepositorioMaquinaria.Add(fertilizadora);
 
-                Fertilizadora fertilizadora = MapperMaquinariaFertilizadora.MaquinariaFertilizadoraDTOaEntidad(fertilizadoraDTO,/*prueba:*/caracteristica,direccion);
-                RepositorioMaquinaria.Add(fertilizadora);
-            }
+            fertilizadoraDTO.Id = fertilizadora.Id;
+
+
         }
     }
 }

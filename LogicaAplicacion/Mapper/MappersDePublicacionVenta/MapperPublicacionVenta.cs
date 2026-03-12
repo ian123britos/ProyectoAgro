@@ -24,7 +24,7 @@ namespace LogicaAplicacion.Mapper.MappersDePublicacionVenta
                 throw new ArgumentNullException("No se proporcionó maquinaria válida");
 
             if (cliente == null)
-                throw new ArgumentNullException("No se proporcionó maquinaria válida");
+                throw new ArgumentNullException("Debe Iniciar Session para realizar el alta de maquinaria");
 
 
 

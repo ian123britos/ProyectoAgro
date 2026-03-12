@@ -53,7 +53,7 @@ namespace WebAgro
             builder.Services.AddScoped<ICUAltaMaquinariaTractor, CUAltaMaquinariaTractor>();
             builder.Services.AddScoped<ICUAltaMaquinariaSembradora, CUAltaMaquinariaSembradora>();
             builder.Services.AddScoped<ICUAltaMaquinariaFertilizadora, CUAltaMaquinariaFertilizadora>();
-
+            builder.Services.AddScoped<ICUAltaMaquinariaCosechadora, CUAltaMaquinariaCosechadora>();
 
             builder.Services.AddScoped<ICUAltaUsuarioCliente, CUAltaUsuarioCliente>();
             builder.Services.AddScoped<ICULoginUsuario, CULoginUsuario>();

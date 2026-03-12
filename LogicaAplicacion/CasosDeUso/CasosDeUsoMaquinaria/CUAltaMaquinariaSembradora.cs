@@ -28,7 +28,7 @@ namespace LogicaAplicacion.CasosDeUso.CasosDeUsoMaquinaria
         }
 
         public void Ejecutar(SembradoraDTO sembradoraDTO)
-        {
+        {   
             Caracteristica caracteristica = RepositorioCaracteristica.FindById(sembradoraDTO.CaracteristicaId);
             if (caracteristica == null)
             { throw new Exception("No se encontro la caracteristica seleccionada"); }

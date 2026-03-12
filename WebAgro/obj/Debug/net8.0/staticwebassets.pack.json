@@ -269,8 +269,16 @@
       "PackagePath": "staticwebassets\\uploads\\0ed4311e-9125-475d-aad2-b8908493ede7.jpeg"
     },
     {
+      "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\uploads\\0f0c03ed-68ed-4854-a992-5a2f8f54ae07.jpg",
+      "PackagePath": "staticwebassets\\uploads\\0f0c03ed-68ed-4854-a992-5a2f8f54ae07.jpg"
+    },
+    {
       "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\uploads\\10460fc7-66f3-4237-8864-dc3bef07cb26.jpg",
       "PackagePath": "staticwebassets\\uploads\\10460fc7-66f3-4237-8864-dc3bef07cb26.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\uploads\\10a9fbcc-a588-4bf7-97b4-6ff7d68fcf62.jpg",
+      "PackagePath": "staticwebassets\\uploads\\10a9fbcc-a588-4bf7-97b4-6ff7d68fcf62.jpg"
     },
     {
       "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\uploads\\11f91e03-12a6-47dc-b70b-f221c5404140.jpg",
@@ -285,12 +293,20 @@
       "PackagePath": "staticwebassets\\uploads\\1c1374cc-3928-41d7-a1f7-5e6e8e062a76.jpeg"
     },
     {
+      "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\uploads\\209cc19e-624a-434a-a98d-3ceb4357e536.jpg",
+      "PackagePath": "staticwebassets\\uploads\\209cc19e-624a-434a-a98d-3ceb4357e536.jpg"
+    },
+    {
       "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\uploads\\22efdb48-f456-4722-aa8d-d8c0c33e95e6.jpg",
       "PackagePath": "staticwebassets\\uploads\\22efdb48-f456-4722-aa8d-d8c0c33e95e6.jpg"
     },
     {
       "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\uploads\\28e05462-cab2-47ed-a93c-9e03fbbb3a05.jpeg",
       "PackagePath": "staticwebassets\\uploads\\28e05462-cab2-47ed-a93c-9e03fbbb3a05.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\uploads\\2b63b901-8374-46a0-af5b-b485ebbee7a1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\2b63b901-8374-46a0-af5b-b485ebbee7a1.jpg"
     },
     {
       "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\uploads\\35d88588-4703-4160-b117-cfbe7d63c27d.jpg",
@@ -331,6 +347,10 @@
     {
       "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\uploads\\6f2bd135-d5e4-4b98-8bad-62c2ae1bfc3c.jpg",
       "PackagePath": "staticwebassets\\uploads\\6f2bd135-d5e4-4b98-8bad-62c2ae1bfc3c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\uploads\\708df16b-32e1-483e-bcf4-0f40e99214db.jpg",
+      "PackagePath": "staticwebassets\\uploads\\708df16b-32e1-483e-bcf4-0f40e99214db.jpg"
     },
     {
       "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\uploads\\7521a333-9538-4b5e-b3cd-cbbd9204dbfb.jpeg",
@@ -389,6 +409,10 @@
       "PackagePath": "staticwebassets\\uploads\\d5768b64-c7e8-419e-bd6e-99daf1136872.jpeg"
     },
     {
+      "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\uploads\\d79d5d12-ead0-4e3f-8a59-04229a91302b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\d79d5d12-ead0-4e3f-8a59-04229a91302b.jpg"
+    },
+    {
       "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\uploads\\dba55f5c-62ac-41de-ae80-a626b2a7a3a4.jpeg",
       "PackagePath": "staticwebassets\\uploads\\dba55f5c-62ac-41de-ae80-a626b2a7a3a4.jpeg"
     },
@@ -435,6 +459,10 @@
     {
       "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\uploads\\fd2dcf18-6b9d-4e95-b4d3-f532dfe648a5.jpg",
       "PackagePath": "staticwebassets\\uploads\\fd2dcf18-6b9d-4e95-b4d3-f532dfe648a5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\wwwroot\\uploads\\ffa78443-50b6-40c5-b59a-1fae34110908.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ffa78443-50b6-40c5-b59a-1fae34110908.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebAgroMVC.Microsoft.AspNetCore.StaticWebAssets.props",

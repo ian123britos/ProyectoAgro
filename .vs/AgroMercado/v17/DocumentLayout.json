@@ -3,23 +3,61 @@
   "WorkspaceRootPath": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\entidadesnegocio\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\entidadesnegocio\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgroMVC.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\webagro\\controllers\\publicacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgroMVC.csproj|solutionrelative:webagro\\controllers\\publicacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FC10961-DBD2-492B-952C-48D34C7334FE}|LogicaAplicacion\\LogicaAplicacion.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\logicaaplicacion\\casosdeuso\\casosdeusousuario\\cualtausuariocliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FC10961-DBD2-492B-952C-48D34C7334FE}|LogicaAplicacion\\LogicaAplicacion.csproj|solutionrelative:logicaaplicacion\\casosdeuso\\casosdeusousuario\\cualtausuariocliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FC10961-DBD2-492B-952C-48D34C7334FE}|LogicaAplicacion\\LogicaAplicacion.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\logicaaplicacion\\casosdeuso\\casosdeusopublicacionventa\\cualtapublicacionventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FC10961-DBD2-492B-952C-48D34C7334FE}|LogicaAplicacion\\LogicaAplicacion.csproj|solutionrelative:logicaaplicacion\\casosdeuso\\casosdeusopublicacionventa\\cualtapublicacionventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/miempresaAgro/True/SqlTable/dbo.usuarios.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgroMVC.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\webagro\\controllers\\publicacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgroMVC.csproj|solutionrelative:webagro\\controllers\\publicacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/miempresaAgro/True/SqlTable/dbo.direcciones.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FC10961-DBD2-492B-952C-48D34C7334FE}|LogicaAplicacion\\LogicaAplicacion.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\logicaaplicacion\\mapper\\mappersdepublicacionventa\\mapperpublicacionventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FC10961-DBD2-492B-952C-48D34C7334FE}|LogicaAplicacion\\LogicaAplicacion.csproj|solutionrelative:logicaaplicacion\\mapper\\mappersdepublicacionventa\\mapperpublicacionventa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/miempresaAgro/True/SqlTable/dbo.caracteristicas.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgroMVC.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\webagro\\views\\publicacion\\formulariocosechadoramaquinaria.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgroMVC.csproj|solutionrelative:webagro\\views\\publicacion\\formulariocosechadoramaquinaria.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgroMVC.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\webagro\\views\\publicacion\\formulariocosechadorapublicacionventa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgroMVC.csproj|solutionrelative:webagro\\views\\publicacion\\formulariocosechadorapublicacionventa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgroMVC.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\webagro\\views\\publicacion\\formulariocosechadoracaracteristicas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgroMVC.csproj|solutionrelative:webagro\\views\\publicacion\\formulariocosechadoracaracteristicas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FC10961-DBD2-492B-952C-48D34C7334FE}|LogicaAplicacion\\LogicaAplicacion.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\logicaaplicacion\\mapper\\mappersdemaquinarias\\mappermaquinariacosechadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FC10961-DBD2-492B-952C-48D34C7334FE}|LogicaAplicacion\\LogicaAplicacion.csproj|solutionrelative:logicaaplicacion\\mapper\\mappersdemaquinarias\\mappermaquinariacosechadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgroMVC.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\webagro\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgroMVC.csproj|solutionrelative:webagro\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FC10961-DBD2-492B-952C-48D34C7334FE}|LogicaAplicacion\\LogicaAplicacion.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\logicaaplicacion\\mapper\\mappersdemaquinarias\\mappermaquinariafertilizadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FC10961-DBD2-492B-952C-48D34C7334FE}|LogicaAplicacion\\LogicaAplicacion.csproj|solutionrelative:logicaaplicacion\\mapper\\mappersdemaquinarias\\mappermaquinariafertilizadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgroMVC.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\webagro\\views\\publicacion\\formulariosembradorapublicacionventa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2DFD930F-D7FD-4024-A2A6-D78175A3E736}|WebAgro\\WebAgroMVC.csproj|solutionrelative:webagro\\views\\publicacion\\formulariosembradorapublicacionventa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FC10961-DBD2-492B-952C-48D34C7334FE}|LogicaAplicacion\\LogicaAplicacion.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\logicaaplicacion\\casosdeuso\\casosdeusomaquinaria\\cualtamaquinariacosechadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FC10961-DBD2-492B-952C-48D34C7334FE}|LogicaAplicacion\\LogicaAplicacion.csproj|solutionrelative:logicaaplicacion\\casosdeuso\\casosdeusomaquinaria\\cualtamaquinariacosechadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FC10961-DBD2-492B-952C-48D34C7334FE}|LogicaAplicacion\\LogicaAplicacion.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\logicaaplicacion\\casosdeuso\\casosdeusomaquinaria\\cualtamaquinariafertilizadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FC10961-DBD2-492B-952C-48D34C7334FE}|LogicaAplicacion\\LogicaAplicacion.csproj|solutionrelative:logicaaplicacion\\casosdeuso\\casosdeusomaquinaria\\cualtamaquinariafertilizadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|c:\\users\\hlbc7\\desktop\\proyectoagro\\dominio\\entidadesnegocio\\fertilizadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05F3715E-4B93-45D8-8245-13239F2F70C6}|Dominio\\Dominio.csproj|solutionrelative:dominio\\entidadesnegocio\\fertilizadora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,8 +66,8 @@
       "VerticalTabListWidth": 100,
       "DocumentGroups": [
         {
-          "DockedHeight": 3,
-          "SelectedChildIndex": 3,
+          "DockedHeight": 7,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -37,54 +75,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PublicacionController.cs",
-              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Controllers\\PublicacionController.cs",
-              "RelativeDocumentMoniker": "WebAgro\\Controllers\\PublicacionController.cs",
-              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Controllers\\PublicacionController.cs",
-              "RelativeToolTip": "WebAgro\\Controllers\\PublicacionController.cs",
-              "ViewState": "AgIAAHwBAAAAAAAAAADwv48BAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T23:07:45.272Z",
+              "DocumentIndex": 6,
+              "Title": "FormularioCosechadoraPublicacionVenta.cshtml",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioCosechadoraPublicacionVenta.cshtml",
+              "RelativeDocumentMoniker": "WebAgro\\Views\\Publicacion\\FormularioCosechadoraPublicacionVenta.cshtml",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioCosechadoraPublicacionVenta.cshtml",
+              "RelativeToolTip": "WebAgro\\Views\\Publicacion\\FormularioCosechadoraPublicacionVenta.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-12T01:10:51.667Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MapperPublicacionVenta.cs",
-              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\LogicaAplicacion\\Mapper\\MappersDePublicacionVenta\\MapperPublicacionVenta.cs",
-              "RelativeDocumentMoniker": "LogicaAplicacion\\Mapper\\MappersDePublicacionVenta\\MapperPublicacionVenta.cs",
-              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\LogicaAplicacion\\Mapper\\MappersDePublicacionVenta\\MapperPublicacionVenta.cs",
-              "RelativeToolTip": "LogicaAplicacion\\Mapper\\MappersDePublicacionVenta\\MapperPublicacionVenta.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAYwGIAAAAeAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Program.cs",
+              "RelativeDocumentMoniker": "WebAgro\\Program.cs",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Program.cs",
+              "RelativeToolTip": "WebAgro\\Program.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAQwDcAAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T23:06:39.252Z",
+              "WhenOpened": "2026-03-12T01:04:27.975Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Cliente.cs",
-              "RelativeDocumentMoniker": "Dominio\\EntidadesNegocio\\Cliente.cs",
-              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Cliente.cs",
-              "RelativeToolTip": "Dominio\\EntidadesNegocio\\Cliente.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAAnAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "MapperMaquinariaCosechadora.cs",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\LogicaAplicacion\\Mapper\\MappersDeMaquinarias\\MapperMaquinariaCosechadora.cs",
+              "RelativeDocumentMoniker": "LogicaAplicacion\\Mapper\\MappersDeMaquinarias\\MapperMaquinariaCosechadora.cs",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\LogicaAplicacion\\Mapper\\MappersDeMaquinarias\\MapperMaquinariaCosechadora.cs",
+              "RelativeToolTip": "LogicaAplicacion\\Mapper\\MappersDeMaquinarias\\MapperMaquinariaCosechadora.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T22:54:01.74Z",
+              "WhenOpened": "2026-03-12T00:54:32.365Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CUAltaUsuarioCliente.cs",
-              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\LogicaAplicacion\\CasosDeUso\\CasosDeUsoUsuario\\CUAltaUsuarioCliente.cs",
-              "RelativeDocumentMoniker": "LogicaAplicacion\\CasosDeUso\\CasosDeUsoUsuario\\CUAltaUsuarioCliente.cs",
-              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\LogicaAplicacion\\CasosDeUso\\CasosDeUsoUsuario\\CUAltaUsuarioCliente.cs",
-              "RelativeToolTip": "LogicaAplicacion\\CasosDeUso\\CasosDeUsoUsuario\\CUAltaUsuarioCliente.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACEAAABFAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "CUAltaMaquinariaCosechadora.cs",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\LogicaAplicacion\\CasosDeUso\\CasosDeUsoMaquinaria\\CUAltaMaquinariaCosechadora.cs",
+              "RelativeDocumentMoniker": "LogicaAplicacion\\CasosDeUso\\CasosDeUsoMaquinaria\\CUAltaMaquinariaCosechadora.cs",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\LogicaAplicacion\\CasosDeUso\\CasosDeUsoMaquinaria\\CUAltaMaquinariaCosechadora.cs",
+              "RelativeToolTip": "LogicaAplicacion\\CasosDeUso\\CasosDeUsoMaquinaria\\CUAltaMaquinariaCosechadora.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAA3wCYAAABiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T22:53:46.145Z",
+              "WhenOpened": "2026-03-12T00:47:34.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FormularioSembradoraPublicacionVenta.cshtml",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioSembradoraPublicacionVenta.cshtml",
+              "RelativeDocumentMoniker": "WebAgro\\Views\\Publicacion\\FormularioSembradoraPublicacionVenta.cshtml",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioSembradoraPublicacionVenta.cshtml",
+              "RelativeToolTip": "WebAgro\\Views\\Publicacion\\FormularioSembradoraPublicacionVenta.cshtml",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAcwBUAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-12T00:37:16.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FormularioCosechadoraCaracteristicas.cshtml",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioCosechadoraCaracteristicas.cshtml",
+              "RelativeDocumentMoniker": "WebAgro\\Views\\Publicacion\\FormularioCosechadoraCaracteristicas.cshtml",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioCosechadoraCaracteristicas.cshtml",
+              "RelativeToolTip": "WebAgro\\Views\\Publicacion\\FormularioCosechadoraCaracteristicas.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-12T00:36:37.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormularioCosechadoraMaquinaria.cshtml",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioCosechadoraMaquinaria.cshtml",
+              "RelativeDocumentMoniker": "WebAgro\\Views\\Publicacion\\FormularioCosechadoraMaquinaria.cshtml",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Views\\Publicacion\\FormularioCosechadoraMaquinaria.cshtml",
+              "RelativeToolTip": "WebAgro\\Views\\Publicacion\\FormularioCosechadoraMaquinaria.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-12T00:34:09.597Z",
               "EditorCaption": ""
             },
             {
@@ -94,28 +171,93 @@
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/miempresaAgro/True/SqlTable/dbo.usuarios.sql",
               "ToolTip": "dbo.usuarios [Datos]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2026-03-11T22:53:03.458Z",
+              "WhenOpened": "2026-03-12T00:17:01.03Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedHeight": 115,
-          "SelectedChildIndex": -1,
-          "Children": [
+            },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            }
-          ]
-        },
-        {
-          "DockedHeight": 5,
-          "SelectedChildIndex": -1,
-          "Children": [
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dbo.direcciones [Datos]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/miempresaAgro/True/SqlTable/dbo.direcciones.sql",
+              "ToolTip": "dbo.direcciones [Datos]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-03-12T00:08:24.638Z",
+              "EditorCaption": ""
+            },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "dbo.caracteristicas [Datos]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/miempresaAgro/True/SqlTable/dbo.caracteristicas.sql",
+              "ToolTip": "dbo.caracteristicas [Datos]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-03-12T00:08:16.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Fertilizadora.cs",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Fertilizadora.cs",
+              "RelativeDocumentMoniker": "Dominio\\EntidadesNegocio\\Fertilizadora.cs",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\Dominio\\EntidadesNegocio\\Fertilizadora.cs",
+              "RelativeToolTip": "Dominio\\EntidadesNegocio\\Fertilizadora.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAqwDkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T23:47:20.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MapperMaquinariaFertilizadora.cs",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\LogicaAplicacion\\Mapper\\MappersDeMaquinarias\\MapperMaquinariaFertilizadora.cs",
+              "RelativeDocumentMoniker": "LogicaAplicacion\\Mapper\\MappersDeMaquinarias\\MapperMaquinariaFertilizadora.cs",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\LogicaAplicacion\\Mapper\\MappersDeMaquinarias\\MapperMaquinariaFertilizadora.cs",
+              "RelativeToolTip": "LogicaAplicacion\\Mapper\\MappersDeMaquinarias\\MapperMaquinariaFertilizadora.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T23:43:55.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CUAltaPublicacionVenta.cs",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\LogicaAplicacion\\CasosDeUso\\CasosDeUsoPublicacionVenta\\CUAltaPublicacionVenta.cs",
+              "RelativeDocumentMoniker": "LogicaAplicacion\\CasosDeUso\\CasosDeUsoPublicacionVenta\\CUAltaPublicacionVenta.cs",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\LogicaAplicacion\\CasosDeUso\\CasosDeUsoPublicacionVenta\\CUAltaPublicacionVenta.cs",
+              "RelativeToolTip": "LogicaAplicacion\\CasosDeUso\\CasosDeUsoPublicacionVenta\\CUAltaPublicacionVenta.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAIAzwCcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T23:35:40.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CUAltaMaquinariaFertilizadora.cs",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\LogicaAplicacion\\CasosDeUso\\CasosDeUsoMaquinaria\\CUAltaMaquinariaFertilizadora.cs",
+              "RelativeDocumentMoniker": "LogicaAplicacion\\CasosDeUso\\CasosDeUsoMaquinaria\\CUAltaMaquinariaFertilizadora.cs",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\LogicaAplicacion\\CasosDeUso\\CasosDeUsoMaquinaria\\CUAltaMaquinariaFertilizadora.cs",
+              "RelativeToolTip": "LogicaAplicacion\\CasosDeUso\\CasosDeUsoMaquinaria\\CUAltaMaquinariaFertilizadora.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T23:36:59.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PublicacionController.cs",
+              "DocumentMoniker": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Controllers\\PublicacionController.cs",
+              "RelativeDocumentMoniker": "WebAgro\\Controllers\\PublicacionController.cs",
+              "ToolTip": "C:\\Users\\hlbc7\\Desktop\\ProyectoAgro\\WebAgro\\Controllers\\PublicacionController.cs",
+              "RelativeToolTip": "WebAgro\\Controllers\\PublicacionController.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAswFcAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T23:07:45.272Z",
+              "EditorCaption": ""
             }
           ]
         }

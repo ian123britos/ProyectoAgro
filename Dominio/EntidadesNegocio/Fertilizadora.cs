@@ -48,10 +48,7 @@ namespace Dominio.EntidadesNegocio
         }
 
         public override string TipoVehiculo() => "Fertilizadora";
-        //public override string ToString()
-        //{
-        //    return TipoVechiculo();
-        //}
+
         public static string EsDobleTraccion(bool esDobleTraccion)
         {
             string Texto = "";

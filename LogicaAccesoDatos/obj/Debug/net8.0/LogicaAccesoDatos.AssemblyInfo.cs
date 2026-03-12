@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LogicaAccesoDatos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b170bea2c737bbcc75265893e61135dc1f628b1b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df065b799aa22e09a1db71794a20c70c5832f0d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("LogicaAccesoDatos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LogicaAccesoDatos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

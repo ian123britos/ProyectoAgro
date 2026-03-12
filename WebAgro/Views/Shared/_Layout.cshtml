@@ -1,59 +1,172 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebAgro</title>
+    <title>@ViewData["Title"] - AgroMercado</title>
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WebAgro.styles.css" asp-append-version="true" />
+
+    <style>
+
+        body {
+            background-color: #f5f7f3;
+        }
+
+        /* NAVBAR */
+
+        .navbar-agro {
+            background-color: #2e7d32;
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-weight: bold;
+            font-size: 1.6rem;
+        }
+
+        .navbar-agro .nav-link {
+            color: white !important;
+            font-weight: 500;
+        }
+
+            .navbar-agro .nav-link:hover {
+                color: #c8e6c9 !important;
+            }
+
+        /* BOTON HAMBURGUESA */
+
+        .navbar-toggler {
+            border: none;
+            background-color: white; /* fondo blanco */
+            padding: 5px 8px;
+            border-radius: 5px;
+        }
+
+        .navbar-toggler-icon {
+            filter: none; /* quita el invert */
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: #1b5e20;
+            color: white;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+            footer a {
+                color: #a5d6a7;
+                text-decoration: none;
+            }
+
+    </style>
+
 </head>
+
 <body>
+
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Usuario" asp-action="FormularioLoginUsuario">WebAgro</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+
+        <nav class="navbar navbar-expand-lg navbar-agro shadow">
+            <div class="container">
+
+                <a class="navbar-brand" asp-controller="Publicacion" asp-action="TodasLasPublicacionesEnVenta">
+                    🌱 AgroMercado
+                </a>
+
+                <!-- BOTON MOBILE -->
+
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#menuAgro">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        @* @if(Context.Session.GetString("RolUsuario")) *@
+
+                <!-- MENU -->
+
+                <div class="collapse navbar-collapse" id="menuAgro">
+
+                    <ul class="navbar-nav ms-auto">
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Publicacion" asp-action="TodasLasPublicacionesEnVenta">Comprar</a>
+                            <a class="nav-link"
+                               asp-controller="Publicacion"
+                               asp-action="TodasLasPublicacionesEnVenta">
+                                Comprar
+                            </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="FormularioRegistroUsuario">Registrate</a>
+                            <a class="nav-link"
+                               asp-controller="Publicacion"
+                               asp-action="SeleccionarTipoMaquinaria">
+                                Vender
+                            </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="FormularioLoginUsuario">Login</a>
+                            <a class="nav-link"
+                               asp-controller="Usuario"
+                               asp-action="FormularioRegistroUsuario">
+                                Registrarse
+                            </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Publicacion" asp-action="SeleccionarTipoMaquinaria">Vender</a>
+                            <a class="nav-link"
+                               asp-controller="Usuario"
+                               asp-action="FormularioLoginUsuario">
+                                Login
+                            </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="Logout">Cerrar Session</a>
+                            <a class="nav-link"
+                               asp-controller="Usuario"
+                               asp-action="Logout">
+                                Cerrar sesión
+                            </a>
                         </li>
+
                     </ul>
+
                 </div>
+
             </div>
         </nav>
+
     </header>
+
+    <!-- CONTENIDO -->
+
     <div class="container">
+
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+
     </div>
 
-    <footer class="border-top footer text-muted">
+    <!-- FOOTER -->
+
+    <footer class="text-center">
+
         <div class="container">
-            &copy; 2025 - WebAgro - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            🌾 © 2026 - AgroMercado | Compra y venta de maquinaria agrícola
         </div>
+
     </footer>
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>
